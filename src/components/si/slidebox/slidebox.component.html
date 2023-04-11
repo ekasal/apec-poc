@@ -1,0 +1,18 @@
+<div class="filter-option">
+  <span>{{ label }}</span>
+  <label class="toggle-switch">
+    <input
+      class="toggle-switch-input"
+      type="checkbox"
+      [(ngModel)]="model"
+      [disabled]="disabled"
+      (change)="change.emit()"
+    />
+    <span
+      class="toggle-switch-label"
+      attr.data-on="{{ dataOn }}"
+      attr.data-off="{{ dataOff }}"
+    ></span>
+    <span class="toggle-switch-handle"></span>
+  </label>
+</div>

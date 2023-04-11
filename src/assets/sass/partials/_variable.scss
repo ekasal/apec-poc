@@ -1,0 +1,207 @@
+// font-size
+$base-font-size: 1.4rem;
+$base-line-height: 1.5rem;
+
+// Couleurs des univers
+$dark-mode: #20232e;
+$light-mode: #f4f7f6;
+
+// Couleur boutons
+$bg-btn: #404a64;
+
+// Couleurs des univers survolés
+$item-hover: #404a64;
+
+// Couleurs des filets séparateurs
+$bg-separator: #404a64;
+
+// Couleurs d'arrière-plan dark mode
+$bgcolor: $dark-mode;
+$bgcolor-sidebar: #272d3a;
+$bgcolor-topbar: #2e3548;
+$bgcolor-card: #272d3a;
+$bgcolor-very-dark: #181a21;
+$bgcolor-item: #1a2336;
+
+// Couleurs loader dark mode
+$bg-loader-off: #41495f;
+$bg-loader-on: #8ca3d5;
+
+// Couleurs des boutons du slider range dark mode
+$bg-btn-slider-range: #60739f;
+
+// Couleurs des onglets
+$bgcolor-search-tab: #404a64;
+$item-active: $bgcolor-topbar;
+$item-active-light: #637293;
+$item-hover-light: $item-active-light;
+
+// Couleurs des filets séparateurs light mode
+$bg-separator-light: #b8becc;
+
+// Couleurs d'arrière-plan light mode
+$bgcolor-light: $light-mode;
+$bgcolor-white: #fff;
+$bgcolor-input-light: #e6eaea;
+$bgcolor-topbar-light: #e6eaea;
+$bgcolor-userpanel-light: #fff;
+$bgcolor-sidebar-light: #fff;
+
+// Couleurs des textes
+$color-text: #b8becc;
+$color-text-off: #e2e8f2;
+$color-text-light: #a0a9be;
+$color-text-dark: $bgcolor-topbar;
+$color-text-white: #fff;
+$color-text-negative: #1a1d26;
+$color-text-attention: #ffa803;
+$color-text-new: #fdd600;
+$color-text-error: #ff0000;
+$color-text-info: #3d8dd4;
+$color-text-validation: #00af00;
+$color-yellow: #ffa803;
+$btn-cancelling-color: #e54028;
+$color-black: #000000;
+// Couleurs de texte LIGHT-MODE
+//$color-text-normal-light: #576775;
+$color-text-light-lm: $dark-mode;
+$color-text-highlight-lm: #576775;
+
+$color-generic-dark: #b8becc;
+
+$color-generic-lm: $dark-mode;
+
+$color-text-title-lm: #0a3bae;
+
+$color-ancre-hover-lm: #052497;
+
+$color-border-table: #bebed2;
+
+$line-color: #3d4a64;
+$line-color-light: #e8e7e7;
+
+// select colors as aiguillage, poit entree
+$color-back-select: #80abc8;
+//$color-back-select: #009BFB;
+
+$background-dropdown-dark: #222731;
+$background-dropdown-light: #f4f7f6;
+
+// tables
+$tr-border-color: #3f485d;
+$tr-bgcolor: #404a64;
+
+$tr-bgcolor-lm: lighten(#404a64, 40%);
+
+$color-filtre-lm: #aeb7cb;
+// Transitions
+$item-color-transition: stroke 0.3s ease-in;
+
+$shadow: 1px 2px 10px rgba(0, 0, 0, 0.05);
+
+$workshop-page-width: 1000px;
+
+// Form
+$input-background: #353d50;
+$input-background-lm: #e6eaea;
+
+// Boutons
+$square-corner: 0;
+$rounded-corner: 5px;
+$bgcolor-btn-light: #b8becc;
+
+//link actions
+$link-actions: #3d8dd4;
+$link-actions-hover: #23639d;
+
+//logo
+$logo-color-primary: #fdc300;
+$logo-color-secondary: $dark-mode;
+
+// COULEURS
+// ------------------------------
+
+// Couleurs Feedback
+$col-vert: #00af00;
+$col-rouge: #ff0000;
+$col-orange: #f69d17;
+$col-bleu: #404a64; //#3d8dd4;
+
+// Couleurs Branding DARK
+$col-A-d: #ffffff;
+$col-B-d: #e6eaea;
+$col-C-d: #b8becc;
+$col-D-d: #3b4a59;
+$col-E-d: #8ca3d5;
+$col-F-d: #404a64;
+$col-G-d: #3f485d;
+$col-H-d: #353d50;
+$col-I-d: #2e3548;
+$col-J-d: #272d3a;
+$col-K-d: #20232e;
+$col-L-d: #20242f;
+$col-M-d: #181a21;
+
+// Couleurs Branding LIGHT
+$col-A-l: #000000;
+$col-B-l: #404040;
+$col-C-l: #3e3548;
+$col-D-l: #7f8993;
+$col-E-l: #8ca3d5;
+$col-F-l: #dddddd;
+$col-G-l: #8c92a2;
+$col-H-l: #bcc0c9;
+$col-I-l: #b4b6ba;
+$col-J-l: #c9cace;
+$col-K-l: #e6eaea;
+$col-L-l: #f2f4f4;
+$col-M-l: #f9fafa;
+
+// Affectations
+$col-succes: $col-vert;
+$col-error: $col-rouge;
+$col-warning: $col-orange;
+$col-current: $col-warning;
+$col-link: $col-bleu;
+$col-hover: darken($col-bleu, 16%);
+
+$col-up-d: $col-A-d;
+$col-txt-d: $col-C-d;
+$col-sepl-d: $col-C-d;
+$col-thead-d: $col-D-d;
+$col-load-d: $col-E-d;
+$col-label-d: $col-E-d;
+$col-entete-d: $col-F-d;
+$col-sepd-d: $col-G-d;
+$col-autoc-d: $col-H-d;
+$col-head-d: $col-I-d;
+$col-tuile-d: $col-J-d;
+$col-bg-d: $col-K-d;
+$col-bgload-d: $col-L-d;
+$col-area-d: $col-M-d;
+
+$col-up-l: $col-A-l;
+$col-txt-l: $col-C-l;
+$col-sepl-l: $col-C-l;
+$col-thead-l: $col-D-l;
+$col-load-l: $col-E-l;
+$col-label-l: $col-E-l;
+$col-entete-l: $col-F-l;
+$col-sepd-l: $col-G-l;
+$col-autoc-l: $col-H-l;
+$col-head-l: $col-I-l;
+$col-tuile-l: $col-J-l;
+$col-bg-l: $col-K-l;
+$col-bgload-l: $col-L-l;
+$col-area-l: $col-M-l;
+
+// COMMON
+// ------------------------------
+// Sizes
+$container2-w: 1080px;
+$sep: 20px;
+
+$container-max-width-desktop: 1960px;
+
+// General
+$radius: 4px;

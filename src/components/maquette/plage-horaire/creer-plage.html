@@ -1,0 +1,142 @@
+<div class="wrapper-filters active">
+  <div class="creer-plage sidebar-filters push-open">
+    <div class="filters-content-container">
+      <a class="btn btn-transparent btn-close" *ngIf="calendrierService.showFilter" (click)="hideFilter()">
+        <img src="../../../../../../assets/images/common/picto_close.svg" width="16" height="16" alt="Fermer" />
+      </a>
+      <form class="row" name="form" (ngSubmit)="form.valid && enregistrer()" #form="ngForm" novalidate>
+        <div class="col">
+          <!-- Input Date, apec-input-text : -->
+          {% set compoMode = 'edit' %} {% set compoType = 'date' %} {% set compoLabel = 'Composant input date' %} {% set compoId = 'inputedit2' %} {% set compoPlaceholder = 'Placeholder' %} {% set
+          compoValue = 'Lorem ipsum' %} {% set compoClass = '' %} {% set compoRequire = false %} {% include "html/templates/labo/component-input.html" %}
+          <!--<apec-input-text [name]="'date'" [label]="'Date '" [type]="'date'" [(ngModel)]="creationModel.date"></apec-input-text>
+       -->
+
+          <!-- TODO remplacer par Input number, apec-input-text : -->
+          <div class="floating-label" apec-validation>
+            <input
+                    type="number"
+                    class="floating-input session-hour"
+                    placeholder=""
+                    name="heureDebut"
+                    #heureDebut="ngModel"
+                    [(ngModel)]="creationModel.heureDebut"
+                    min="0"
+                    max="23"
+                    id="heureDebut"
+                    [ngClass]="{ 'input-error': form.submitted && heureDebut.invalid }"
+                    required />
+            <span class="highlight"></span>
+            <label>Heure de début *</label>
+          </div>
+
+          <!-- TODO remplacer par Input number, apec-input-text : -->
+          <div class="floating-label session-minutes" apec-validation>
+            <input
+                    type="number"
+                    class="floating-input"
+                    placeholder=""
+                    name="heureFin"
+                    #minuteDebut="ngModel"
+                    [(ngModel)]="creationModel.heureFin"
+                    min="0"
+                    max="23"
+                    id="heureFin"
+                    [ngClass]="{ 'input-error': form.submitted && minuteDebut.invalid }"
+                    required />
+            <span class="highlight"></span>
+            <label>Heure de fin *</label>
+          </div>
+
+
+          <!-- Toggle Journee, apec-slidebox : -->
+          <div class="filter-option">
+            <span>Journée</span>
+            {%
+            set compoIdToggle = 'toggleJournee' %} {% set compoNameToggle = 'toggleJournee' %} {% set compoToggleChecked = '' %} {% include "html/templates/labo/component-toggle.html" %}
+          </div>
+          <!-- <apec-slidebox [label]="'Journée'" [(model)]="creationModel.journee"></apec-slidebox>-->
+
+          <!-- SELECT Type, apec-input-select : -->
+          {% set compoMode = 'edit' %}
+          {% set compoLabel = 'Type' %}
+          {% set compoId = 'idType' %}
+          {% set compoClass = '' %}
+          {% set compoRequire = false %}
+          {% set compoValues = ['Choisissez ...', 'Atelier', 'Autre-Type évènement', 'Entretien', 'Entretien de suivi', 'Entretien PM'] %}
+          {% set compoSelect = '' %}
+          {% include "html/templates/labo/component-select.html" %}
+         <!-- <apec-input-select
+                  [name]="'type'"
+                  [label]="'Type'"
+                  [(ngModel)]="creationModel.type"
+                  [optionItems]="'TYPE_EVENEMENT' | apecReferentielFromCodePresentation"
+                  [optionValueKey]="'idNomenclature'"
+                  [optionLabelKey]="'libelle'"></apec-input-select>-->
+
+
+          <!-- Toggle Invisible sur Apec.fr, apec-slidebox : -->
+          <div class="filter-option">
+            <span>Invisible sur Apec.fr</span>
+            {%
+            set compoIdToggle = 'toggleInvisibleApec' %} {% set compoNameToggle = 'toggleInvisibleApec' %} {% set compoToggleChecked = '' %} {% include "html/templates/labo/component-toggle.html" %}
+          </div>
+          <!--<apec-slidebox [label]="'Invisible sur Apec.fr'" [(model)]="creationModel.invisibleApec"></apec-slidebox>-->
+
+          <!-- Checkbox Spécialités, apec-multiple-checkbox -->
+          {% set compoMode = 'edit' %}
+          {% set compoType = 'checkbox' %}
+          {% set compoLabel = 'Spécialités' %}
+          {% set compoId = 'statut' %}
+          {% set compoClass = '' %}
+          {% set compoRequire = false %}
+          {% set compoTitle = 'Spécialités' %}
+          {% set compoRadiocheckNb = '3' %}
+
+          {% include "html/templates/labo/component-radiocheck.html" %}
+
+          <!--<apec-multiple-checkbox [data]="specialites" [(model)]="creationModel.specialites" [label]="'Spécialités'"></apec-multiple-checkbox>-->
+
+
+
+          <apec-input-text [name]="'titre'" [type]="'text'" [label]="'Objet/Titre'" [(ngModel)]="creationModel.titre" maxlength="50"></apec-input-text>
+          <apec-input-select
+                  [name]="'modalite'"
+                  [label]="'Modalité'"
+                  [(ngModel)]="creationModel.modalite"
+                  [optionItems]="'SERVICE_PRESTATION_CANAL' | apecReferentielFromCodePresentation"
+                  [optionValueKey]="'idNomenclature'"
+                  [optionLabelKey]="'libelle'"></apec-input-select>
+          <apec-input-radio [options]="CibleRadioOptions" [name]="'cible'" [label]="''" [direction]="'x'" [(ngModel)]="creationModel.cible"></apec-input-radio>
+          <apec-input-text [name]="'nomDuClient'" [label]="'Nom du client'" [type]="'text'" [(ngModel)]="creationModel.nomDuClient"></apec-input-text>
+          <apec-input-text [name]="'fonction'" [label]="'Fonction'" [type]="'text'" [(ngModel)]="creationModel.fonction"></apec-input-text>
+          <apec-input-text [name]="'demande'" [label]="'Demande'" [type]="'text'" [(ngModel)]="creationModel.demande"></apec-input-text>
+          <apec-input-text [name]="'email'" [label]="'E-mail'" [type]="'email'" [(ngModel)]="creationModel.email"></apec-input-text>
+          <apec-input-text [name]="'telephone'" [label]="'Téléphone'" [type]="'text'" [(ngModel)]="creationModel.telephone"></apec-input-text>
+          <div class="floating-textarea">
+            <textarea [(ngModel)]="creationModel.description" id="externes" name="externes"></textarea>
+            <span class="highlight"></span>
+            <label>Description</label>
+          </div>
+          <apec-input-checkbox
+                  [name]="'rappelRdv'"
+                  [label]="'Rappel du RDV'"
+                  [direction]="'x'"
+                  [options]="[{ checked: false }]"
+                  (change)="creationModel.rappelRdv = $event.target['checked']"></apec-input-checkbox>
+          <apec-input-checkbox
+                  [name]="'rdvConfidentiel'"
+                  [label]="'RDV confidentiel'"
+                  [direction]="'x'"
+                  [options]="[{ checked: false }]"
+                  (change)="creationModel.rdvConfidentiel = $event.target['checked']"></apec-input-checkbox>
+        </div>
+      </form>
+    </div>
+    <div class="row disp-flex-center">
+      <button class="btn btn-filter" role="button" title="Filtrer" (click)="enregistrer()">
+        <span>Enregistrer</span>
+      </button>
+    </div>
+  </div>
+</div>

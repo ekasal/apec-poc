@@ -1,0 +1,704 @@
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* PRÉFIXE UNE PROPRIÉTÉ CSS */
+@mixin css3-prefix($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+@mixin width-5-to-100-pct {
+  @for $i from 1 through 20 {
+    $taux: $i * 5;
+    .width-#{$taux}-pct {
+      width: (1%) * $taux;
+    }
+  }
+}
+
+/* ALIGNEMENT VERTICAL */
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* FONT-FACE */
+@mixin font-face($name, $file) {
+  @font-face {
+    font-family: '#{$name}';
+    src: url('../fonts/#{$file}.eot');
+    src: url('../fonts/#{$file}.eot?#iefix') format('embedded-opentype'), url('../fonts/#{$file}.woff') format('woff'), url('../fonts/#{$file}.ttf') format('truetype'),
+      url('../fonts/#{$file}.svg?#webfont') format('svg');
+  }
+}
+/*
+@include font-face("My Font", my-font);
+*/
+
+@mixin font-size-rem($size) {
+  $size: $size * 0.1;
+  font-size: #{$size}rem;
+}
+
+@mixin height-define($h) {
+  height: #{$h}px;
+}
+
+@mixin margin-bottom-px-to-remF($size) {
+  $size: $size * 0.1;
+  margin-bottom: #{$size}rem;
+}
+
+/* margin - padding : {margin, padding}-{top, right, bottom, left)*/
+@mixin margin-padding($size) {
+  $list-directions: 'top', 'right', 'bottom', 'left';
+  $list-marges: 'margin', 'padding';
+
+  @each $marge-courante in $list-marges {
+    @each $direction in $list-directions {
+      @for $i from 0 through $size {
+        .#{$marge-courante}-#{$direction}-#{$i * 10} {
+          #{$marge-courante}-#{$direction}: #{$i}rem !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin border-radius($size) {
+  border-radius: #{$size}px;
+}
+
+/* KEYFRAME ANIMATIONS */
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Level Stars Competences
+@mixin stars-level($size-level) {
+  @for $i from 1 through $size-level {
+    @for $j from 1 through $i {
+      .stars-level-#{$i} {
+        span:nth-child(#{$j}) {
+          color: $color-yellow;
+        }
+      }
+    }
+  }
+}
+
+// Jauge Competences
+@mixin jauge-level($size-levelb) {
+  @for $i from 1 through $size-levelb {
+    @for $j from 1 through $i {
+      .jauge-level-#{$i} {
+        span:nth-child(#{$j}) {
+          svg {
+            .st0 {
+              fill: #f7a616;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Level Stars Competences
+@mixin stars-level($size-level) {
+  @for $i from 1 through $size-level {
+    @for $j from 1 through $i {
+      .stars-level-#{$i} {
+        span:nth-child(#{$j}) {
+          color: $color-yellow;
+        }
+      }
+    }
+  }
+}
+
+/* IMAGES RETINA */
+@mixin retina-image($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+/* POSITIONNEMENT ABSOLU */
+@mixin abs-position($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+/* ORIENTER UNE ARROW SUR L'UNE DES 4 DIRECTIONS */
+@mixin arrow($direction: down, $size: 5px, $color: #555) {
+  width: 0;
+  height: 0;
+  @if ($direction == left) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  } @else if ($direction == right) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if ($direction == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  } @else {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+}
+
+/* MEDIA-QUERIES POUR MOBILE-FIRST */
+@mixin breakpoint-up($point) {
+  @if $point == large {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media only screen and (min-width: 576px) {
+      @content;
+    }
+  }
+}
+@mixin breakpoint-down($point) {
+  @if $point == large {
+    @media only screen and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media only screen and (max-width: 575px) {
+      @content;
+    }
+  }
+}
+
+/* ASPECT RATION */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .inner-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* TEXT SHORTENING */
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// COULEURS
+// ------------------------------
+@mixin colDarkLight($colDark, $colLight) {
+  color: $colDark;
+  .light-mode & {
+    color: $colLight;
+  }
+}
+
+@mixin bgDarkLight($colDark, $colLight) {
+  background-color: $colDark;
+  .light-mode & {
+    background-color: $colLight;
+  }
+}
+
+@mixin borderDarkLight($colDark, $colLight) {
+  border-color: $colDark;
+  .light-mode & {
+    border-color: $colLight;
+  }
+}
+
+@mixin fillDarkLight($colDark, $colLight) {
+  fill: $colDark;
+  .light-mode & {
+    fill: $colLight;
+  }
+}
+
+@mixin col-txt {
+  @include colDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin col-up {
+  @include colDarkLight($col-up-d, $col-up-l);
+}
+@mixin col-sepl {
+  @include colDarkLight($col-sepl-d, $col-sepl-l);
+}
+@mixin col-thead {
+  @include colDarkLight($col-thead-d, $col-thead-l);
+}
+@mixin col-load {
+  @include colDarkLight($col-load-d, $col-load-l);
+}
+@mixin col-label {
+  @include colDarkLight($col-label-d, $col-label-l);
+}
+@mixin col-entete {
+  @include colDarkLight($col-entete-d, $col-entete-l);
+}
+@mixin col-sepd {
+  @include colDarkLight($col-sepd-d, $col-sepd-l);
+}
+@mixin col-autoc {
+  @include colDarkLight($col-autoc-d, $col-autoc-l);
+}
+@mixin col-head {
+  @include colDarkLight($col-head-d, $col-head-l);
+}
+@mixin col-tuile {
+  @include colDarkLight($col-tuile-d, $col-tuile-l);
+}
+@mixin col-bg {
+  @include colDarkLight($col-bg-d, $col-bg-l);
+}
+@mixin col-bgload {
+  @include colDarkLight($col-bgload-d, $col-bgload-l);
+}
+@mixin col-area {
+  @include colDarkLight($col-area-d, $col-area-l);
+}
+@mixin col-succes {
+  color: $col-succes;
+}
+@mixin col-error {
+  color: $col-error;
+}
+@mixin col-warning {
+  color: $col-warning;
+}
+@mixin col-current {
+  color: $col-current;
+}
+@mixin col-link {
+  color: $col-link;
+}
+@mixin col-hover {
+  color: $col-hover;
+}
+
+@mixin bg-txt {
+  @include bgDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin bg-up {
+  @include bgDarkLight($col-up-d, $col-up-l);
+}
+@mixin bg-sepl {
+  @include bgDarkLight($col-sepl-d, $col-sepl-l);
+}
+@mixin bg-thead {
+  @include bgDarkLight($col-thead-d, $col-thead-l);
+}
+@mixin bg-load {
+  @include bgDarkLight($col-load-d, $col-load-l);
+}
+@mixin bg-label {
+  @include bgDarkLight($col-label-d, $col-label-l);
+}
+@mixin bg-entete {
+  @include bgDarkLight($col-entete-d, $col-entete-l);
+}
+@mixin bg-sepd {
+  @include bgDarkLight($col-sepd-d, $col-sepd-l);
+}
+@mixin bg-autoc {
+  @include bgDarkLight($col-autoc-d, $col-autoc-l);
+}
+@mixin bg-head {
+  @include bgDarkLight($col-head-d, $col-head-l);
+}
+@mixin bg-tuile {
+  @include bgDarkLight($col-tuile-d, $col-tuile-l);
+}
+@mixin bg-bg {
+  @include bgDarkLight($col-bg-d, $col-bg-l);
+}
+@mixin bg-bgload {
+  @include bgDarkLight($col-bgload-d, $col-bgload-l);
+}
+@mixin bg-area {
+  @include bgDarkLight($col-area-d, $col-area-l);
+}
+@mixin bg-succes {
+  background-color: $col-succes;
+}
+@mixin bg-error {
+  background-color: $col-error;
+}
+@mixin bg-warning {
+  background-color: $col-warning;
+}
+@mixin bg-current {
+  background-color: $col-current;
+}
+@mixin bg-link {
+  background-color: $col-link;
+}
+@mixin bg-hover {
+  background-color: $col-hover;
+}
+
+@mixin border-txt {
+  @include borderDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin border-up {
+  @include borderDarkLight($col-up-d, $col-up-l);
+}
+@mixin border-sepl {
+  @include borderDarkLight($col-sepl-d, $col-sepl-l);
+}
+@mixin border-thead {
+  @include borderDarkLight($col-thead-d, $col-thead-l);
+}
+@mixin border-load {
+  @include borderDarkLight($col-load-d, $col-load-l);
+}
+@mixin border-label {
+  @include borderDarkLight($col-label-d, $col-label-l);
+}
+@mixin border-entete {
+  @include borderDarkLight($col-entete-d, $col-entete-l);
+}
+@mixin border-sepd {
+  @include borderDarkLight($col-sepd-d, $col-sepd-l);
+}
+@mixin border-autoc {
+  @include borderDarkLight($col-autoc-d, $col-autoc-l);
+}
+@mixin border-head {
+  @include borderDarkLight($col-head-d, $col-head-l);
+}
+@mixin border-tuile {
+  @include borderDarkLight($col-tuile-d, $col-tuile-l);
+}
+@mixin border-bg {
+  @include borderDarkLight($col-bg-d, $col-bg-l);
+}
+@mixin border-bgload {
+  @include borderDarkLight($col-bgload-d, $col-bgload-l);
+}
+@mixin border-area {
+  @include borderDarkLight($col-area-d, $col-area-l);
+}
+@mixin border-succes {
+  border-color: $col-succes;
+}
+@mixin border-error {
+  border-color: $col-error;
+}
+@mixin border-warning {
+  border-color: $col-warning;
+}
+@mixin border-current {
+  border-color: $col-current;
+}
+@mixin border-link {
+  border-color: $col-link;
+}
+@mixin border-hover {
+  border-color: $col-hover;
+}
+
+@mixin fill-txt {
+  @include fillDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin fill-up {
+  @include fillDarkLight($col-up-d, $col-up-l);
+}
+@mixin fill-link {
+  fill: $col-link;
+}
+@mixin fill-hover {
+  fill: $col-hover;
+}
+@mixin fill-bg {
+  @include fillDarkLight($col-bg-d, $col-bg-l);
+}
+
+// COMMON
+// ------------------------------
+// Transition
+@mixin trans {
+  transition: all 0.25s ease-in-out 0s;
+}
+
+// COULEURS
+// ------------------------------
+@mixin colDarkLight($colDark, $colLight) {
+  color: $colDark;
+  .light-mode & {
+    color: $colLight;
+  }
+}
+
+@mixin bgDarkLight($colDark, $colLight) {
+  background-color: $colDark;
+  .light-mode & {
+    background-color: $colLight;
+  }
+}
+
+@mixin borderDarkLight($colDark, $colLight) {
+  border-color: $colDark;
+  .light-mode & {
+    border-color: $colLight;
+  }
+}
+
+@mixin fillDarkLight($colDark, $colLight) {
+  fill: $colDark;
+  .light-mode & {
+    fill: $colLight;
+  }
+}
+
+@mixin col-txt {
+  @include colDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin col-up {
+  @include colDarkLight($col-up-d, $col-up-l);
+}
+@mixin col-sepl {
+  @include colDarkLight($col-sepl-d, $col-sepl-l);
+}
+@mixin col-thead {
+  @include colDarkLight($col-thead-d, $col-thead-l);
+}
+@mixin col-load {
+  @include colDarkLight($col-load-d, $col-load-l);
+}
+@mixin col-label {
+  @include colDarkLight($col-label-d, $col-label-l);
+}
+@mixin col-entete {
+  @include colDarkLight($col-entete-d, $col-entete-l);
+}
+@mixin col-sepd {
+  @include colDarkLight($col-sepd-d, $col-sepd-l);
+}
+@mixin col-autoc {
+  @include colDarkLight($col-autoc-d, $col-autoc-l);
+}
+@mixin col-head {
+  @include colDarkLight($col-head-d, $col-head-l);
+}
+@mixin col-tuile {
+  @include colDarkLight($col-tuile-d, $col-tuile-l);
+}
+@mixin col-bg {
+  @include colDarkLight($col-bg-d, $col-bg-l);
+}
+@mixin col-bgload {
+  @include colDarkLight($col-bgload-d, $col-bgload-l);
+}
+@mixin col-area {
+  @include colDarkLight($col-area-d, $col-area-l);
+}
+@mixin col-succes {
+  color: $col-succes;
+}
+@mixin col-error {
+  color: $col-error;
+}
+@mixin col-warning {
+  color: $col-warning;
+}
+@mixin col-current {
+  color: $col-current;
+}
+@mixin col-link {
+  color: $col-link;
+}
+@mixin col-hover {
+  color: $col-hover;
+}
+
+@mixin bg-txt {
+  @include bgDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin bg-up {
+  @include bgDarkLight($col-up-d, $col-up-l);
+}
+@mixin bg-sepl {
+  @include bgDarkLight($col-sepl-d, $col-sepl-l);
+}
+@mixin bg-thead {
+  @include bgDarkLight($col-thead-d, $col-thead-l);
+}
+@mixin bg-load {
+  @include bgDarkLight($col-load-d, $col-load-l);
+}
+@mixin bg-label {
+  @include bgDarkLight($col-label-d, $col-label-l);
+}
+@mixin bg-entete {
+  @include bgDarkLight($col-entete-d, $col-entete-l);
+}
+@mixin bg-sepd {
+  @include bgDarkLight($col-sepd-d, $col-sepd-l);
+}
+@mixin bg-autoc {
+  @include bgDarkLight($col-autoc-d, $col-autoc-l);
+}
+@mixin bg-head {
+  @include bgDarkLight($col-head-d, $col-head-l);
+}
+@mixin bg-tuile {
+  @include bgDarkLight($col-tuile-d, $col-tuile-l);
+}
+@mixin bg-bg {
+  @include bgDarkLight($col-bg-d, $col-bg-l);
+}
+@mixin bg-bgload {
+  @include bgDarkLight($col-bgload-d, $col-bgload-l);
+}
+@mixin bg-area {
+  @include bgDarkLight($col-area-d, $col-area-l);
+}
+@mixin bg-succes {
+  background-color: $col-succes;
+}
+@mixin bg-error {
+  background-color: $col-error;
+}
+@mixin bg-warning {
+  background-color: $col-warning;
+}
+@mixin bg-current {
+  background-color: $col-current;
+}
+@mixin bg-link {
+  background-color: $col-link;
+}
+@mixin bg-hover {
+  background-color: $col-hover;
+}
+
+@mixin border-txt {
+  @include borderDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin border-up {
+  @include borderDarkLight($col-up-d, $col-up-l);
+}
+@mixin border-sepl {
+  @include borderDarkLight($col-sepl-d, $col-sepl-l);
+}
+@mixin border-thead {
+  @include borderDarkLight($col-thead-d, $col-thead-l);
+}
+@mixin border-load {
+  @include borderDarkLight($col-load-d, $col-load-l);
+}
+@mixin border-label {
+  @include borderDarkLight($col-label-d, $col-label-l);
+}
+@mixin border-entete {
+  @include borderDarkLight($col-entete-d, $col-entete-l);
+}
+@mixin border-sepd {
+  @include borderDarkLight($col-sepd-d, $col-sepd-l);
+}
+@mixin border-autoc {
+  @include borderDarkLight($col-autoc-d, $col-autoc-l);
+}
+@mixin border-head {
+  @include borderDarkLight($col-head-d, $col-head-l);
+}
+@mixin border-tuile {
+  @include borderDarkLight($col-tuile-d, $col-tuile-l);
+}
+@mixin border-bg {
+  @include borderDarkLight($col-bg-d, $col-bg-l);
+}
+@mixin border-bgload {
+  @include borderDarkLight($col-bgload-d, $col-bgload-l);
+}
+@mixin border-area {
+  @include borderDarkLight($col-area-d, $col-area-l);
+}
+@mixin border-succes {
+  border-color: $col-succes;
+}
+@mixin border-error {
+  border-color: $col-error;
+}
+@mixin border-warning {
+  border-color: $col-warning;
+}
+@mixin border-current {
+  border-color: $col-current;
+}
+@mixin border-link {
+  border-color: $col-link;
+}
+@mixin border-hover {
+  border-color: $col-hover;
+}
+
+@mixin fill-txt {
+  @include fillDarkLight($col-txt-d, $col-txt-l);
+}
+@mixin fill-up {
+  @include fillDarkLight($col-up-d, $col-up-l);
+}
+@mixin fill-link {
+  fill: $col-link;
+}
+@mixin fill-hover {
+  fill: $col-hover;
+}
+@mixin fill-bg {
+  @include fillDarkLight($col-bg-d, $col-bg-l);
+}
+
+// COMMON
+// ------------------------------
+// Transition
+@mixin trans {
+  transition: all 0.25s ease-in-out 0s;
+}
