@@ -1,0 +1,38 @@
+{% if compoMode == 'edit' %}
+
+<div class="filter-group form-part form-part-select {{compoClass}}">
+  <label for="{{compoId}}" class="float-label initialized">
+    {{compoLabel}}{% if compoRequire %}*{% endif %} (
+    <a href="pano-objectifs.htm" class="link pano-inter">Voir les objectifs</a>
+    )
+  </label>
+  <select id="{{compoId}}" class="form-control-custom">
+    {% if compoSelect == 'groupe' %}
+    <optgroup label="Lorem ipsum">
+      <option value="0">Lorem ipsum 1</option>
+      <option value="0">Lorem ipsum 2</option>
+      <option value="0">Lorem ipsum 3</option>
+    </optgroup>
+    <optgroup label="Dolor sit amet">
+      <option value="0">Dolor sit amet 1</option>
+      <option value="0">Dolor sit amet 2</option>
+      <option value="0">Dolor sit amet 3</option>
+    </optgroup>
+    <optgroup label="Consectetur elit">
+      <option value="0">Consectetur elit 1</option>
+      <option value="0">Consectetur elit 2</option>
+      <option value="0">Consectetur elit 3</option>
+    </optgroup>
+    {% elseif compoSelect == 'range' %} {% for i in range(compoRangeFrom,
+    compoRangeTo) -%}
+    <option value="{{ i }}1">{{ i }}</option>
+    {%- endfor %} {% else %}
+    <option value="1">Lorem ipsum</option>
+    <option value="2">Dolor sit amet</option>
+    <option value="3">Consectetur elit</option>
+    {% endif %}
+  </select>
+</div>
+
+{% elseif compoMode == 'view' %} {% include
+"html/templates/labo/component-view-objectifs.htm" %} {% endif %}

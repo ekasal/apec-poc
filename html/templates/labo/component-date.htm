@@ -1,0 +1,18 @@
+<div class="floating-label form-part form-part-input {{compoClass}}">
+  <input
+    class="floating-input"
+    type="date"
+    id="{{compoId}}"
+    placeholder="{{compoPlaceholder}}"
+    {%
+    if
+    compoValue
+    %}value="{{compoValue}}"
+    {%
+    endif
+    %}
+  />
+  <label for="{{compoId}}"
+    >{{compoLabel}}{% if compoRequire %}*{% endif %}</label
+  >
+</div>

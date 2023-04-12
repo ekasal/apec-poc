@@ -1,0 +1,20 @@
+{% if compoMode == 'edit' %}
+
+<div class="filter-group form-part-autocomplete {{compoClass}}">
+  <label class="float-label initialized" for="{{compoId}}"
+    >{{compoLabel}}{% if compoRequire %}*{% endif %}</label
+  >
+  <input
+    class="form-control-custom"
+    autocomplete="on"
+    type="compoType"
+    id="{{compoId}}"
+    placeholder="{{compoPlaceholder}}"
+  />
+  <a class="autocomplete-add-btn link">
+    <img src="/assets/images/common/icon-add.svg" width="20" />
+  </a>
+</div>
+
+{% elseif compoMode == 'view' %} {% include
+"html/templates/labo/component-view-multiple.htm" %} {% endif %}

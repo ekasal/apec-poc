@@ -9,4 +9,4 @@ export default {
 
 export const Playground: StoryFn<SlideboxComponent> = (
   args: SlideboxComponent
-) => ({ props: args });
+) => ({ props: { ...args, label: "Slidebox" } });

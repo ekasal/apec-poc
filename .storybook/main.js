@@ -1,15 +1,12 @@
+const path = require("path");
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm",
   ],
-  framework: {
-    name: "@storybook/angular",
-    options: {},
-  },
+  framework: "@storybook/angular",
   features: {
     interactionsDebugger: true,
   },
@@ -18,12 +15,13 @@ module.exports = {
   },
   webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
-      test: /\/maquette\/.*\.html/,
-      type: "asset/source",
+      test: /\.htm$/,
+      use: { loader: "simple-nunjucks-loader" },
     });
     return config;
   },
   core: {
+    builder: "webpack5",
     disableTelemetry: true, // 👈 Disables telemetry
   },
 };

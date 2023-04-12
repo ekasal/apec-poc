@@ -1,11 +1,9 @@
 import { Component } from "@angular/core";
 import { StoryFn, Meta } from "@storybook/angular";
-import { Environment } from "nunjucks/index";
-// import calendar from "./calendar.html";
-// console.log(calendar);
-// const env = nunjucks.÷configure('../../../../')
 
-@Component({ selector: "apec-calendar", template: "./calendar.html" })
+// @ts-ignore
+import template from "./calendar.htm";
+@Component({ selector: "apec-calendar", template: template({}) })
 class Calendar {}
 
 export default {

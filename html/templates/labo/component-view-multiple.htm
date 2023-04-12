@@ -1,0 +1,21 @@
+<dl class="dl">
+  <dt class="dt">
+    {% if compoType == 'checkox' %} {{compoTitle}} {% elseif compoType ==
+    'radio' %} {{compoTitle}} {% else %} {{compoLabel}} {% endif %}
+  </dt>
+</dl>
+{% for i in range(0, compoDataLines) -%}
+<div class="bloc-open-close">
+  <dl class="dl">
+    <dt class="dt">Atelier ABC</dt>
+
+    <dd class="dd">
+      <div class="liste-items-separated">
+        {% for i in range(0, compoDataLines) -%}
+        <span>Participant</span>
+        {%- endfor %}
+      </div>
+    </dd>
+  </dl>
+</div>
+{%- endfor %}

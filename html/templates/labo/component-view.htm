@@ -1,0 +1,20 @@
+<dl class="dl">
+  <dt class="dt">
+    {% if compoType == 'checkox' %} {{compoTitle}} {% elseif compoType ==
+    'radio' %} {{compoTitle}} {% else %} {{compoLabel}} {% endif %}
+  </dt>
+  <dd class="dd">
+    {% if compoData == 'value' %} {{compoValue}} {% elseif compoData == 'link'
+    %}
+    <a href="#" class="link">{{compoValue}}</a>
+    {% elseif compoData == 'liste' %} {% for i in range(0, compoDataLines) -%} -
+    Lorem ipsum dolor sit amet{% if i != compoDataLines %}
+    <br />
+    {% endif %} {%- endfor %} {% elseif compoData == 'statut' %}
+    <span class="stat stat-error">
+      Non récupéré
+      <span>(12/11/2020)</span>
+    </span>
+    {% endif %}
+  </dd>
+</dl>

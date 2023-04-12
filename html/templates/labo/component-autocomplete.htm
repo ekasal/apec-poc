@@ -1,0 +1,17 @@
+{% if compoMode == 'edit' %}
+
+<div class="filter-group form-part form-part-autocomplete {{compoClass}}">
+  <label class="float-label initialized" for="{{compoId}}"
+    >{{compoLabel}}{% if compoRequire %}*{% endif %}</label
+  >
+  <input
+    class="form-control-custom"
+    autocomplete="on"
+    type="compoType"
+    id="{{compoId}}"
+    placeholder="{{compoPlaceholder}}"
+  />
+</div>
+
+{% elseif compoMode == 'view' %} {% include
+"html/templates/labo/component-view.htm" %} {% endif %}

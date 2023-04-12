@@ -1,0 +1,157 @@
+<div class="labo-h3">View mode</div>
+
+<div class="row">
+  <div class="col-3">
+    {% set compoMode = 'view' %} {% set compoLabel = 'All Composants View
+    (value)' %} {% set compoValue = 'Lorem ipsum' %} {% set compoData = 'value'
+    %} {% include "html/templates/labo/component-input.htm" %}
+  </div>
+
+  <div class="col-3">
+    {% set compoMode = 'view' %} {% set compoLabel = 'All Composants View
+    (link)' %} {% set compoValue = 'Lorem ipsum' %} {% set compoData = 'link' %}
+    {% include "html/templates/labo/component-input.htm" %}
+  </div>
+
+  <div class="col-3">
+    {% set compoMode = 'view' %} {% set compoLabel = 'All Composants View
+    (liste)' %} {% set compoValue = 'Lorem ipsum' %} {% set compoData = 'liste'
+    %} {% set compoDataLines = 4 %} {% include
+    "html/templates/labo/component-input.htm" %}
+  </div>
+
+  <div class="col-3">
+    {% set compoMode = 'view' %} {% set compoLabel = 'All Composants View
+    (statut)' %} {% set compoValue = 'Lorem ipsum' %} {% set compoData =
+    'statut' %} {% include "html/templates/labo/component-input.htm" %}
+  </div>
+</div>
+<!-- .row -->
+
+<div class="labo-h3">Input</div>
+
+<div class="row">
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoType = 'text' %} {% set compoLabel
+    = 'Composant input text' %} {% set compoId = 'inputedit1' %} {% set
+    compoPlaceholder = 'Placeholder' %} {% set compoValue = 'Lorem ipsum' %} {%
+    set compoClass = '' %} {% set compoRequire = false %} {% include
+    "html/templates/labo/component-input.htm" %}
+  </div>
+
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoType = 'date' %} {% set compoLabel
+    = 'Composant input date' %} {% set compoId = 'inputedit2' %} {% set
+    compoPlaceholder = 'Placeholder' %} {% set compoValue = 'Lorem ipsum' %} {%
+    set compoClass = '' %} {% set compoRequire = false %} {% include
+    "html/templates/labo/component-input.htm" %}
+  </div>
+
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoType = 'file' %} {% set compoLabel
+    = 'Composant input file' %} {% set compoId = 'inputedit3' %} {% set
+    compoPlaceholder = 'Placeholder' %} {% set compoValue = 'Lorem ipsum' %} {%
+    set compoClass = '' %} {% set compoRequire = false %} {% include
+    "html/templates/labo/component-input.htm" %}
+  </div>
+</div>
+<!-- .row -->
+
+<div class="labo-h3">Select</div>
+
+<div class="row">
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoLabel = 'Composant select' %} {%
+    set compoId = 'idselect1' %} {% set compoClass = '' %} {% set compoRequire =
+    false %} {% set compoSelect = '' %} {% include
+    "html/templates/labo/component-select.htm" %}
+
+    <label class="valid-ko">Lorem ipsum dolor sit amet</label>
+  </div>
+  <!-- .col -->
+
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoLabel = 'Composant select groupe'
+    %} {% set compoId = 'idselect2' %} {% set compoClass = '' %} {% set
+    compoRequire = false %} {% set compoSelect = 'groupe' %} {% include
+    "html/templates/labo/component-select.htm" %}
+  </div>
+  <!-- .col -->
+
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoLabel = 'Composant select range' %}
+    {% set compoId = 'idselect3' %} {% set compoClass = '' %} {% set
+    compoRequire = false %} {% set compoSelect = 'range' %} {% set
+    compoRangeFrom = 0 %} {% set compoRangeTo = 13 %} {% include
+    "html/templates/labo/component-select.htm" %}
+  </div>
+  <!-- .col -->
+</div>
+<!-- .row -->
+
+<div class="labo-h3">Textarea</div>
+
+<div class="row">
+  <div class="col">
+    {% set compoMode = 'edit' %} {% set compoLabel = 'Composant textarea' %} {%
+    set compoId = 'idtextarea1' %} {% set compoPlaceholder = 'Placeholder lorem
+    ipsum' %} {% set compoValue = 'Lorem ipsum dolor sit amet' %} {% set
+    compoClass = '' %} {% set compoRequire = false %} {% set compoXL = false %}
+    {% set compoCount = false %} {% include
+    "html/templates/labo/component-textarea.htm" %}
+  </div>
+  <!-- .col -->
+
+  <div class="col">
+    {% set compoMode = 'edit' %} {% set compoLabel = 'Composant textarea XL' %}
+    {% set compoId = 'idtextarea2' %} {% set compoPlaceholder = 'Placeholder
+    lorem ipsum' %} {% set compoValue = 'Lorem ipsum dolor sit amet' %} {% set
+    compoClass = '' %} {% set compoRequire = false %} {% set compoXL = true %}
+    {% set compoCount = false %} {% include
+    "html/templates/labo/component-textarea.htm" %}
+  </div>
+  <!-- .col -->
+
+  <div class="col">
+    {% set compoMode = 'edit' %} {% set compoLabel = 'Composant textarea XL
+    Count' %} {% set compoId = 'idtextarea1' %} {% set compoPlaceholder =
+    'Placeholder lorem ipsum' %} {% set compoValue = 'Lorem ipsum dolor sit
+    amet' %} {% set compoClass = '' %} {% set compoRequire = false %} {% set
+    compoXL = true %} {% set compoCount = true %} {% set compoCountMax = 150 %}
+    {% include "html/templates/labo/component-textarea.htm" %}
+  </div>
+  <!-- .col -->
+</div>
+<!-- .row -->
+
+<div class="labo-h3">Radio & checkox</div>
+
+<div class="row">
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoType = 'checkbox' %} {% set
+    compoLabel = 'Lorem ipsum' %} {% set compoId = 'idcase1' %} {% set
+    compoClass = '' %} {% set compoRequire = false %} {% set compoTitle =
+    'Checkbox liste' %} {% set compoRadiocheckNb = '2' %} {% include
+    "html/templates/labo/component-radiocheck.htm" %}
+  </div>
+  <!-- .col -->
+
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoType = 'radio' %} {% set compoLabel
+    = 'Lorem ipsum' %} {% set compoId = 'idcase2' %} {% set compoClass = '' %}
+    {% set compoRequire = false %} {% set compoTitle = 'Radio liste' %} {% set
+    compoRadiocheckNb = '4' %} {% include
+    "html/templates/labo/component-radiocheck.htm" %}
+  </div>
+  <!-- .col -->
+
+  <div class="col-4">
+    {% set compoMode = 'edit' %} {% set compoType = 'checkbox' %} {% set
+    compoLabel = 'exemple sans titre' %} {% set compoId = 'idcase3' %} {% set
+    compoClass = '' %} {% set compoRequire = false %} {% set compoTitleEmpty =
+    true %} {% set compoRadiocheckNb = '1' %} {% include
+    "html/templates/labo/component-radiocheck.htm" %}
+  </div>
+  <!-- .col -->
+</div>
+<!-- .row -->

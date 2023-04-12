@@ -1,0 +1,23 @@
+{% if compoMode == 'edit' %}
+
+<div class="floating-label form-part form-part-input {{compoClass}}">
+  <input
+    class="floating-input"
+    type="{{compoType}}"
+    id="{{compoId}}"
+    placeholder="{{compoPlaceholder}}"
+    {%
+    if
+    compoValue
+    %}value="{{compoValue}}"
+    {%
+    endif
+    %}
+  />
+  <label for="{{compoId}}"
+    >{{compoLabel}}{% if compoRequire %}*{% endif %}</label
+  >
+</div>
+
+{% elseif compoMode == 'view' %} {% include
+"html/templates/labo/component-view.htm" %} {% endif %}

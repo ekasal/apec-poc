@@ -197,7 +197,7 @@
         },
         {
             "name": "Calendar",
-            "id": "component-Calendar-e9fb162ec7f77b23560fb5a07815d0e0eb78ace9b02f8fe5b17709ddf1c19899451ab89002ab4c0e58d559c1944220b1c9456cdc7e3073cea56238fbdcfc3db8",
+            "id": "component-Calendar-0bace0712a0db791335d5e6e4984b252d8477c9cdd342d2de02c26f73830d05be9d8b12a71cc281942457cc0712ebb44e61b0cd74ba25e0910b1e033115fe15f",
             "file": "src/components/maquette/calendar/calendar.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -207,7 +207,6 @@
             "selector": "apec-calendar",
             "styleUrls": [],
             "styles": [],
-            "template": "./calendar.html",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [],
@@ -221,14 +220,14 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { StoryFn, Meta } from \"@storybook/angular\";\nimport { Environment } from \"nunjucks/index\";\n// import calendar from \"./calendar.html\";\n// console.log(calendar);\n// const env = nunjucks.÷configure('../../../../')\n\n@Component({ selector: \"apec-calendar\", template: \"./calendar.html\" })\nclass Calendar {}\n\nexport default {\n  title: \"Maquette/Calendar\",\n  component: Calendar,\n  argTypes: {},\n} as Meta;\n\nexport const Playground: StoryFn<Calendar> = (args: Calendar) => ({\n  props: args,\n});\n",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { StoryFn, Meta } from \"@storybook/angular\";\n\n// @ts-ignore\nimport template from \"./calendar.html\";\n@Component({ selector: \"apec-calendar\", template: template({}) })\nclass Calendar {}\n\nexport default {\n  title: \"Maquette/Calendar\",\n  component: Calendar,\n  argTypes: {},\n} as Meta;\n\nexport const Playground: StoryFn<Calendar> = (args: Calendar) => ({\n  props: args,\n});\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
         },
         {
-            "name": "CreerPlageComponent",
-            "id": "component-CreerPlageComponent-4c55259f6b0dd9824b14123c28bd93aec348e521d46ed963d75c5dd55232aab3edf7a707892db4c47e8973956fd04ef98e12d4731744df1979700866aed89347",
+            "name": "CreerPlage",
+            "id": "component-CreerPlage-915b9e01d53e3492e5f5e6bc218922b5e2cb07aae370366ce5f5c7e0866dd7c11d22e1ad5dd67c6975dc88cf2bd06cba9bf2fd1edd21268efda9b986cd8c7ea0",
             "file": "src/components/maquette/plage-horaire/creer-plage.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -238,9 +237,7 @@
             "selector": "apec-creer-plage",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./creer-plage.html"
-            ],
+            "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -253,11 +250,10 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { StoryFn, Meta } from \"@storybook/angular\";\n\n@Component({\n  selector: \"apec-creer-plage\",\n  templateUrl: \"./creer-plage.html\",\n})\nclass CreerPlageComponent {}\n\nexport default {\n  title: \"Maquette/CreerPlage\",\n  component: CreerPlageComponent,\n  argTypes: {},\n} as Meta;\n\nexport const Playground: StoryFn<CreerPlageComponent> = (\n  args: CreerPlageComponent\n) => ({ props: args });\n",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { StoryFn, Meta } from \"@storybook/angular\";\n\n// @ts-ignore\nimport template from \"./creer-plage.html\";\n@Component({ selector: \"apec-creer-plage\", template: template({}) })\nclass CreerPlage {}\n\nexport default {\n  title: \"Maquette/CreerPlage\",\n  component: CreerPlage,\n  argTypes: {},\n} as Meta;\n\nexport const Playground: StoryFn<CreerPlage> = (args: CreerPlage) => ({\n  props: args,\n});\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "",
-            "templateData": "<div class=\"wrapper-filters active\">\r\n  <div class=\"creer-plage sidebar-filters push-open\">\r\n    <div class=\"filters-content-container\">\r\n      <a class=\"btn btn-transparent btn-close\" *ngIf=\"calendrierService.showFilter\" (click)=\"hideFilter()\">\r\n        <img src=\"../../../../../../assets/images/common/picto_close.svg\" width=\"16\" height=\"16\" alt=\"Fermer\" />\r\n      </a>\r\n      <form class=\"row\" name=\"form\" (ngSubmit)=\"form.valid && enregistrer()\" #form=\"ngForm\" novalidate>\r\n        <div class=\"col\">\r\n          <!-- Input Date, apec-input-text : -->\r\n          {% set compoMode = 'edit' %} {% set compoType = 'date' %} {% set compoLabel = 'Composant input date' %} {% set compoId = 'inputedit2' %} {% set compoPlaceholder = 'Placeholder' %} {% set\r\n          compoValue = 'Lorem ipsum' %} {% set compoClass = '' %} {% set compoRequire = false %} {% include \"html/templates/labo/component-input.html\" %}\r\n          <!--<apec-input-text [name]=\"'date'\" [label]=\"'Date '\" [type]=\"'date'\" [(ngModel)]=\"creationModel.date\"></apec-input-text>\r\n       -->\r\n\r\n          <!-- TODO remplacer par Input number, apec-input-text : -->\r\n          <div class=\"floating-label\" apec-validation>\r\n            <input\r\n                    type=\"number\"\r\n                    class=\"floating-input session-hour\"\r\n                    placeholder=\"\"\r\n                    name=\"heureDebut\"\r\n                    #heureDebut=\"ngModel\"\r\n                    [(ngModel)]=\"creationModel.heureDebut\"\r\n                    min=\"0\"\r\n                    max=\"23\"\r\n                    id=\"heureDebut\"\r\n                    [ngClass]=\"{ 'input-error': form.submitted && heureDebut.invalid }\"\r\n                    required />\r\n            <span class=\"highlight\"></span>\r\n            <label>Heure de début *</label>\r\n          </div>\r\n\r\n          <!-- TODO remplacer par Input number, apec-input-text : -->\r\n          <div class=\"floating-label session-minutes\" apec-validation>\r\n            <input\r\n                    type=\"number\"\r\n                    class=\"floating-input\"\r\n                    placeholder=\"\"\r\n                    name=\"heureFin\"\r\n                    #minuteDebut=\"ngModel\"\r\n                    [(ngModel)]=\"creationModel.heureFin\"\r\n                    min=\"0\"\r\n                    max=\"23\"\r\n                    id=\"heureFin\"\r\n                    [ngClass]=\"{ 'input-error': form.submitted && minuteDebut.invalid }\"\r\n                    required />\r\n            <span class=\"highlight\"></span>\r\n            <label>Heure de fin *</label>\r\n          </div>\r\n\r\n\r\n          <!-- Toggle Journee, apec-slidebox : -->\r\n          <div class=\"filter-option\">\r\n            <span>Journée</span>\r\n            {%\r\n            set compoIdToggle = 'toggleJournee' %} {% set compoNameToggle = 'toggleJournee' %} {% set compoToggleChecked = '' %} {% include \"html/templates/labo/component-toggle.html\" %}\r\n          </div>\r\n          <!-- <apec-slidebox [label]=\"'Journée'\" [(model)]=\"creationModel.journee\"></apec-slidebox>-->\r\n\r\n          <!-- SELECT Type, apec-input-select : -->\r\n          {% set compoMode = 'edit' %}\r\n          {% set compoLabel = 'Type' %}\r\n          {% set compoId = 'idType' %}\r\n          {% set compoClass = '' %}\r\n          {% set compoRequire = false %}\r\n          {% set compoValues = ['Choisissez ...', 'Atelier', 'Autre-Type évènement', 'Entretien', 'Entretien de suivi', 'Entretien PM'] %}\r\n          {% set compoSelect = '' %}\r\n          {% include \"html/templates/labo/component-select.html\" %}\r\n         <!-- <apec-input-select\r\n                  [name]=\"'type'\"\r\n                  [label]=\"'Type'\"\r\n                  [(ngModel)]=\"creationModel.type\"\r\n                  [optionItems]=\"'TYPE_EVENEMENT' | apecReferentielFromCodePresentation\"\r\n                  [optionValueKey]=\"'idNomenclature'\"\r\n                  [optionLabelKey]=\"'libelle'\"></apec-input-select>-->\r\n\r\n\r\n          <!-- Toggle Invisible sur Apec.fr, apec-slidebox : -->\r\n          <div class=\"filter-option\">\r\n            <span>Invisible sur Apec.fr</span>\r\n            {%\r\n            set compoIdToggle = 'toggleInvisibleApec' %} {% set compoNameToggle = 'toggleInvisibleApec' %} {% set compoToggleChecked = '' %} {% include \"html/templates/labo/component-toggle.html\" %}\r\n          </div>\r\n          <!--<apec-slidebox [label]=\"'Invisible sur Apec.fr'\" [(model)]=\"creationModel.invisibleApec\"></apec-slidebox>-->\r\n\r\n          <!-- Checkbox Spécialités, apec-multiple-checkbox -->\r\n          {% set compoMode = 'edit' %}\r\n          {% set compoType = 'checkbox' %}\r\n          {% set compoLabel = 'Spécialités' %}\r\n          {% set compoId = 'statut' %}\r\n          {% set compoClass = '' %}\r\n          {% set compoRequire = false %}\r\n          {% set compoTitle = 'Spécialités' %}\r\n          {% set compoRadiocheckNb = '3' %}\r\n\r\n          {% include \"html/templates/labo/component-radiocheck.html\" %}\r\n\r\n          <!--<apec-multiple-checkbox [data]=\"specialites\" [(model)]=\"creationModel.specialites\" [label]=\"'Spécialités'\"></apec-multiple-checkbox>-->\r\n\r\n\r\n\r\n          <apec-input-text [name]=\"'titre'\" [type]=\"'text'\" [label]=\"'Objet/Titre'\" [(ngModel)]=\"creationModel.titre\" maxlength=\"50\"></apec-input-text>\r\n          <apec-input-select\r\n                  [name]=\"'modalite'\"\r\n                  [label]=\"'Modalité'\"\r\n                  [(ngModel)]=\"creationModel.modalite\"\r\n                  [optionItems]=\"'SERVICE_PRESTATION_CANAL' | apecReferentielFromCodePresentation\"\r\n                  [optionValueKey]=\"'idNomenclature'\"\r\n                  [optionLabelKey]=\"'libelle'\"></apec-input-select>\r\n          <apec-input-radio [options]=\"CibleRadioOptions\" [name]=\"'cible'\" [label]=\"''\" [direction]=\"'x'\" [(ngModel)]=\"creationModel.cible\"></apec-input-radio>\r\n          <apec-input-text [name]=\"'nomDuClient'\" [label]=\"'Nom du client'\" [type]=\"'text'\" [(ngModel)]=\"creationModel.nomDuClient\"></apec-input-text>\r\n          <apec-input-text [name]=\"'fonction'\" [label]=\"'Fonction'\" [type]=\"'text'\" [(ngModel)]=\"creationModel.fonction\"></apec-input-text>\r\n          <apec-input-text [name]=\"'demande'\" [label]=\"'Demande'\" [type]=\"'text'\" [(ngModel)]=\"creationModel.demande\"></apec-input-text>\r\n          <apec-input-text [name]=\"'email'\" [label]=\"'E-mail'\" [type]=\"'email'\" [(ngModel)]=\"creationModel.email\"></apec-input-text>\r\n          <apec-input-text [name]=\"'telephone'\" [label]=\"'Téléphone'\" [type]=\"'text'\" [(ngModel)]=\"creationModel.telephone\"></apec-input-text>\r\n          <div class=\"floating-textarea\">\r\n            <textarea [(ngModel)]=\"creationModel.description\" id=\"externes\" name=\"externes\"></textarea>\r\n            <span class=\"highlight\"></span>\r\n            <label>Description</label>\r\n          </div>\r\n          <apec-input-checkbox\r\n                  [name]=\"'rappelRdv'\"\r\n                  [label]=\"'Rappel du RDV'\"\r\n                  [direction]=\"'x'\"\r\n                  [options]=\"[{ checked: false }]\"\r\n                  (change)=\"creationModel.rappelRdv = $event.target['checked']\"></apec-input-checkbox>\r\n          <apec-input-checkbox\r\n                  [name]=\"'rdvConfidentiel'\"\r\n                  [label]=\"'RDV confidentiel'\"\r\n                  [direction]=\"'x'\"\r\n                  [options]=\"[{ checked: false }]\"\r\n                  (change)=\"creationModel.rdvConfidentiel = $event.target['checked']\"></apec-input-checkbox>\r\n        </div>\r\n      </form>\r\n    </div>\r\n    <div class=\"row disp-flex-center\">\r\n      <button class=\"btn btn-filter\" role=\"button\" title=\"Filtrer\" (click)=\"enregistrer()\">\r\n        <span>Enregistrer</span>\r\n      </button>\r\n    </div>\r\n  </div>\r\n</div>"
+            "stylesData": ""
         },
         {
             "name": "HeaderComponent",
@@ -538,7 +534,7 @@
                     }
                 }
             },
-            "templateData": "<span for=\"filter-status\" class=\"label-name\">{{ label }}</span>\r\n<label for=\"statut_{{ opt.idNomenclature }}\" class=\"custom-checkbox\" *ngFor=\"let opt of data; trackBy: trackByIndex\">\r\n  {{ opt.libelle }}\r\n  <input id=\"statut_{{ opt.idNomenclature }}\" type=\"checkbox\" [checked]=\"isCheckedBox(opt.idNomenclature)\" (click)=\"updateCritere(opt.idNomenclature)\" />\r\n  <span class=\"checkmark\"></span>\r\n</label>\r\n"
+            "templateData": "<span for=\"filter-status\" class=\"label-name\">{{ label }}</span>\r\n<label\r\n  for=\"statut_{{ opt.idNomenclature }}\"\r\n  class=\"custom-checkbox\"\r\n  *ngFor=\"let opt of data; trackBy: trackByIndex\"\r\n>\r\n  {{ opt.libelle }}\r\n  <input\r\n    id=\"statut_{{ opt.idNomenclature }}\"\r\n    type=\"checkbox\"\r\n    [checked]=\"isCheckedBox(opt.idNomenclature)\"\r\n    (click)=\"updateCritere(opt.idNomenclature)\"\r\n  />\r\n  <span class=\"checkmark\"></span>\r\n</label>\r\n"
         },
         {
             "name": "PageComponent",
@@ -759,19 +755,19 @@
                     }
                 }
             },
-            "templateData": "<div class=\"filter-option\">\r\n  <span>{{ label }}</span>\r\n  <label class=\"toggle-switch\">\r\n    <input class=\"toggle-switch-input\" type=\"checkbox\" [(ngModel)]=\"model\" [disabled]=\"disabled\" (change)=\"change.emit()\" />\r\n    <span class=\"toggle-switch-label\" attr.data-on=\"{{ dataOn }}\" attr.data-off=\"{{ dataOff }}\"></span>\r\n    <span class=\"toggle-switch-handle\"></span>\r\n  </label>\r\n</div>\r\n"
+            "templateData": "<div class=\"filter-option\">\r\n  <span>{{ label }}</span>\r\n  <label class=\"toggle-switch\">\r\n    <input\r\n      class=\"toggle-switch-input\"\r\n      type=\"checkbox\"\r\n      [(ngModel)]=\"model\"\r\n      [disabled]=\"disabled\"\r\n      (change)=\"change.emit()\"\r\n    />\r\n    <span\r\n      class=\"toggle-switch-label\"\r\n      attr.data-on=\"{{ dataOn }}\"\r\n      attr.data-off=\"{{ dataOff }}\"\r\n    ></span>\r\n    <span class=\"toggle-switch-handle\"></span>\r\n  </label>\r\n</div>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-5ab1efd0381d9217be8ed997a59b997598f167ee28852d679fac54c0d7322d32090862446c7126730d5cb8672c31fd9f7baab0cf10db9d1012c3cd137b4750c9",
+            "id": "module-AppModule-69f4b2154f55c71962cb591d9fdc1501c6ee269af5d193fbb271a573ab84e498df2e94439cf25d48ea3a152054394c8dfd59d84ff2c77b57b5d384c4f72e38c8",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from \"@angular/core\";\nimport { BrowserModule } from \"@angular/platform-browser\";\n\nimport { AppComponent } from \"./app.component\";\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from \"@angular/core\";\nimport { BrowserModule } from \"@angular/platform-browser\";\n\nimport { AppComponent } from \"./app.component\";\nimport { FormsModule } from \"@angular/forms\";\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule, FormsModule],\n  providers: [],\n  bootstrap: [AppComponent],\n  exports: [FormsModule],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -844,16 +840,6 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/components/si/multiple-checkbox/multiple-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn<MultipleCheckboxComponent>",
-                "defaultValue": "(\n  args: MultipleCheckboxComponent\n) => ({ props: args })"
-            },
-            {
-                "name": "Playground",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/components/example/page/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -864,21 +850,31 @@
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/components/si/slidebox/slidebox.stories.ts",
+                "file": "src/components/maquette/plage-horaire/creer-plage.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "StoryFn<SlideboxComponent>",
-                "defaultValue": "(\n  args: SlideboxComponent\n) => ({ props: args })"
+                "type": "StoryFn<CreerPlage>",
+                "defaultValue": "(args: CreerPlage) => ({\n  props: args,\n})"
             },
             {
                 "name": "Playground",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/components/maquette/plage-horaire/creer-plage.stories.ts",
+                "file": "src/components/si/multiple-checkbox/multiple-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "StoryFn<CreerPlageComponent>",
-                "defaultValue": "(\n  args: CreerPlageComponent\n) => ({ props: args })"
+                "type": "StoryFn<MultipleCheckboxComponent>",
+                "defaultValue": "(\n  args: MultipleCheckboxComponent\n) => ({ props: args })"
+            },
+            {
+                "name": "Playground",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/components/si/slidebox/slidebox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<SlideboxComponent>",
+                "defaultValue": "(\n  args: SlideboxComponent\n) => ({ props: args })"
             }
         ],
         "functions": [],
@@ -921,18 +917,6 @@
                     "defaultValue": "(args: Calendar) => ({\n  props: args,\n})"
                 }
             ],
-            "src/components/si/multiple-checkbox/multiple-checkbox.stories.ts": [
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/components/si/multiple-checkbox/multiple-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryFn<MultipleCheckboxComponent>",
-                    "defaultValue": "(\n  args: MultipleCheckboxComponent\n) => ({ props: args })"
-                }
-            ],
             "src/components/example/page/Page.stories.ts": [
                 {
                     "name": "Playground",
@@ -945,6 +929,30 @@
                     "defaultValue": "(args: Button) => ({ props: args })"
                 }
             ],
+            "src/components/maquette/plage-horaire/creer-plage.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/components/maquette/plage-horaire/creer-plage.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<CreerPlage>",
+                    "defaultValue": "(args: CreerPlage) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/components/si/multiple-checkbox/multiple-checkbox.stories.ts": [
+                {
+                    "name": "Playground",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/components/si/multiple-checkbox/multiple-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<MultipleCheckboxComponent>",
+                    "defaultValue": "(\n  args: MultipleCheckboxComponent\n) => ({ props: args })"
+                }
+            ],
             "src/components/si/slidebox/slidebox.stories.ts": [
                 {
                     "name": "Playground",
@@ -955,18 +963,6 @@
                     "deprecationMessage": "",
                     "type": "StoryFn<SlideboxComponent>",
                     "defaultValue": "(\n  args: SlideboxComponent\n) => ({ props: args })"
-                }
-            ],
-            "src/components/maquette/plage-horaire/creer-plage.stories.ts": [
-                {
-                    "name": "Playground",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/components/maquette/plage-horaire/creer-plage.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryFn<CreerPlageComponent>",
-                    "defaultValue": "(\n  args: CreerPlageComponent\n) => ({ props: args })"
                 }
             ]
         },
@@ -1077,7 +1073,7 @@
                 "filePath": "src/components/maquette/plage-horaire/creer-plage.stories.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "CreerPlageComponent",
+                "name": "CreerPlage",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

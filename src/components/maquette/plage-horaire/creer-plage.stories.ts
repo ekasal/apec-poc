@@ -1,23 +1,17 @@
 import { Component } from "@angular/core";
 import { StoryFn, Meta } from "@storybook/angular";
 
-// import templateNunjucks from "./creer-page.html";
-// import nunjucks from "nunjucks";
-// const template = nunjucks.configure({}).renderToString(templateNunjucks);
-
-@Component({
-  selector: "apec-creer-plage",
-  templateUrl: "./creer-plage.html",
-  // template,
-})
-class CreerPlageComponent {}
+// @ts-ignore
+import template from "./creer-plage.htm";
+@Component({ selector: "apec-creer-plage", template: template({}) })
+class CreerPlage {}
 
 export default {
   title: "Maquette/CreerPlage",
-  component: CreerPlageComponent,
+  component: CreerPlage,
   argTypes: {},
 } as Meta;
 
-export const Playground: StoryFn<CreerPlageComponent> = (
-  args: CreerPlageComponent
-) => ({ props: args });
+export const Playground: StoryFn<CreerPlage> = (args: CreerPlage) => ({
+  props: args,
+});

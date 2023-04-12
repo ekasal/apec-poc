@@ -1,6 +1,15 @@
 <span for="filter-status" class="label-name">{{ label }}</span>
-<label for="statut_{{ opt.idNomenclature }}" class="custom-checkbox" *ngFor="let opt of data; trackBy: trackByIndex">
+<label
+  for="statut_{{ opt.idNomenclature }}"
+  class="custom-checkbox"
+  *ngFor="let opt of data; trackBy: trackByIndex"
+>
   {{ opt.libelle }}
-  <input id="statut_{{ opt.idNomenclature }}" type="checkbox" [checked]="isCheckedBox(opt.idNomenclature)" (click)="updateCritere(opt.idNomenclature)" />
+  <input
+    id="statut_{{ opt.idNomenclature }}"
+    type="checkbox"
+    [checked]="isCheckedBox(opt.idNomenclature)"
+    (click)="updateCritere(opt.idNomenclature)"
+  />
   <span class="checkmark"></span>
 </label>

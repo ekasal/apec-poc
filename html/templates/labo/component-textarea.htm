@@ -1,0 +1,48 @@
+{% if compoMode == 'edit' %}
+
+<div class="floating-textarea form-part form-part-textarea {{compoClass}}">
+  <textarea
+    id="{{compoId}}"
+    placeholder="{{compoPlaceholder}}"
+    class="
+      {%
+      if
+      compoXL
+      %}
+      big{%
+      endif
+      %}{%
+      if
+      compoCount
+      %}
+      textcount{%
+      endif
+      %}
+    "
+    maxlenght="{{compoCountMax}}"
+  >
+{% if compoValue %} {{compoValue}} {% endif %}</textarea
+  >
+  <span class="highlight"></span>
+  <label>{{compoLabel}}{% if compoRequire %}*{% endif %}</label>
+  {% if compoCount %}
+  <div class="textarea-countdown">
+    <span class="textarea-countdown-nb">0</span>
+    / {{compoCountMax}} caractères
+  </div>
+  <script>
+    $(document).ready(function () {
+      var cible = $(".textcount");
+      $maxlength = parseInt(cible.attr("maxlength"), 10);
+
+      cible.on("keyup keypress change", function () {
+        charCount = $(this).val().length;
+        $(this).parent().find(".textarea-countdown-nb").text(charCount);
+      });
+    });
+  </script>
+  {% endif %}
+</div>
+
+{% elseif compoMode == 'view' %} {% include
+"html/templates/labo/component-view.htm" %} {% endif %}
