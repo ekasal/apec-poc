@@ -13,10 +13,11 @@ export const Playground: StoryFn<MultipleCheckboxComponent> = (
   props: {
     ...args,
     label: "Mutiple Checkbox",
-    idsNom: [],
+    idsNom: ["1"],
     data: [
       { idNomenclature: "1", libelle: "Label 1" },
       { idNomenclature: "2", libelle: "Label 2" },
+      { idNomenclature: "3", libelle: "Label 3" },
     ],
   },
 });
