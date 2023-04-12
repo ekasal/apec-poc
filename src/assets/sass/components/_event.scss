@@ -5,7 +5,7 @@ $box-shadow: 4px 9px 14px 1px rgba(148, 143, 148, 0.74);
 
 body {
   &.event {
-    background: url('/assets/images/event/bg-event.png') no-repeat top fixed;
+    background: url("../../images/event/bg-event.png") no-repeat top fixed;
     background-size: cover;
     background-color: $bgcolor-white;
     color: $color-text-event;

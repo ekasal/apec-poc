@@ -1,4 +1,4 @@
-@import '../partials/variable';
+@import "../partials/variable";
 
 .choice-radio {
   display: flex;
@@ -27,7 +27,7 @@
     position: relative;
 
     &:before {
-      content: '';
+      content: "";
       width: 24px;
       height: 24px;
       border: 1px solid currentColor;
@@ -47,7 +47,7 @@
       padding-left: 30px;
 
       &:after {
-        content: '';
+        content: "";
         width: 14px;
         height: 14px;
         background-color: currentColor;
@@ -228,11 +228,13 @@
             font-weight: 400;
 
             &.floating-input-registration-connexion {
-              background: url('/assets/images/form/icon_registration-manager-locked.svg') no-repeat center right;
+              background: url("../../images/form/icon_registration-manager-locked.svg")
+                no-repeat center right;
             }
 
             &.floating-input-locked {
-              background: url('/assets/images/form/icon_padlock-locked.svg') no-repeat center right;
+              background: url("../../images/form/icon_padlock-locked.svg")
+                no-repeat center right;
             }
           }
         }

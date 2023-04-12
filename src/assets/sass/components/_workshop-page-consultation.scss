@@ -1,4 +1,4 @@
-@import '../partials/variable';
+@import "../partials/variable";
 
 $title-margin-bottom: 20px;
 $consultation-padding-left: 20px;
@@ -212,7 +212,7 @@ $consultation-padding-left: 20px;
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-gap: 10px;
-          grid-template-areas: 'session session' 'day day' 'hour duree' 'animator modalities';
+          grid-template-areas: "session session" "day day" "hour duree" "animator modalities";
 
           .filter-group-session-name {
             grid-area: session;
@@ -282,7 +282,7 @@ $consultation-padding-left: 20px;
           display: inline-block;
           width: 17px;
           height: 17px;
-          background: url('/assets/images/form/icon_filter-apec-center.svg');
+          background: url("../../images/form/icon_filter-apec-center.svg");
         }
       }
 
@@ -292,7 +292,7 @@ $consultation-padding-left: 20px;
         .adress-text {
           .code-postal {
             &::after {
-              content: ' ';
+              content: " ";
             }
           }
         }
@@ -318,7 +318,7 @@ $consultation-padding-left: 20px;
 
       .complementary-address {
         &::after {
-          content: '-';
+          content: "-";
           margin: 0 6px;
         }
       }
@@ -327,7 +327,8 @@ $consultation-padding-left: 20px;
         display: inline-block;
         width: 17px;
         height: 17px;
-        background: url('/assets/images/ateliers/icon-workshop-adress.svg') no-repeat;
+        background: url("../../images/ateliers/icon-workshop-adress.svg")
+          no-repeat;
       }
 
       .item-publications {

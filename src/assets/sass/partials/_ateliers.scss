@@ -1,5 +1,5 @@
-@import 'variable';
-@import 'typography';
+@import "variable";
+@import "typography";
 
 .ateliers {
   main {
@@ -42,7 +42,8 @@
     #volet-workshop {
       height: calc(50vh + 30px);
       padding-top: 60px;
-      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)),
+        url("../../images/ateliers/bg-workshop.jpg") no-repeat;
       background-size: cover;
       @media (min-width: 768px) {
         height: 100vh;
@@ -52,7 +53,11 @@
 
     #volet-registrations {
       height: calc(50vh - 30px);
-      background: linear-gradient(rgba(32, 36, 47, 0.95), rgba(26, 29, 38, 0.93)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background: linear-gradient(
+          rgba(32, 36, 47, 0.95),
+          rgba(26, 29, 38, 0.93)
+        ),
+        url("../../images/ateliers/bg-registrations.jpg") no-repeat;
       background-size: cover;
       @media (min-width: 768px) {
         height: 100vh;
@@ -62,12 +67,20 @@
 
   &.light-mode {
     #volet-workshop {
-      background: linear-gradient(rgba(245, 245, 245, 0.97), rgba(235, 235, 235, 0.97)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background: linear-gradient(
+          rgba(245, 245, 245, 0.97),
+          rgba(235, 235, 235, 0.97)
+        ),
+        url("../../images/ateliers/bg-workshop.jpg") no-repeat;
       background-size: cover;
     }
 
     #volet-registrations {
-      background: linear-gradient(rgba(235, 235, 235, 0.95), rgba(235, 235, 235, 0.95)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background: linear-gradient(
+          rgba(235, 235, 235, 0.95),
+          rgba(235, 235, 235, 0.95)
+        ),
+        url("../../images/ateliers/bg-registrations.jpg") no-repeat;
       background-size: cover;
     }
   }
@@ -104,7 +117,7 @@
             content: "Editer l'atelier";
             opacity: 1;
             color: #fff;
-            background: url('/assets/images/ateliers/icon_see.svg') no-repeat;
+            background: url("../../images/ateliers/icon_see.svg") no-repeat;
             background-size: 25px 16px;
             display: block;
             width: 180px;
@@ -162,8 +175,8 @@
             margin-bottom: 5px;
 
             &::before {
-              content: '';
-              background: url('/assets/images/ateliers/icon_comment.svg');
+              content: "";
+              background: url("../../images/ateliers/icon_comment.svg");
               background-size: 100%;
               display: inline-block;
               width: 21px;

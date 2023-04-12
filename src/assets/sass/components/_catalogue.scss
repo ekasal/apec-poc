@@ -1,14 +1,14 @@
-@import '../partials/variable';
-@import 'card-workshop';
-@import 'card-registration';
-@import 'workshop-page';
-@import 'tile-search';
-@import 'pagination';
-@import 'carousel';
-@import 'tabs';
-@import 'accordion';
-@import 'table';
-@import 'dropdown-actions';
+@import "../partials/variable";
+@import "card-workshop";
+@import "card-registration";
+@import "workshop-page";
+@import "tile-search";
+@import "pagination";
+@import "carousel";
+@import "tabs";
+@import "accordion";
+@import "table";
+@import "dropdown-actions";
 
 .catalogue {
   .home-main {
@@ -53,7 +53,8 @@
   }
 
   #volet-workshop {
-    background: linear-gradient(rgba(26, 29, 38, 0.7), rgba(26, 29, 38, 0.8)), url('/assets/images/bg/home-1.jpg') no-repeat;
+    background: linear-gradient(rgba(26, 29, 38, 0.7), rgba(26, 29, 38, 0.8)),
+      url("../../images/bg/home-1.jpg") no-repeat;
     background-size: cover;
   }
 
@@ -220,7 +221,11 @@
     }
 
     #volet-workshop {
-      background: linear-gradient(rgba(229, 228, 228, 0.7), rgba(192, 208, 203, 0.8)), url('/assets/images/bg/home-1.jpg') no-repeat;
+      background: linear-gradient(
+          rgba(229, 228, 228, 0.7),
+          rgba(192, 208, 203, 0.8)
+        ),
+        url("../../images/bg/home-1.jpg") no-repeat;
       background-size: cover;
     }
   }

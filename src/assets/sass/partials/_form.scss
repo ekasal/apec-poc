@@ -1,17 +1,17 @@
 /* =Form
 -------------------------------------------------------------- */
-@import 'variable';
-@import 'toggle-switch';
-@import 'floating-label';
-@import 'custom-checkbox';
-@import 'custom-radio-button';
-@import 'custom-select-box';
-@import 'actions-box';
-@import 'simple-select';
-@import 'textarea';
-@import 'multiselection';
-@import 'form-validation';
-@import '../components/sort-options';
+@import "variable";
+@import "toggle-switch";
+@import "floating-label";
+@import "custom-checkbox";
+@import "custom-radio-button";
+@import "custom-select-box";
+@import "actions-box";
+@import "simple-select";
+@import "textarea";
+@import "multiselection";
+@import "form-validation";
+@import "../components/sort-options";
 
 $error-color: rgba($color-text-error, 0.4);
 
@@ -63,7 +63,7 @@ label {
   height: 30px;
 
   &::after {
-    content: '';
+    content: "";
     background-size: 100%;
     display: block;
     position: absolute;
@@ -161,7 +161,7 @@ label {
 
   &.filter-group-region {
     &::after {
-      background: url('/assets/images/form/icon_filter-region.svg');
+      background: url("../../images/form/icon_filter-region.svg");
       width: 12px;
       height: 16px;
     }
@@ -171,7 +171,7 @@ label {
   &.filter-group-session-end,
   &.filter-group-session-item {
     &::after {
-      background: url('/assets/images/form/icon_filter-calendar.svg');
+      background: url("../../images/form/icon_filter-calendar.svg");
       width: 16px;
       height: 16px;
     }
@@ -179,7 +179,7 @@ label {
 
   &.filter-group-apec-center {
     &::after {
-      background: url('/assets/images/form/icon_filter-apec-center.svg');
+      background: url("../../images/form/icon_filter-apec-center.svg");
       width: 17px;
       height: 17px;
     }
@@ -187,7 +187,7 @@ label {
 
   &.filter-group-animator {
     &::after {
-      background: url('/assets/images/form/icon_filter-animator.svg');
+      background: url("../../images/form/icon_filter-animator.svg");
       width: 23px;
       height: 16px;
     }
@@ -195,7 +195,7 @@ label {
 
   &.filter-group-target {
     &::after {
-      background: url('/assets/images/form/icon_filter-target.svg');
+      background: url("../../images/form/icon_filter-target.svg");
       width: 16px;
       height: 16px;
     }
@@ -203,7 +203,7 @@ label {
 
   &.filter-group-service {
     &::after {
-      background: url('/assets/images/form/icon_filter-service.svg');
+      background: url("../../images/form/icon_filter-service.svg");
       width: 16px;
       height: 16px;
     }
@@ -211,7 +211,7 @@ label {
 
   &.filter-group-registration-manager {
     &::after {
-      background: url('/assets/images/form/icon_registration-manager.svg');
+      background: url("../../images/form/icon_registration-manager.svg");
       width: 16px;
       height: 16px;
     }
@@ -219,7 +219,7 @@ label {
 
   &.filter-group-registration-status {
     &::after {
-      background: url('/assets/images/form/icon_registration-status.svg');
+      background: url("../../images/form/icon_registration-status.svg");
       width: 19px;
       height: 16px;
     }
@@ -585,7 +585,7 @@ textarea.form-input {
     left: 12px;
     width: 8px;
     height: 8px;
-    content: '';
+    content: "";
   }
 }
 
@@ -593,7 +593,7 @@ textarea.form-input {
   position: absolute;
   top: -1px;
   left: 5px;
-  content: '+';
+  content: "+";
   text-align: center;
   font-weight: 700;
   font-size: 19px;
@@ -604,7 +604,7 @@ textarea.form-input {
   position: absolute;
   top: -2px;
   left: 7px;
-  content: '-';
+  content: "-";
   text-align: center;
   font-weight: 700;
   font-size: 19px;

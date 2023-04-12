@@ -1,4 +1,4 @@
-@import '../partials/variable';
+@import "../partials/variable";
 
 table {
   tr {
@@ -423,7 +423,7 @@ table {
   width: 5px;
   height: 100%;
   display: block;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   background-color: #00af00;
@@ -592,7 +592,7 @@ table {
 
   th {
     &.sort-table {
-      background-image: url('/assets/images/common/sortable.svg');
+      background-image: url("../../images/common/sortable.svg");
       background-repeat: no-repeat;
       background-position: center right;
       background-size: 1.4rem 1.4rem;
@@ -600,11 +600,11 @@ table {
       padding-right: 18px;
 
       &.sort-asc {
-        background-image: url('/assets/images/common/sort-asc.svg');
+        background-image: url("../../images/common/sort-asc.svg");
       }
 
       &.sort-desc {
-        background-image: url('/assets/images/common/sort-desc.svg');
+        background-image: url("../../images/common/sort-desc.svg");
       }
     }
 
@@ -658,15 +658,15 @@ table {
 
     th {
       &.sort-table {
-        background-image: url('/assets/images/common/sortable-lm.svg');
+        background-image: url("../../images/common/sortable-lm.svg");
         background-repeat: no-repeat;
 
         &.sort-asc {
-          background-image: url('/assets/images/common/sort-asc-lm.svg');
+          background-image: url("../../images/common/sort-asc-lm.svg");
         }
 
         &.sort-desc {
-          background-image: url('/assets/images/common/sort-desc-lm.svg');
+          background-image: url("../../images/common/sort-desc-lm.svg");
         }
       }
     }

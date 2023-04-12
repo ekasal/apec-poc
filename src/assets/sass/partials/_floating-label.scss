@@ -1,4 +1,4 @@
-@import 'variable';
+@import "variable";
 
 .floating-form {
   display: grid;
@@ -38,55 +38,65 @@
 
   .floating-input {
     &.floating-input-customer-name {
-      background: url('/assets/images/form/icon_customer-name.svg') no-repeat center right;
+      background: url("../../images/form/icon_customer-name.svg") no-repeat
+        center right;
       background-size: 15px 16px;
     }
 
     &.floating-input-email {
-      background: url('/assets/images/form/icon_email.svg') no-repeat center right;
+      background: url("../../images/form/icon_email.svg") no-repeat center right;
       background-size: 22px 16px;
     }
 
     &.floating-input-account-number {
-      background: url('/assets/images/form/icon_account-number.svg') no-repeat center right;
+      background: url("../../images/form/icon_account-number.svg") no-repeat
+        center right;
       background-size: 16px 16px;
     }
 
     &.floating-input-company {
-      background: url('/assets/images/form/icon_filter-apec-center.svg') no-repeat center right;
+      background: url("../../images/form/icon_filter-apec-center.svg") no-repeat
+        center right;
       background-size: 16px 16px;
     }
 
     &.floating-input-registration-manager {
-      background: url('/assets/images/form/icon_registration-manager.svg') no-repeat center right;
+      background: url("../../images/form/icon_registration-manager.svg")
+        no-repeat center right;
       background-size: 16px 16px;
     }
 
     &.floating-input-registration-connexion {
-      background: url('/assets/images/form/icon_registration-manager-locked.svg') no-repeat center right;
+      background: url("../../images/form/icon_registration-manager-locked.svg")
+        no-repeat center right;
       background-size: 16px 16px;
 
       .light-mode & {
-        background: url('/assets/images/form/icon_registration-manager-locked-lm.svg') no-repeat center right;
+        background: url("../../images/form/icon_registration-manager-locked-lm.svg")
+          no-repeat center right;
       }
     }
 
     &.floating-input-service {
-      background: url('/assets/images/form/icon_filter-service.svg') no-repeat center right;
+      background: url("../../images/form/icon_filter-service.svg") no-repeat
+        center right;
       background-size: 16px 16px;
     }
 
     &.floating-input:disabled {
-      background: url('/assets/images/form/icon-padlock-locked.svg') no-repeat center right;
+      background: url("../../images/form/icon-padlock-locked.svg") no-repeat
+        center right;
       background-size: 15px 16px;
     }
 
     &.floating-input-locked {
-      background: url('/assets/images/form/icon_padlock-locked.svg') no-repeat center right;
+      background: url("../../images/form/icon_padlock-locked.svg") no-repeat
+        center right;
       background-size: 16px 16px;
 
       .light-mode & {
-        background: url('/assets/images/form/icon_padlock-locked-lm.svg') no-repeat center right;
+        background: url("../../images/form/icon_padlock-locked-lm.svg")
+          no-repeat center right;
       }
     }
   }
@@ -122,9 +132,9 @@
   }
 
   .floating-select:focus ~ label,
-  .floating-select:not([value='']):valid ~ label,
+  .floating-select:not([value=""]):valid ~ label,
   textarea:focus ~ label,
-  textarea:not([value='']):valid ~ label {
+  textarea:not([value=""]):valid ~ label {
     top: -18px;
     font-size: 14px;
     color: $color-text;

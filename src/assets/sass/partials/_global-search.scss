@@ -1,4 +1,4 @@
-@import 'variable';
+@import "variable";
 
 .global-search {
   display: block;
@@ -193,7 +193,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       display: table;
       clear: both;
     }
@@ -223,7 +223,8 @@
         height: 23px;
         display: flex;
         align-items: center;
-        background: url('/assets/images/form/icon_radio-button-off.svg') no-repeat center left;
+        background: url("../../images/form/icon_radio-button-off.svg") no-repeat
+          center left;
         background-size: 23px 23px;
       }
 
@@ -240,7 +241,8 @@
         color: #404a64;
 
         span {
-          background: url('/assets/images/form/icon_radio-button-on.svg') no-repeat center left;
+          background: url("../../images/form/icon_radio-button-on.svg")
+            no-repeat center left;
           background-size: 23px 23px;
         }
 
@@ -295,7 +297,8 @@
 
       span {
         padding-left: 25px;
-        background: url('/assets/images/form/icon_radio-button-small-off.svg') no-repeat center left;
+        background: url("../../images/form/icon_radio-button-small-off.svg")
+          no-repeat center left;
         background-size: 14px 14px;
       }
 
@@ -304,7 +307,8 @@
         color: #404a64;
 
         span {
-          background: url('/assets/images/form/icon_radio-button-small-on.svg') no-repeat center left;
+          background: url("../../images/form/icon_radio-button-small-on.svg")
+            no-repeat center left;
           background-size: 14px 14px;
         }
       }

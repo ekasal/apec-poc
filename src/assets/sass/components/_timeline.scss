@@ -115,7 +115,7 @@
   }
   &:last-child {
     .timeline-arrow {
-      background: url('/assets/images/common/icone-flag.svg') no-repeat;
+      background: url('../../images/common/icone-flag.svg') no-repeat;
       background-position: center center;
       width: 26px;
       height: 26px;
@@ -160,11 +160,11 @@
   }
 
   .actions-see {
-    background: url('/assets/images/ateliers/icon_see.svg') no-repeat;
+    background: url("../../images/ateliers/icon_see.svg") no-repeat;
     background-position: center center;
   }
 
   .actions-edit {
-    background: url('/assets/images/common/icon-edit.svg') no-repeat;
+    background: url("../../images/common/icon-edit.svg") no-repeat;
   }
 }

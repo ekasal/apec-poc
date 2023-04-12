@@ -1,14 +1,14 @@
-@import '../partials/variable';
-@import 'card-workshop';
-@import 'card-registration';
-@import 'workshop-page';
-@import 'tile-search';
-@import 'pagination';
-@import 'carousel';
-@import 'tabs';
-@import 'accordion';
-@import 'table';
-@import 'dropdown-actions';
+@import "../partials/variable";
+@import "card-workshop";
+@import "card-registration";
+@import "workshop-page";
+@import "tile-search";
+@import "pagination";
+@import "carousel";
+@import "tabs";
+@import "accordion";
+@import "table";
+@import "dropdown-actions";
 
 .ateliers {
   main {
@@ -35,7 +35,8 @@
     #volet-workshop {
       height: calc(50vh + 30px);
       padding-top: 60px;
-      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)),
+        url("../../images/ateliers/bg-workshop.jpg") no-repeat;
       background-size: cover;
       @media (min-width: 768px) {
         height: 100vh;
@@ -45,7 +46,8 @@
 
     #volet-registrations {
       height: calc(50vh - 30px);
-      background: linear-gradient(rgba(32, 36, 47, 0.9), rgba(26, 29, 38, 0.87)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background: linear-gradient(rgba(32, 36, 47, 0.9), rgba(26, 29, 38, 0.87)),
+        url("../../images/ateliers/bg-registrations.jpg") no-repeat;
       background-size: cover;
       @media (min-width: 768px) {
         height: 100vh;
@@ -55,7 +57,8 @@
     &.create-workshop {
       height: calc(100vh + 30px);
       padding-top: 60px;
-      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)),
+        url("../../images/ateliers/bg-workshop.jpg") no-repeat;
       background-size: cover;
       @media (min-width: 768px) {
         height: 100vh;

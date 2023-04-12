@@ -21,9 +21,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/public"
-            ],
+            "assets": [],
             "styles": [
               "src/assets/sass/styles.scss"
             ],

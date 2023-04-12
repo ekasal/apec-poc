@@ -1,5 +1,5 @@
 .adep {
-  nav[aria-label='pagination'] {
+  nav[aria-label="pagination"] {
     margin-bottom: 0;
   }
 }
@@ -7,7 +7,8 @@
 #volet-full-cover-registrations {
   height: calc(50vh + 30px);
   padding-top: 60px;
-  background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+  background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)),
+    url("../../images/ateliers/bg-registrations.jpg") no-repeat;
   background-size: cover;
   width: 100%;
   display: flex;

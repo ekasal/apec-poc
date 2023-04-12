@@ -1,5 +1,5 @@
-@import 'variable';
-@import 'mixin';
+@import "variable";
+@import "mixin";
 
 html {
   font-size: 62.5%; /* Ré-équilibrage du Rem face au Pixel pour des calculs simples */
@@ -10,7 +10,7 @@ body {
   color: $color-text;
   font-size: $base-font-size;
   line-height: normal;
-  font-family: 'Montserrat', Verdana, Arial, sans-serif;
+  font-family: "Montserrat", Verdana, Arial, sans-serif;
   transition: background-color 0.3s ease-in;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -244,7 +244,7 @@ figure {
   align-items: baseline;
 
   &::before {
-    content: '';
+    content: "";
     width: 12px;
     height: 12px;
     border-radius: 100%;
@@ -410,7 +410,7 @@ figure {
     margin-right: 5px;
     cursor: pointer;
   }
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     position: absolute;
     cursor: pointer;
     width: 100%;
@@ -480,7 +480,7 @@ figure {
   }
 }
 
-[class*='flex-row-'] {
+[class*="flex-row-"] {
   display: flex;
   margin-right: -2rem;
   margin-left: -2rem;
@@ -490,7 +490,7 @@ figure {
     padding-left: 2rem;
     width: 100%;
   }
-  & + [class*='flex-row-'] {
+  & + [class*="flex-row-"] {
     margin-top: 2rem;
     &.no-margin-top {
       margin-top: 0;
@@ -726,7 +726,7 @@ figure {
 .flex-basis-5 {
   flex-basis: calc(100% / 5);
 }
-[class*='flex-row-md'] {
+[class*="flex-row-md"] {
   @include breakpoint-down(small) {
     > *:not(:first-child) {
       margin-top: 2rem;
@@ -761,7 +761,7 @@ figure {
     }
   }
 }
-[class*='flex-row-md'] {
+[class*="flex-row-md"] {
   @include breakpoint-down(medium) {
     > *:not(:first-child) {
       margin-top: 2rem;
@@ -796,7 +796,7 @@ figure {
     }
   }
 }
-[class*='flex-row-lg'] {
+[class*="flex-row-lg"] {
   @include breakpoint-down(large) {
     > *:not(:first-child) {
       margin-top: 2rem;
@@ -866,7 +866,7 @@ figure {
     left: 23px;
     &:before,
     &:after {
-      content: '';
+      content: "";
       transition: all 0.25s ease-in-out;
       position: absolute;
       background-color: currentColor;
@@ -1019,7 +1019,7 @@ figure {
     text-indent: -0.6em;
     padding-left: 1.4em;
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 0.6em;
       height: 0.6em;
@@ -1037,7 +1037,7 @@ figure {
 .trait-union-list {
   & > li {
     &::before {
-      content: '-';
+      content: "-";
       margin-right: 1rem;
     }
   }
@@ -1458,7 +1458,7 @@ svg.push-accueil-icon {
       display: inline;
       &:not(:last-child) {
         &:after {
-          content: '-';
+          content: "-";
           margin: 0.5rem;
         }
       }
@@ -1574,14 +1574,16 @@ svg.push-accueil-icon {
   }
 }
 
-input[type='date']::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
   background: transparent;
 }
 
-input[type='date'] {
-  background: url(/assets/images/form/icon_filter-calendar.svg) center right/15px no-repeat;
+input[type="date"] {
+  background: url(../../images/form/icon_filter-calendar.svg) center right/15px
+    no-repeat;
   .light-mode & {
-    background: url(/assets/images/form/icon_filter-calendar-lm.svg) center right/15px no-repeat;
+    background: url(../../images/form/icon_filter-calendar-lm.svg) center
+      right/15px no-repeat;
   }
 }
 

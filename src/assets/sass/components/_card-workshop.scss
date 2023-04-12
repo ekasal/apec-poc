@@ -1,4 +1,4 @@
-@import '../partials/variable';
+@import "../partials/variable";
 
 .workshop-list {
   display: grid;
@@ -34,13 +34,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas:
-      'nom nom nom'
-      'lieu lieu confirmes'
-      'date date attente'
-      'statut statut disponibles'
-      'responsable responsable responsable'
-      'publication publication publication'
-      'commentaire commentaire commentaire';
+      "nom nom nom"
+      "lieu lieu confirmes"
+      "date date attente"
+      "statut statut disponibles"
+      "responsable responsable responsable"
+      "publication publication publication"
+      "commentaire commentaire commentaire";
   }
 
   // Fin .card-workshop-inner
@@ -85,12 +85,12 @@
       grid-template-columns: 1fr 1fr 120px;
       grid-gap: 10px 15px;
       grid-template-areas:
-        'nom nom nom'
-        'lieu date confirmes'
-        'responsable statut attente'
-        'publication vide disponibles'
-        '. . modalite'
-        'commentaire commentaire commentaire';
+        "nom nom nom"
+        "lieu date confirmes"
+        "responsable statut attente"
+        "publication vide disponibles"
+        ". . modalite"
+        "commentaire commentaire commentaire";
     }
   }
   // End (min-width: 768px)
@@ -103,10 +103,10 @@
       padding-right: 70px;
       grid-template-columns: 1fr 1fr 120px 1fr;
       grid-template-areas:
-        'nom nom nom nom'
-        'lieu responsable confirmes commentaire'
-        'date statut attente commentaire'
-        'vide publication disponibles commentaire';
+        "nom nom nom nom"
+        "lieu responsable confirmes commentaire"
+        "date statut attente commentaire"
+        "vide publication disponibles commentaire";
     }
 
     .btn-add-registration {
@@ -126,11 +126,11 @@
     .card-workshop-inner {
       grid-template-columns: 1fr 1fr 120px;
       grid-template-areas:
-        'nom nom nom'
-        'lieu responsable confirmes'
-        'date statut attente'
-        'vide publication disponibles'
-        'commentaire commentaire commentaire';
+        "nom nom nom"
+        "lieu responsable confirmes"
+        "date statut attente"
+        "vide publication disponibles"
+        "commentaire commentaire commentaire";
     }
 
     .btn-add-registration {
@@ -171,14 +171,14 @@
   &.card-workshop-date {
     .card-workshop-inner {
       grid-template-areas:
-        'date date date'
-        'nom nom nom'
-        'lieu lieu confirmes'
-        'statut statut attente'
-        'responsable responsable disponibles'
-        'responsable responsable modalite'
-        'publication publication publication'
-        'commentaire commentaire commentaire';
+        "date date date"
+        "nom nom nom"
+        "lieu lieu confirmes"
+        "statut statut attente"
+        "responsable responsable disponibles"
+        "responsable responsable modalite"
+        "publication publication publication"
+        "commentaire commentaire commentaire";
 
       .workshop-detail-date {
         border-bottom: 1px solid $tr-border-color;
@@ -199,11 +199,11 @@
     @media screen and (min-width: 768px) {
       .card-workshop-inner {
         grid-template-areas:
-          'date nom nom nom'
-          'date lieu statut confirmes'
-          'date commentaire responsable disponibles'
-          'date commentaire publication attente'
-          'date commentaire publication modalite';
+          "date nom nom nom"
+          "date lieu statut confirmes"
+          "date commentaire responsable disponibles"
+          "date commentaire publication attente"
+          "date commentaire publication modalite";
 
         .workshop-detail-date {
           border-bottom: none;
@@ -230,13 +230,13 @@
   &.card-workshop-apec-center {
     .card-workshop-inner {
       grid-template-areas:
-        'lieu lieu lieu'
-        'nom nom nom'
-        'date date confirmes'
-        'statut statut attente'
-        'responsable responsable disponibles'
-        'publication publication publication'
-        'commentaire commentaire commentaire';
+        "lieu lieu lieu"
+        "nom nom nom"
+        "date date confirmes"
+        "statut statut attente"
+        "responsable responsable disponibles"
+        "publication publication publication"
+        "commentaire commentaire commentaire";
 
       .workshop-detail-apec-center {
         border-bottom: 1px solid $tr-border-color;
@@ -253,10 +253,10 @@
     @media screen and (min-width: 768px) {
       .card-workshop-inner {
         grid-template-areas:
-          'lieu nom nom nom'
-          'lieu date statut confirmes'
-          'lieu commentaire publication disponibles'
-          'lieu commentaire responsable attente';
+          "lieu nom nom nom"
+          "lieu date statut confirmes"
+          "lieu commentaire publication disponibles"
+          "lieu commentaire responsable attente";
 
         .workshop-detail-apec-center {
           border-bottom: none;
@@ -283,11 +283,11 @@
       padding-right: 70px;
       grid-template-columns: 1fr 1fr 120px 1fr;
       grid-template-areas:
-        'nom nom nom nom'
-        'lieu responsable confirmes commentaire'
-        'date statut attente commentaire'
-        'vide publication disponibles commentaire'
-        '.  . modalite .';
+        "nom nom nom nom"
+        "lieu responsable confirmes commentaire"
+        "date statut attente commentaire"
+        "vide publication disponibles commentaire"
+        ".  . modalite .";
     }
 
     .btn-add-registration {
@@ -302,11 +302,11 @@
     .card-workshop-inner {
       grid-template-columns: 1fr 1fr 120px;
       grid-template-areas:
-        'date nom nom nom'
-        'date lieu statut confirmes'
-        'date commentaire responsable disponibles'
-        'date commentaire publication attente'
-        'date commentaire publication modalite';
+        "date nom nom nom"
+        "date lieu statut confirmes"
+        "date commentaire responsable disponibles"
+        "date commentaire publication attente"
+        "date commentaire publication modalite";
     }
 
     .workshop-detail-date {
@@ -410,8 +410,8 @@
       margin-bottom: 5px;
 
       &::before {
-        content: '';
-        background: url('/assets/images/ateliers/icon_comment.svg');
+        content: "";
+        background: url("../../images/ateliers/icon_comment.svg");
         background-size: 100%;
         display: inline-block;
         width: 21px;

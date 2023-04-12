@@ -1,10 +1,10 @@
-@import '../partials/variable';
-@import 'pagination';
-@import 'tabs';
-@import 'table';
-@import 'dropdown-actions';
-@import 'workshop-page';
-@import 'timeline';
+@import "../partials/variable";
+@import "pagination";
+@import "tabs";
+@import "table";
+@import "dropdown-actions";
+@import "workshop-page";
+@import "timeline";
 
 .conseil {
   main {
@@ -30,7 +30,8 @@
     #volet-workshop {
       height: calc(50vh + 30px);
       padding-top: 60px;
-      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)),
+        url("../../images/ateliers/bg-workshop.jpg") no-repeat;
       background-size: cover;
       @media (min-width: 768px) {
         height: 100vh;
@@ -40,7 +41,8 @@
 
     #volet-registrations {
       height: calc(50vh - 30px);
-      background: linear-gradient(rgba(32, 36, 47, 0.9), rgba(26, 29, 38, 0.87)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background: linear-gradient(rgba(32, 36, 47, 0.9), rgba(26, 29, 38, 0.87)),
+        url("../../images/ateliers/bg-registrations.jpg") no-repeat;
       background-size: cover;
       @media (min-width: 768px) {
         height: 100vh;
@@ -121,7 +123,7 @@
     width: 60px;
     &:before {
       display: block;
-      content: '';
+      content: "";
       width: 5px;
       height: 100%;
       position: absolute;
@@ -137,7 +139,7 @@
       @include bg-load;
       border: 5px solid;
       @include border-tuile;
-      content: '';
+      content: "";
       position: absolute;
       bottom: -5px;
       border-radius: 50%;
@@ -183,7 +185,7 @@
       @include col-up;
       &:before {
         display: block;
-        content: '';
+        content: "";
         position: absolute;
         @include bg-succes;
         width: 20px;
@@ -481,7 +483,7 @@
 
       &:after,
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 10px;
         left: 6px;
@@ -537,7 +539,7 @@
 
   &:after,
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 10px;
     left: 6px;

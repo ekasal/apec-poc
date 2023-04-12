@@ -1,8 +1,8 @@
 // COMMON
 // ------------------------------
 
-@import 'variable';
-@import 'mixin';
+@import "variable";
+@import "mixin";
 
 /* grid mecanisme */
 .container2 {
@@ -25,7 +25,7 @@
 }
 
 .no-gutters > .col,
-.no-gutters > [class*='col-'] {
+.no-gutters > [class*="col-"] {
   padding-right: 0;
   padding-left: 0;
 }
@@ -224,7 +224,7 @@ p {
   &:before {
     width: 12px;
     height: 12px;
-    content: '';
+    content: "";
     display: inline-block;
     border-radius: 50%;
     position: relative;
@@ -395,7 +395,7 @@ p {
 
   &:after,
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 10px;
     left: 6px;
@@ -729,10 +729,10 @@ p {
 }
 
 /* .form-skin:-moz-focusring { color:transparent; text-shadow:0 0 0 #495057; } */
-input[type='date'].form-skin,
-input[type='datetime-local'].form-skin,
-input[type='month'].form-skin,
-input[type='time'].form-skin {
+input[type="date"].form-skin,
+input[type="datetime-local"].form-skin,
+input[type="month"].form-skin,
+input[type="time"].form-skin {
   appearance: none;
 }
 
@@ -775,8 +775,8 @@ textarea.big {
   }
 
   // radio & checkbox
-  input[type='radio'],
-  input[type='checkbox'] {
+  input[type="radio"],
+  input[type="checkbox"] {
     position: absolute;
     left: -9999em;
 
@@ -793,7 +793,7 @@ textarea.big {
         &:before {
           display: block;
           position: absolute;
-          content: '';
+          content: "";
           cursor: pointer;
           top: 0;
           left: 0;
@@ -809,7 +809,7 @@ textarea.big {
         &:after {
           display: block;
           position: absolute;
-          content: '';
+          content: "";
           cursor: pointer;
           top: 5px;
           left: 5px;
@@ -853,7 +853,7 @@ textarea.big {
   }
 
   // radio
-  input[type='radio'] {
+  input[type="radio"] {
     &:checked,
     &:not(:checked) {
       ~ label {
@@ -872,7 +872,7 @@ textarea.big {
   }
 
   // checkbox
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     &:checked {
       ~ label:after {
         @include bg-current;
@@ -893,8 +893,8 @@ textarea.big {
   input,
   select,
   textarea,
-  input[type='checkbox'] ~ label:before,
-  input[type='radio'] ~ label:before {
+  input[type="checkbox"] ~ label:before,
+  input[type="radio"] ~ label:before {
     border-color: $col-error !important;
   }
 }
@@ -921,7 +921,7 @@ label.valid-ok {
 
 label.require {
   &:after {
-    content: ' *';
+    content: " *";
     font-size: 1.4rem;
     color: inherit;
   }
@@ -1161,7 +1161,7 @@ label.require {
     &:before {
       width: 16px;
       transform: rotate(-45deg);
-      content: '';
+      content: "";
       left: 5px;
       bottom: 8px;
     }
@@ -1169,7 +1169,7 @@ label.require {
     &:after {
       width: 7px;
       transform: rotate(45deg);
-      content: '';
+      content: "";
       left: 2px;
       bottom: 6px;
     }
@@ -1265,7 +1265,8 @@ label.require {
 #volet-workshop {
   height: calc(50vh + 30px);
   padding-top: 60px;
-  background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+  background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)),
+    url("../../images/ateliers/bg-workshop.jpg") no-repeat;
   background-size: cover;
   @media (min-width: 768px) {
     height: 100vh;
@@ -1285,7 +1286,8 @@ label.require {
   #volet-workshop {
     height: calc(50vh + 30px);
     padding-top: 60px;
-    background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+    background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)),
+      url("../../images/ateliers/bg-workshop.jpg") no-repeat;
     background-size: cover;
     width: 100%;
     display: flex;
@@ -1302,12 +1304,20 @@ label.require {
 .light-mode {
   .wrapper {
     #volet-workshop {
-      background: linear-gradient(rgba(229, 228, 228, 0.95), rgba(192, 208, 203, 0.95)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background: linear-gradient(
+          rgba(229, 228, 228, 0.95),
+          rgba(192, 208, 203, 0.95)
+        ),
+        url("../../images/ateliers/bg-workshop.jpg") no-repeat;
       background-size: cover;
     }
 
     #volet-registrations {
-      background: linear-gradient(rgba(229, 228, 228, 0.95), rgba(192, 208, 203, 0.95)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background: linear-gradient(
+          rgba(229, 228, 228, 0.95),
+          rgba(192, 208, 203, 0.95)
+        ),
+        url("../../images/ateliers/bg-registrations.jpg") no-repeat;
       background-size: cover;
     }
   }
@@ -1317,6 +1327,6 @@ label.require {
   color: orangered;
 }
 
-div.form-part label[for='checkbox_facteurRisque_0'].custom-checkbox {
+div.form-part label[for="checkbox_facteurRisque_0"].custom-checkbox {
   max-width: 20%;
 }

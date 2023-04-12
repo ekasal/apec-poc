@@ -1,6 +1,6 @@
-@import '../partials/variable';
+@import "../partials/variable";
 
-@import 'registration-item';
+@import "registration-item";
 
 .tile-search__back {
   width: 1000px;
@@ -44,9 +44,9 @@
 
       &.filters-grid-workshop {
         grid-template-areas:
-          'service service'
-          'region site'
-          'animator webconf';
+          "service service"
+          "region site"
+          "animator webconf";
 
         .filter-group-service {
           grid-area: service;
@@ -114,15 +114,18 @@
       }
 
       &.idf {
-        background: url('/assets/images/common/map-idf.svg') no-repeat center center;
+        background: url("../../images/common/map-idf.svg") no-repeat center
+          center;
       }
 
       &.bretagne {
-        background: url('/assets/images/common/map-bretagne.svg') no-repeat center center;
+        background: url("../../images/common/map-bretagne.svg") no-repeat center
+          center;
       }
 
       &.pays-de-la-loire {
-        background: url('/assets/images/common/map-pays-de-la-loire.svg') no-repeat center center;
+        background: url("../../images/common/map-pays-de-la-loire.svg")
+          no-repeat center center;
       }
     }
   }
@@ -139,7 +142,7 @@
 
   // End .tile-search-results
 
-  nav[aria-label='pagination'] {
+  nav[aria-label="pagination"] {
     margin-bottom: 0;
   }
 
