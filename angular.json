@@ -24,7 +24,9 @@
             "assets": [
               "src/public"
             ],
-            "styles": [],
+            "styles": [
+              "src/assets/sass/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
