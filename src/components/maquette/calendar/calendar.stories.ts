@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import { StoryFn, Meta } from "@storybook/angular";
+import { StoryFn, Meta, moduleMetadata } from "@storybook/angular";
 
 // @ts-ignore
 import template from "./calendar.htm";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 @Component({ selector: "apec-calendar", template: template({}) })
 class Calendar {}
 

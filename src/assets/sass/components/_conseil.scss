@@ -1,0 +1,571 @@
+@import '../partials/variable';
+@import 'pagination';
+@import 'tabs';
+@import 'table';
+@import 'dropdown-actions';
+@import 'workshop-page';
+@import 'timeline';
+
+.conseil {
+  main {
+    &.home-conseil {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+    #volet-workshop,
+    #volet-registrations {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-position-x: center;
+    }
+
+    #volet-workshop {
+      height: calc(50vh + 30px);
+      padding-top: 60px;
+      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background-size: cover;
+      @media (min-width: 768px) {
+        height: 100vh;
+        padding-top: 0;
+      }
+    }
+
+    #volet-registrations {
+      height: calc(50vh - 30px);
+      background: linear-gradient(rgba(32, 36, 47, 0.9), rgba(26, 29, 38, 0.87)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background-size: cover;
+      @media (min-width: 768px) {
+        height: 100vh;
+      }
+    }
+  }
+
+  .conseil-zone {
+    position: relative;
+    margin-bottom: 4rem;
+    .conseil-zone-links {
+      position: absolute;
+      top: -5rem;
+      left: 5rem;
+      width: 75%;
+      .ul-horizontal {
+        flex-wrap: wrap;
+      }
+      li {
+        margin-bottom: 4px;
+        z-index: 3;
+      }
+    }
+  }
+
+  .conseil-listing {
+    border: 1px solid $tr-bgcolor;
+    padding: 30px 30px 40px;
+    margin-top: 1rem;
+    .parcours-item {
+      position: relative;
+      height: 30px;
+      .parcours-error {
+        position: absolute;
+        top: 40px;
+        width: max-content;
+      }
+    }
+    &.conseil-ferme {
+      background-color: rgba(20, 68, 80, 0.2);
+    }
+
+    &.conseil-archive {
+      background-color: rgba(20, 68, 80, 0.4);
+    }
+  }
+
+  .blocs-info-conseil {
+    padding-top: 2rem;
+    border: 1px solid $bg-separator;
+    border-top: 0;
+    &.blocs-info-conseil-surrounded {
+      border-top: 1px solid $bg-separator;
+    }
+    &.blocs-info-conseil-surrounded-alert {
+      border: 1px solid;
+      border-color: $error-color;
+      padding: 1rem;
+    }
+  }
+}
+
+// Fin .conseil
+
+// PARCOURS CONSEIL
+// ------------------------------
+/* frise */
+.frise {
+  &-o {
+    position: relative;
+    padding: 0 0 20px 50px;
+  }
+  &-skin {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 60px;
+    &:before {
+      display: block;
+      content: '';
+      width: 5px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      @include bg-load;
+    }
+    &:after {
+      display: block;
+      width: 30px;
+      height: 30px;
+      @include bg-load;
+      border: 5px solid;
+      @include border-tuile;
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &-top {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      @include bg-load;
+      border: 5px solid;
+      @include border-tuile;
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      border-radius: 50%;
+      text-align: center;
+      @include col-bg;
+      align-items: center;
+      svg {
+        @include fill-bg;
+        width: 28px;
+        stroke: transparent;
+        position: relative;
+        top: 12px;
+      }
+    }
+  }
+  &-entete {
+    text-align: right;
+    margin-bottom: $sep;
+    padding-top: 10px;
+  }
+  &-item {
+    border-radius: $radius;
+    margin-bottom: 10px;
+    @include bg-area;
+    border-left: 5px solid transparent;
+    position: relative;
+    &.done {
+      @include border-succes;
+      @include col-up;
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        @include bg-succes;
+        width: 20px;
+        height: 20px;
+        border: 5px solid;
+        @include border-tuile;
+        border-radius: 50%;
+        top: $sep;
+        left: -35px;
+      }
+    }
+  }
+  &-header {
+    padding: 10px 150px 10px 60px;
+    min-height: 60px;
+    position: relative;
+    @include col-txt;
+    .done &,
+    .started & {
+      @include col-up;
+    }
+  }
+  &-content {
+    padding: 0 10px;
+    display: none;
+    &-i {
+      border-top: 1px solid transparent;
+      padding: $sep 0;
+      @include trans;
+      .frise-opened & {
+        @include border-txt;
+      }
+    }
+    .frise-opened & {
+      display: block;
+    }
+  }
+  &-title {
+    color: inherit !important;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  &-link {
+    color: inherit !important;
+    font-weight: 600;
+    position: absolute;
+    right: 70px;
+  }
+  &-date {
+    display: inline-block;
+    @include bg-txt;
+    @include col-bg;
+    border-radius: 3px;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    .done & {
+      @include bg-succes;
+      @include col-up;
+    }
+    .started & {
+      @include bg-up;
+    }
+  }
+  &-action {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  &-svg {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    svg {
+      @include fill-txt;
+      max-height: 100%;
+      max-width: 100%;
+      .done &,
+      .started & {
+        @include fill-up;
+      }
+    }
+  }
+  &-inter {
+    svg {
+      @include trans;
+      .frise-opened & {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  &-multiple {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 4px;
+    margin-left: 5px;
+    svg {
+      @include fill-up;
+    }
+  }
+}
+
+.textarea-new {
+  margin-top: 48px;
+}
+.select-new {
+  margin-bottom: 30px;
+}
+
+// Fin .conseil
+
+/* pclist */
+.pclist {
+  &-page {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  &-title {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #3f485d;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  &-name {
+    font-size: 1.8rem;
+    @include col-up;
+    span {
+      font-size: 1.2rem;
+    }
+  }
+  &-actions {
+    text-align: right;
+  }
+
+  &-item {
+    border-radius: 5px;
+    margin: 0 0 16px 0;
+    @include bg-tuile;
+    padding: 12px 18px;
+    border: 1px solid;
+    @include border-tuile;
+    &.push {
+      @include border-txt;
+      box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
+      .light-mode & {
+        box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+      }
+    }
+    .light-mode & {
+      @include border-txt;
+    }
+    strong {
+      @include col-up;
+      .light-mode & {
+        color: #000;
+      }
+    }
+  }
+
+  &-cols {
+    display: flex;
+  }
+
+  &-col {
+    flex: 1;
+    line-height: 22px;
+    .bt {
+      margin: 0 0 5px 5px;
+    }
+  }
+
+  &-resume {
+    border-left: 5px solid #ff0000; /*color:#ff0000;*/
+    font-style: italic;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    color: #fff;
+    .light-mode & {
+      color: #000;
+    }
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  &-entete {
+    margin: 40px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    &-item {
+      display: inline-block;
+      float: left;
+    }
+    &-title {
+      margin: 0 0 5px 0;
+      text-transform: uppercase;
+      .light-mode & {
+        color: #000;
+      }
+    }
+  }
+
+  &-input {
+    position: absolute;
+    left: -9999em;
+    &:checked {
+      ~ .pclist-label {
+        background: #fff;
+        color: #404a64;
+      }
+    }
+  }
+  &-label {
+    display: inline-block;
+    background: #404a64;
+    padding: 5px 10px;
+    border: 1px solid #20232e;
+    cursor: pointer;
+    .light-mode & {
+      color: #fff;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &-entete-item {
+    &:first-child {
+      label {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+    }
+    &:last-child {
+      label {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+
+  &-list {
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+
+  &-tri {
+    text-align: right;
+  }
+}
+
+.autocomplete-listing {
+  .autocomplete-listing__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+    .autocomplete-icon {
+      margin-right: 10px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .autocomplete-name {
+      margin-right: 20px;
+      flex: 1;
+    }
+
+    .autocomplete-delete {
+      display: block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      background: #000;
+      border-radius: 50%;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 6px;
+        width: 12px;
+        height: 2px;
+        background: #404a64;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.bloc-open-close-conseil {
+  position: relative;
+  border: 1px solid #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+
+  .liste-items-separated span {
+    display: block;
+  }
+}
+
+.line-to-close {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-badge {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: #000;
+  border-radius: 50%;
+
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    transform: rotate(45deg);
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    width: 12px;
+    height: 2px;
+    background: #404a64;
+  }
+}
+
+.filter-group-workshop-atelier {
+  grid-area: animator;
+  padding-bottom: 10px;
+  display: block;
+
+  .form-part-autocomplete {
+    margin-bottom: 5px;
+  }
+}
+
+.no-result {
+  font-style: italic;
+  background-color: $background-dropdown-dark;
+  display: block;
+  padding: 1rem 1.5rem;
+}
+
+.light-mode {
+  .no-result {
+    background-color: $background-dropdown-light;
+  }
+}

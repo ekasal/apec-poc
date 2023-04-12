@@ -1,0 +1,53 @@
+@import 'variable';
+
+$tooltip-bg: $bgcolor-very-dark;
+$tooltip-width: 20rem;
+$tooltip-arrow-width: 8px;
+
+.tooltip,
+.newtooltip {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  pointer-events: auto;
+  word-break: break-word;
+}
+
+/* Tooltip text */
+.tooltiptext {
+  visibility: hidden;
+  width: $tooltip-width;
+  background-color: $tooltip-bg;
+  color: $color-text-white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 50%;
+  margin-left: -($tooltip-width * 0.5);
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 1s;
+  line-height: 1.3;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -$tooltip-arrow-width;
+    border-width: $tooltip-arrow-width;
+    border-style: solid;
+    border-color: transparent transparent $tooltip-bg transparent;
+  }
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext,
+.newtooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

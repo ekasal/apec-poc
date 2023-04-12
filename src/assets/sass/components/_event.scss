@@ -1,0 +1,85 @@
+$color-text-event: #1b3244;
+$color-caption: #7997af;
+$border-separate-filter: #f1f1f1;
+$box-shadow: 4px 9px 14px 1px rgba(148, 143, 148, 0.74);
+
+body {
+  &.event {
+    background: url('/assets/images/event/bg-event.png') no-repeat top fixed;
+    background-size: cover;
+    background-color: $bgcolor-white;
+    color: $color-text-event;
+  }
+}
+
+.main {
+  width: calc(100% - 100px);
+  margin: 6.4rem auto;
+
+  &.event {
+    .container {
+      padding-bottom: 4rem;
+      padding-right: 0;
+      padding-left: 0;
+      @media (min-width: 768px) {
+        max-width: 100%;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color-text-event;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.event {
+  .mg-top-40 {
+    margin-top: 4rem;
+  }
+
+  .display-flex-row {
+    border: 3px solid green;
+    display: flex;
+
+    .col-left,
+    .col-right {
+      flex: 0 1 34rem;
+    }
+
+    .col-left {
+      margin-right: 2rem;
+    }
+
+    .col-right {
+      margin-left: 2rem;
+    }
+
+    .column-center {
+      flex: 0 1 100%;
+    }
+  }
+
+  .event-grid-zone {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .card-event-structure {
+    display: flex;
+
+    .card-event-customer,
+    .card-part-event {
+      flex: 1;
+      border: 1px solid #000;
+    }
+  }
+}

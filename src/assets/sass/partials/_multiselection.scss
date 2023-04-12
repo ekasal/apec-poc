@@ -1,0 +1,122 @@
+@import 'variable';
+
+/* Multiselect */
+.dropdown-up {
+  display: none !important;
+}
+
+.dropdown-down {
+  display: none !important;
+}
+
+.multiselect-dropdown .dropdown-btn {
+  border: none !important;
+  padding: 0 !important;
+  width: 97% !important;
+
+  span:last-child {
+    span:first-child {
+      padding-right: 6px !important;
+    }
+  }
+}
+
+.dropdown,
+.dropdown-list {
+  padding-top: 0 !important;
+  border: 0 !important;
+  background: $background-dropdown-dark !important;
+  box-shadow: none !important;
+  width: 100%;
+  z-index: 2;
+}
+
+.light-mode {
+  .dropdown,
+  .dropdown-list {
+    background: $background-dropdown-light !important;
+  }
+}
+
+.multiselect-item-checkbox input[type='checkbox'] + div {
+  color: #b8becc !important;
+}
+.light-mode {
+  .multiselect-item-checkbox input[type='checkbox'] + div {
+    color: $color-text-dark !important;
+  }
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item {
+  border: none !important;
+  background: none !important;
+  margin-bottom: 3px !important;
+  max-width: 390px !important;
+}
+
+.dropdown-multiselect__caret {
+  display: none !important;
+}
+
+.multiselect-native-select {
+  position: static !important;
+}
+
+.multiselect {
+  &.btn {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent !important;
+    border: none;
+    width: 100%;
+    height: 30px;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+  }
+}
+
+.multiselect-container > li > a > label > input[type='checkbox'] {
+  position: absolute;
+  left: 15px;
+}
+
+.multiselect-container > li > a > label.checkbox,
+.multiselect-container > li > a > label.radio {
+  display: inline-block;
+  color: $color-text-white;
+}
+
+.bootstrap-select .bs-ok-default::after {
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.1em 0.1em 0;
+  transform: rotate(45deg) translateY(0.5rem);
+}
+
+.btn.dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.multiselect-container {
+  background-color: #222731;
+  transform: none !important;
+  padding: 30px 5px;
+  li {
+    a {
+      label {
+        padding-left: 30px;
+        border: none;
+        display: block;
+      }
+    }
+  }
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item {
+  border: none !important;
+  background: $bgcolor-light !important;
+  color: $color-text-light-lm !important;
+  a {
+    color: $color-text-light-lm !important;
+  }
+}

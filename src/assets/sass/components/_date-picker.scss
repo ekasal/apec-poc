@@ -1,0 +1,137 @@
+@import '../partials/variable';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.datepicker.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: inherit;
+  text-align: left;
+  list-style: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-radius: 4px;
+  width: 250px;
+  height: 270px;
+  background-color: $bgcolor-very-dark;
+  border: 1px solid $bg-btn;
+  button {
+    outline: 0;
+    border: 0;
+  }
+  tbody {
+    height: 180px;
+  }
+  tbody button {
+    padding: 6px;
+  }
+  table td,
+  table th {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: inherit;
+    text-align: center;
+    vertical-align: middle;
+  }
+  table td:nth-child(1),
+  table th:nth-child(1) {
+    padding-left: 0;
+  }
+  table tr:hover {
+    background-color: inherit;
+  }
+  table tr {
+    border-top: none;
+    border-bottom: none;
+  }
+  table th.dow {
+    background-color: $bgcolor-card;
+    padding: 0.5rem 0.1rem;
+  }
+  .btn {
+    font-family: inherit;
+    font-weight: inherit;
+    background-color: inherit;
+    text-align: center;
+    color: inherit;
+    font-size: inherit;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      color: $color-text-white;
+    }
+  }
+  .btn-today {
+    color: $color-text-attention;
+  }
+  .btn-primary {
+    background-color: $bgcolor-card;
+    color: $color-text-white;
+  }
+  .btn.disabled,
+  .btn[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: 0.5;
+  }
+  &.datepicker-mode-1 tbody button,
+  &.datepicker-mode-2 tbody button {
+    height: 65px;
+  }
+  .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .glyphicon-chevron-left:before {
+    content: '<';
+  }
+  .glyphicon-chevron-right:before {
+    content: '>';
+  }
+}
+.light-mode {
+  .datepicker.dropdown-menu {
+    background-color: $bgcolor-white;
+    border-color: $bg-separator-light;
+    table th.dow {
+      background-color: $bgcolor-input-light;
+    }
+  }
+}
+
+.mat-calendar-table-header th {
+  text-align: center !important;
+  padding: 6px 0px 7px 0px !important;
+}
+
+.mat-icon-button {
+  width: 40px !important;
+}
+
+.mat-calendar-arrow {
+  border-left: 5px solid transparent !important;
+  border-right: 5px solid transparent !important;
+  border-top-width: 5px !important;
+  border-top-style: solid !important;
+}

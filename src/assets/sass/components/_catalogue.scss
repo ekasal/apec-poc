@@ -1,0 +1,227 @@
+@import '../partials/variable';
+@import 'card-workshop';
+@import 'card-registration';
+@import 'workshop-page';
+@import 'tile-search';
+@import 'pagination';
+@import 'carousel';
+@import 'tabs';
+@import 'accordion';
+@import 'table';
+@import 'dropdown-actions';
+
+.catalogue {
+  .home-main {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .workshop-page {
+    width: 1250px;
+  }
+
+  .ods-accueil {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    // background: linear-gradient(rgba(32, 36, 47, 0.98), rgba(26, 29, 38, 0.98)),  url(/../../assets/images/ateliers/bg-registrations.jpg);
+    .accueil-wrapper {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .accueil-item-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .accueil-item {
+      margin: 0 3rem 6rem;
+
+      button {
+        width: 350px;
+        padding: 2rem 3rem;
+      }
+    }
+  }
+
+  #volet-workshop {
+    background: linear-gradient(rgba(26, 29, 38, 0.7), rgba(26, 29, 38, 0.8)), url('/assets/images/bg/home-1.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .cat-head {
+    border-bottom: 1px solid $tr-border-color;
+    padding: 4rem 2rem;
+  }
+
+  .bloc-recherche {
+    background-color: #1a2336;
+    padding: 4rem 0;
+  }
+
+  .cat-recherche {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 3rem;
+
+    .cat-recherche-container {
+      display: flex;
+      flex: 0 0 240px;
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+
+    .search-cible {
+      justify-content: center;
+    }
+  }
+
+  .dropdown-actions-h {
+    @include height-define(240);
+  }
+
+  .consultation-zone {
+    .consultation-strophe {
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .cat-entete {
+    margin-bottom: 3rem;
+
+    + * {
+      padding-left: 1rem;
+    }
+
+    .cat-title {
+      color: $color-text-white;
+    }
+
+    .cat-puce {
+      background-color: $bgcolor-white;
+      border-radius: 50%;
+    }
+
+    .cat-puce-1 {
+      width: 20px;
+      height: 20px;
+
+      + h2 {
+        font-weight: 700;
+        font-size: 15px;
+      }
+    }
+
+    .cat-puce-2 {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .cat-link {
+    a {
+      text-decoration: underline;
+      color: #00bbcb;
+    }
+  }
+
+  .toggle-switch {
+    margin-bottom: 0;
+  }
+
+  .cat-tb-presentation {
+    .table-row {
+      width: 356px;
+
+      .table-cell + .table-cell {
+        text-align: right;
+
+        &.center {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .link-actions {
+    color: $link-actions;
+
+    &:hover {
+      color: $link-actions-hover;
+    }
+  }
+
+  .catalogue-garde {
+    width: 80%;
+  }
+
+  .catalogue-garde-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .catalogue-garde-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+
+    a {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #volet-workshop {
+      height: calc(124vh + 30px);
+    }
+
+    .catalogue-garde-row {
+      flex-direction: column;
+      justify-content: normal;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-export-excel span {
+      display: block;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.light-mode {
+  .catalogue {
+    .bloc-recherche {
+      background-color: $light-mode;
+    }
+
+    .cat-entete {
+      .cat-puce {
+        background-color: $color-text-dark;
+      }
+
+      .cat-title {
+        color: $color-text-dark;
+      }
+    }
+
+    #volet-workshop {
+      background: linear-gradient(rgba(229, 228, 228, 0.7), rgba(192, 208, 203, 0.8)), url('/assets/images/bg/home-1.jpg') no-repeat;
+      background-size: cover;
+    }
+  }
+}

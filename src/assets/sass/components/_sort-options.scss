@@ -1,0 +1,144 @@
+@import '../partials/variable';
+
+.sort-options {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+
+  * {
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+
+  li {
+    padding: 5px 10px;
+    background-color: #404a64;
+    display: flex;
+    align-items: center;
+
+    .btn-sort-others {
+      padding: 5px;
+    }
+  }
+
+  li:not(:first-child) {
+    margin-left: 1px;
+  }
+
+  li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .sort-option {
+    display: none;
+
+    @media screen and (min-width: 992px) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &.active {
+      background-color: $color-text-white;
+      label {
+        &.label-inner {
+          color: $color-text-dark;
+          .checkmark {
+            border: 1px solid $color-text-dark;
+            &:after {
+              background: $color-text-dark;
+            }
+          }
+        }
+      }
+      svg * {
+        stroke: $color-text-dark !important;
+      }
+    }
+
+    svg {
+      width: 13px;
+      height: 7px;
+      margin-left: 10px;
+      &:hover,
+      &:active,
+      &:focus {
+        cursor: pointer;
+      }
+      &.inverse-order {
+        transform: rotate(180deg);
+        display: inline-block;
+      }
+    }
+
+    label {
+      position: relative;
+      /* Création de l'indicateur (caché si non sélectionné) */
+      .checkmark:after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+      &.label-inner {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        margin: 0;
+        cursor: pointer;
+        font-size: 14px;
+        font-size: 1.4rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        /* Au survol ajoute un fond de couleur */
+        &:hover input ~ .checkmark {
+          background-color: transparent;
+        }
+
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+
+        /* Quand le bouton radio est sélectionné, ajoute un fond de couleur */
+        input:checked ~ .checkmark {
+          background-color: transparent;
+        }
+
+        /* Montre l'indicateur lors de la sélection */
+        input:checked ~ .checkmark:after {
+          display: block;
+        }
+
+        /* Création d'un bouton radio personnalisé */
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 18px;
+          width: 18px;
+          background-color: transparent;
+          border: 1px solid $color-text-light;
+          border-radius: 50%;
+          /* Personnalisation de l'indicateur */
+          &:after {
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $color-text-white;
+          }
+        }
+      }
+    } // End label
+  } // End .sort-option
+}

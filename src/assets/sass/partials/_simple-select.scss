@@ -1,0 +1,30 @@
+/* =Form
+-------------------------------------------------------------- */
+@import 'variable';
+
+.simple-select {
+  position: relative;
+  margin: 0 auto;
+  padding: 15px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1b2029;
+  color: $color-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.simple-select-entry-situation {
+    max-width: 220px;
+  }
+  &.simple-select-aiguillage {
+    max-width: 200px;
+  }
+
+  option {
+    &.option-attention {
+      color: $color-text-attention;
+    }
+  }
+}

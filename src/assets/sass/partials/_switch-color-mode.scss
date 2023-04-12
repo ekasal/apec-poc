@@ -1,0 +1,1270 @@
+/* =Nav
+-------------------------------------------------------------- */
+@import 'variable';
+
+.svg-general {
+  stroke: $color-generic-dark;
+  fill: none;
+}
+
+.svg-general-white {
+  stroke: $bgcolor-white;
+}
+
+.btn-dark-mode {
+  cursor: none;
+}
+
+.btn-dark-mode svg .picto-moon {
+  stroke: $color-text-white !important;
+}
+
+.btn-dark-mode svg * {
+  stroke: $color-text-white;
+  transition: $item-color-transition;
+}
+
+.btn-light-mode svg *,
+.btn-old-interface svg *,
+.btn-new-interface svg * {
+  stroke: $line-color !important;
+  transition: $item-color-transition;
+}
+
+.zone-tuile {
+  background-color: $bgcolor-card;
+}
+
+.workshop-page {
+  .workshop-page-body {
+    .new-registration-item {
+      &.new-registration-item-interlocuteurs {
+        li {
+          &.remove-item {
+            svg {
+              fill: $bgcolor-white;
+              stroke: $color-generic-lm;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.workshop-page-body {
+  .tabs {
+    svg {
+      stroke: #fff;
+
+      &.svg-tabs {
+        stroke: #b7bdcb;
+      }
+    }
+  }
+}
+
+// Switch vers le thème de couleur clair
+body {
+  &.light-mode {
+    color: $color-text-light-lm;
+  }
+}
+
+.light-mode {
+  background-color: $bgcolor-light;
+  color: $color-text-highlight-lm;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-generic-lm;
+  }
+
+  p {
+    color: $color-text-light-lm;
+  }
+
+  .svg-general {
+    stroke: $color-generic-lm;
+    fill: none;
+  }
+
+  button {
+    .svg-general {
+      stroke: $color-text;
+    }
+  }
+
+  .selecteur-affichage-btn {
+    background-color: #aeb7cb;
+    border-color: #aeb7cb;
+  }
+
+  .svg-general-white {
+    stroke: $color-generic-lm;
+  }
+
+  .step-number {
+    background-color: $color-text-highlight-lm;
+    color: $bgcolor-white;
+  }
+
+  .overlay {
+    background-color: $bgcolor-light;
+  }
+
+  a {
+    color: $color-text-light-lm;
+
+    &:hover {
+      color: $color-ancre-hover-lm;
+    }
+  }
+
+  .zone-tuile {
+    background-color: $bgcolor-white;
+  }
+
+  .pds-modal-content {
+    .pds-modal-title {
+      color: $color-text-white;
+    }
+
+    .pds-modal-body {
+      p {
+        color: $color-text-white;
+      }
+    }
+
+    .floating-label {
+      .floating-input {
+        color: $color-generic-lm;
+
+        &:focus {
+          ~ label {
+            color: $color-text;
+          }
+        }
+      }
+
+      label {
+        color: $color-text;
+      }
+    }
+
+    .text-highlight {
+      color: $color-text-highlight-lm;
+    }
+  }
+
+  .btn {
+    background-color: $bg-btn;
+    color: $color-text-white;
+
+    svg * {
+      stroke: darken($color-text-white, 40%);
+    }
+
+    figure {
+      margin-right: 10px;
+
+      svg {
+        * {
+          stroke: $color-text-white;
+        }
+      }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #fff;
+      color: $color-text-dark;
+    }
+  }
+
+  .btn.btn-transparent {
+    &,
+    &:active,
+    &:hover {
+      background-color: transparent;
+      color: currentColor;
+    }
+
+    &:active,
+    &:hover {
+      background-color: transparent;
+      color: $color-ancre-hover-lm;
+    }
+  }
+
+  .btn.btn-negative {
+    border-color: $color-generic-lm;
+    background-color: transparent;
+    color: $color-generic-lm;
+
+    svg * {
+      stroke: $color-generic-lm !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $color-generic-lm;
+      color: $color-text-white;
+
+      svg * {
+        stroke: $color-text-white !important;
+      }
+
+      span {
+        color: $color-text-white;
+      }
+    }
+  }
+
+  .btn-white {
+    background-color: $color-text-white;
+    color: $color-text-light;
+
+    svg * {
+      stroke: $color-text-light !important;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-text-light;
+      color: $color-text-white;
+
+      svg * {
+        stroke: $color-text-white !important;
+      }
+    }
+  }
+
+  .btn-light-mode svg .picto-sun circle,
+  .btn-light-mode svg .picto-sun * {
+    stroke: $color-text-light !important;
+    fill: transparent !important;
+  }
+
+  .btn-dark-mode svg *,
+  .btn-old-interface svg *,
+  .btn-new-interface svg * {
+    stroke: $color-text-light !important;
+    transition: $item-color-transition;
+  }
+
+  .btn-light-mode svg * {
+    stroke: $color-text;
+    transition: $item-color-transition;
+  }
+
+  .btn-add-registration {
+    background-color: $color-text-white;
+    color: $color-text-light;
+    border-color: $bgcolor-light;
+
+    svg * {
+      stroke: darken($color-text-light, 30%);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-text-light;
+
+      svg * {
+        stroke: #fff;
+      }
+
+      &::after {
+        color: $color-text-white;
+      }
+    }
+  }
+
+  .btn-sort-others {
+    svg {
+      * {
+        stroke: none !important;
+        fill: $color-text-white;
+      }
+    }
+
+    &:hover {
+      svg * {
+        stroke: none;
+        fill: $color-text-dark;
+      }
+    }
+  }
+
+  .simple-select {
+    background-color: $color-back-select;
+    color: $color-text-white;
+  }
+
+  input {
+    &.time-spent {
+      background-color: darken($color-generic-dark, 30%);
+      color: $bgcolor-white;
+      outline: none;
+    }
+  }
+
+  header {
+    background-color: rgba($bgcolor-topbar-light, 1);
+    transition: background-color 0.3s ease-in;
+
+    .header-inner {
+      svg * {
+        stroke: $color-text-light-lm;
+      }
+
+      a:hover svg *,
+      a:focus svg *,
+      a:hover svg *,
+      a:active svg *,
+      button:hover svg *,
+      button:focus svg *,
+      button:active svg * {
+        stroke: $bgcolor-topbar;
+      }
+
+      .user-nav {
+        .display-mode {
+          border-top: 1px solid $line-color-light;
+          border-bottom: 1px solid $line-color-light;
+        }
+
+        a {
+          color: $color-text-title-lm;
+        }
+
+        .interface-mode {
+          border-bottom: 1px solid $line-color-light;
+        }
+
+        .user-panel {
+          background-color: $color-text-white;
+          color: $color-text-dark;
+
+          a {
+            color: $color-text-dark;
+
+            svg * {
+              stroke: $dark-mode;
+            }
+
+            &:hover {
+              color: $bgcolor-topbar;
+
+              svg * {
+                stroke: $color-text-dark;
+                fill: transparent;
+              }
+            }
+          }
+        }
+      }
+
+      .username {
+        &:hover,
+        &:focus,
+        &:active {
+          .wellcome-user {
+            color: $bgcolor-topbar;
+          }
+        }
+      }
+
+      .btn-search {
+        color: $color-text-light-lm;
+      }
+    }
+
+    .menu-button {
+      .before,
+      .middle,
+      .after {
+        background-color: $color-text;
+      }
+    }
+  }
+
+  // Fin header
+
+  .sidebar {
+    background-color: $bgcolor-sidebar-light;
+    transition: background-color 0.3s ease-in;
+    box-shadow: 5px 0 15px -5px #e3e3e3;
+
+    ul {
+      li {
+        a {
+          background-color: transparent;
+
+          span {
+            color: $color-text-light-lm;
+          }
+
+          svg * {
+            stroke: $color-text-light-lm;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: $bg-btn;
+            color: $color-text-white;
+            transition: background-color 0.3s ease-out;
+            text-decoration: none;
+
+            span {
+              color: $color-text-white;
+            }
+
+            svg * {
+              stroke: $color-text-white !important;
+            }
+          }
+
+          &.active {
+            background-color: $bg-btn;
+
+            figure {
+              svg * {
+                stroke: $color-text-white;
+              }
+            }
+
+            span {
+              color: $color-text-white;
+              font-weight: bold;
+            }
+
+            &:hover {
+              svg * {
+                stroke: $color-text-white !important;
+              }
+            }
+          }
+
+          // Fin .active
+        }
+
+        // Fin a
+      }
+
+      // Fin li
+    }
+
+    // Fin ul
+  }
+
+  // Fin .sidebar
+
+  .accordion {
+    h3 {
+      color: $color-text-highlight-lm;
+    }
+
+    ul {
+      li {
+        i {
+          &:before,
+          &:after {
+            background-color: $color-text-highlight-lm;
+          }
+        }
+      }
+    }
+
+    &.accordion-new-registrations {
+      i {
+        &::before {
+          background-color: #fdd600;
+        }
+
+        &::after {
+          background-color: #fdd600;
+        }
+      }
+
+      h3 {
+        font-weight: 600;
+
+        svg {
+          stroke-width: 2px;
+        }
+      }
+    }
+  }
+
+  .full-page {
+    .sidebar {
+      box-shadow: none;
+    }
+  }
+
+  &.push-active {
+    header {
+      background-color: rgba($bgcolor-topbar-light, 0);
+    }
+  }
+
+  .form-control-custom {
+    color: $color-text-light-lm;
+  }
+
+  .workshop-page {
+    background-color: $bgcolor-white;
+    box-shadow: 0 4px 64px 0 rgba(103, 101, 152, 0.1), 0 12px 64px 0 rgba(103, 101, 132, 0.2);
+
+    .workshop-page-head {
+      .workshop-page-buttons {
+        .btn-save {
+          &:hover {
+            color: $color-text-dark;
+          }
+        }
+      }
+    }
+
+    .workshop-page-body {
+      .session-item {
+        border-left: 2px solid $color-text-highlight-lm;
+
+        .session-item-grid {
+          h4 {
+            color: $color-text-highlight-lm;
+            font-weight: 600;
+          }
+        }
+      }
+
+      &.fichier-atelier-consultation {
+        .highlight-info {
+          color: $color-generic-lm;
+          font-weight: 600;
+        }
+
+        .session-item {
+          .session-item-grid--consultation {
+            p,
+            h4 {
+              color: #fff;
+            }
+
+            color: #fff;
+
+            .highlight-info {
+              color: #fff;
+            }
+          }
+        }
+
+        .centrum-apec {
+          .icone-building {
+            background: url('/assets/images/form/icon_filter-apec-center-lm.svg') no-repeat;
+          }
+
+          .centrum-apec--info {
+            span {
+              color: $color-text-white;
+            }
+          }
+        }
+
+        .flag-area {
+          background: url('/assets/images/ateliers/icon-workshop-adress-lm.svg') no-repeat;
+        }
+
+        .table-flex {
+          span {
+            color: $color-text-white;
+          }
+        }
+      }
+
+      .new-registration-item {
+        .registration-detail-id {
+          .customer-name {
+            font-weight: 600;
+          }
+        }
+
+        &.new-registration-item-interlocuteurs {
+          li {
+            &.remove-item {
+              svg {
+                fill: $color-generic-lm;
+                stroke: $bgcolor-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .workshop-detail {
+    &.workshop-detail-comment {
+      h3 {
+        color: $color-generic-lm;
+
+        &::before {
+          background: url('/assets/images/ateliers/icon_comment-lm.svg') no-repeat;
+        }
+      }
+    }
+  }
+
+  .workshop-page-body {
+    .tabs {
+      svg {
+        stroke: $color-generic-lm;
+
+        &.svg-tabs {
+          stroke: $color-generic-lm;
+        }
+      }
+    }
+  }
+
+  .tile-search {
+    .tile-search-container {
+      background: $bgcolor-white;
+    }
+
+    .title-search-results {
+      border-top: 1px solid $color-border-table;
+    }
+
+    .title-search-head {
+      h1 {
+        .workshop-title {
+          color: #2287e8;
+        }
+      }
+    }
+  }
+
+  .custom-radio-button {
+    input {
+      &:checked ~ .checkmark {
+        border: 1px solid $color-generic-lm;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+
+    .checkmark {
+      border: 1px solid $color-generic-dark;
+
+      &:after {
+        background: $color-generic-lm;
+      }
+    }
+
+    &:hover input ~ .checkmark {
+      background-color: transparent;
+      border: 2px solid $color-generic-lm;
+    }
+  }
+
+  table {
+    tr {
+      border-top: 1px solid $color-border-table;
+      border-bottom: 1px solid $color-border-table;
+
+      &:hover {
+        background-color: rgba(200, 190, 194, 0.1);
+      }
+    }
+  }
+
+  .registration-item {
+    .btn-negative {
+      color: $color-generic-lm !important;
+      border: 1px solid $color-generic-lm;
+    }
+
+    &.item-selected {
+      background-color: rgb(210, 210, 210);
+      color: $color-generic-lm;
+
+      &:hover {
+        // background-color: transparent;
+      }
+
+      .registration-date ul li,
+      .registration-name,
+      .registration-site,
+      .registration-manager,
+      .registration-company,
+      .registration-session,
+      .registration-apec-center,
+      .registration-animator,
+      .registration-number-available,
+      .registration-number-confirmed,
+      .registration-status,
+      .registration-publish {
+        font-weight: bold;
+        color: $color-generic-lm;
+      }
+    }
+
+    border-bottom: 1px solid #bebed2;
+  }
+
+  .tabs {
+    .tab {
+      &.active {
+        border-bottom: 2px solid #899aa9;
+      }
+    }
+  }
+
+  .global-search {
+    background-color: $bgcolor-light;
+
+    h1 {
+      color: $item-active-light;
+    }
+
+    .container-search {
+      .search-nav {
+        ul {
+          li {
+            a {
+              background-color: transparent;
+              color: $color-text-light-lm;
+
+              svg * {
+                // stroke: $color-text-white;
+                fill: transparent;
+              }
+
+              &.search-tab-on {
+                background-color: $bgcolor-search-tab;
+
+                svg * {
+                  stroke: #aeb7cb;
+                }
+
+                span {
+                  color: #aeb7cb;
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                  background-color: $color-text-white;
+
+                  svg * {
+                    stroke: #aeb7cb;
+                  }
+
+                  span {
+                    color: #aeb7cb;
+                  }
+                }
+              }
+
+              &:hover,
+              &:active,
+              &:focus {
+                background-color: $item-hover-light;
+
+                svg * {
+                  stroke: $color-text-white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Fin .search-nav
+
+      .search-form {
+        background-color: $bgcolor-white;
+
+        .filter-tab {
+          li {
+            a {
+              &.active {
+                color: $item-active-light;
+                border-bottom: 3px solid $item-active-light;
+              }
+            }
+          }
+        }
+
+        .filters-tabs-customers-type {
+          li {
+            a {
+              border-color: $color-text-light;
+
+              &.active {
+                background-color: $color-text-light;
+                color: $color-text-white;
+
+                span {
+                  background: url('/assets/images/form/icon_radio-button-small-light-on.svg') no-repeat center left;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Fin search-form
+    }
+
+    // Fin .container-search
+  }
+
+  // Fin .global-search
+
+  /* disabled */
+  .floating-input:disabled {
+    &::placeholder {
+      color: $color-text-highlight-lm;
+    }
+  }
+
+  .floating-input:not(:placeholder-shown) ~ label {
+    color: $color-text-light-lm;
+  }
+
+  .floating-label,
+  .floating-textarea {
+    textarea {
+      &.floating-input {
+        color: $color-text-white;
+      }
+    }
+
+    label {
+      color: $color-text-light-lm;
+    }
+
+    .floating-input {
+      color: $color-text-highlight-lm;
+      font-weight: 600;
+
+      &:focus ~ label {
+        color: $color-text-light-lm;
+      }
+
+      &:not(:placeholder-shown) ~ label {
+        top: -10px;
+        font-size: 1.1rem;
+        color: $color-generic-lm;
+      }
+
+      &.floating-input:disabled {
+        background: url('/assets/images/form/icon-padlock-locked-lm.svg') no-repeat center right;
+        background-size: 15px 16px;
+
+        &:placeholder-shown ~ label {
+          color: $color-generic-lm;
+        }
+      }
+
+      &.floating-input-customer-name {
+        background: url('/assets/images/form/icon_customer-name-lm.svg') no-repeat center right;
+        background-size: 15px 16px;
+      }
+
+      &.floating-input-email {
+        background: url('/assets/images/form/icon_email-lm.svg') no-repeat center right;
+        background-size: 22px 16px;
+      }
+
+      &.floating-input-registration-manager {
+        background: url('/assets/images/form/icon_registration-manager-lm.svg') no-repeat center right;
+        background-size: 16px 16px;
+      }
+
+      &.floating-input-company {
+        background: url('/assets/images/form/icon_filter-apec-center-lm.svg') no-repeat center right;
+        background-size: 16px 16px;
+      }
+    }
+
+    textarea:not([value='']):valid ~ label {
+      top: -18px;
+      font-size: 1.4rem;
+      color: $color-generic-lm;
+    }
+
+    textarea:focus ~ label,
+    textarea:not(:placeholder-shown) ~ label {
+      top: -10px;
+      font-size: 1.1rem;
+      color: $color-generic-lm;
+    }
+
+    //.floating-input:focus ~ label { color: $color-text-light-lm;}
+  }
+
+  .workshop-detail {
+    p {
+      strong {
+        color: $color-text-light-lm;
+      }
+    }
+  }
+
+  .card {
+    background-color: #fff;
+
+    &.card-workshop,
+    &.card-registration {
+      .card-title {
+        // color: $color-text-light;
+        color: $color-text-title-lm;
+      }
+
+      .workshop-detail {
+        p {
+          strong {
+            color: $color-generic-lm;
+          }
+        }
+
+        &.workshop-detail-date,
+        &.workshop-detail-apec-center {
+          border-color: $color-text-light;
+        }
+      }
+
+      .card-workshop--hover {
+        background-color: rgba(174, 183, 203, 0.75);
+      }
+    }
+
+    // Fin .card-workshop
+  }
+
+  // Fin .card
+
+  .sort-options {
+    li {
+      background-color: #aeb7cb;
+      color: $color-text-white;
+
+      label {
+        .checkmark {
+          border-color: $color-text-white !important;
+        }
+      }
+
+      svg * {
+        stroke: $color-text-white;
+      }
+
+      button {
+        svg * {
+          fill: $color-text-white;
+        }
+      }
+
+      &.active {
+        background-color: #637293;
+
+        label {
+          &.label-inner {
+            color: $color-text-white;
+          }
+        }
+
+        svg * {
+          stroke: $color-text-white !important;
+        }
+
+        .checkmark {
+          &::after {
+            background-color: $color-text-white !important;
+          }
+        }
+      }
+    }
+  }
+
+  .filter-group {
+    border-bottom: 1px solid lighten(#404a64, 10%);
+
+    &.input-error {
+      border-bottom: 1px solid $color-text-error;
+    }
+
+    &:hover {
+      border-color: $color-text-dark;
+    }
+
+    label {
+      &.float-label {
+        color: $color-generic-lm;
+      }
+
+      &:hover {
+        color: $item-active-light;
+      }
+    }
+
+    &.filter-group-target {
+      &::after {
+        background: url('/assets/images/form/icon_filter-target-lm.svg');
+      }
+    }
+
+    &.filter-group-service {
+      &::after {
+        background: url('/assets/images/form/icon_filter-service-lm.svg');
+      }
+    }
+
+    &.filter-group-apec-center {
+      &::after {
+        background: url('/assets/images/form/icon_filter-apec-center-lm.svg') no-repeat;
+        background-size: 17px 17px;
+      }
+    }
+
+    &.filter-group-region {
+      &::after {
+        background: url('/assets/images/form/icon_filter-region-lm.svg') no-repeat;
+        background-size: 12px 16px;
+      }
+    }
+
+    &.filter-group-animator {
+      &::after {
+        background: url('/assets/images/form/icon_filter-animator-lm.svg') no-repeat;
+        background-size: 23px 16px;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .sidebar-filters {
+    background-color: $color-text-white;
+    box-shadow: 5px 0 15px 5px #e3e3e3;
+  }
+
+  .filters-tabs li a.active {
+    border-color: $color-text-light;
+  }
+
+  .filters-tabs-refined-search li a {
+    border-color: $color-text-light;
+
+    &.active {
+      background-color: $color-text-light;
+      color: $color-text-white;
+
+      svg * {
+        stroke: $color-text-white;
+      }
+    }
+  }
+
+  .floating-form .floating-input,
+  .floating-form .floating-select,
+  .filter-group .btn-group .multiselect-selected-text {
+    color: $color-text-dark;
+  }
+
+  .multiselect-container {
+    background-color: #aeb7cb;
+  }
+
+  .filters-tabs-refined-search li a.active span {
+    background: url('/assets/images/form/icon_radio-button-light-on.svg') no-repeat center left;
+  }
+
+  .toggle-switch-label {
+    background: darken($color-generic-dark, 30%);
+
+    &:before {
+      color: $color-text-white;
+    }
+  }
+
+  .custom-checkbox {
+    &:hover {
+      input ~ .checkmark {
+        border-color: #404a64;
+      }
+
+      input {
+        &:checked ~ .checkmark {
+          background-color: #404a64;
+        }
+      }
+    }
+  }
+
+  .form-control-custom {
+    background-color: $input-background-lm;
+  }
+
+  .home-ateliers {
+    .title-section {
+      color: $color-generic-lm;
+    }
+  }
+
+  .card-title {
+    color: $color-text-light;
+  }
+
+  .card-registration {
+    .status-indicator {
+      .separator {
+        background-color: $color-text-light;
+      }
+
+      .status-symbol {
+        border-color: $color-text-white;
+        background-color: $color-text-light;
+
+        svg * {
+          stroke: $color-text-white;
+        }
+      }
+
+      p {
+        background-color: $color-text-white;
+        color: $color-text-light;
+      }
+    }
+
+    .status-registered {
+      .status-indicator {
+        p {
+          color: #02a215;
+        }
+
+        .status-symbol {
+          background-color: #02a215;
+
+          svg * {
+            stroke: $color-text-white;
+          }
+        }
+      }
+    }
+
+    .status-processing {
+      .status-indicator {
+        p {
+          color: #f27000;
+        }
+
+        .status-symbol {
+          background-color: #f27000;
+
+          svg * {
+            stroke: $color-text-white;
+          }
+        }
+      }
+    }
+  }
+
+  // End .card-registration
+
+  .status {
+    &.status-open {
+      font-weight: 600;
+    }
+
+    svg {
+      stroke-width: 1.5px;
+    }
+
+    &.status-processing {
+      color: $color-generic-lm;
+    }
+  }
+
+  .vertical-dots li button:before {
+    color: $color-text;
+  }
+
+  .vertical-dots li.slick-active button:before {
+    color: $color-text-dark;
+  }
+
+  .ateliers {
+    #volet-workshop {
+      background: linear-gradient(rgba(229, 228, 228, 0.95), rgba(192, 208, 203, 0.95)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background-size: cover;
+    }
+
+    #volet-registrations {
+      background: linear-gradient(rgba(229, 228, 228, 0.95), rgba(192, 208, 203, 0.95)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background-size: cover;
+    }
+
+    .create-workshop {
+      background: linear-gradient(rgba(229, 228, 228, 0.95), rgba(102, 108, 103, 0.95)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &.ateliers {
+    .registration-detail {
+      .job-title {
+        color: $color-generic-lm;
+      }
+
+      .company-name {
+        color: $color-generic-lm;
+        font-weight: 600;
+      }
+
+      .registration-date {
+        color: $color-generic-lm;
+      }
+    }
+  }
+
+  .catalogue {
+    .bloc-recherche {
+      background-color: $light-mode;
+    }
+
+    .cat-entete {
+      .cat-puce {
+        background-color: $color-text-dark;
+      }
+
+      .cat-title {
+        color: $color-text-dark;
+      }
+    }
+  }
+}
+
+// Fin switch couleur

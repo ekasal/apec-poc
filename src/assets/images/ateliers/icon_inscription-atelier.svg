@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-general" width="19.371" height="17" viewBox="0 0 19.371 17">
+  <g id="icon_inscription_atelier" data-name="icon inscription atelier" transform="translate(-185.88 -857.64)">
+    <path id="Tracé_8450" data-name="Tracé 8450" d="M192.6,858.14h12.148v10.37H194.084" fill="none" stroke="" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <g id="Groupe_35825" data-name="Groupe 35825">
+      <g id="_Grupo_" data-name="&lt;Grupo&gt;">
+        <path id="Tracé_8451" data-name="Tracé 8451" d="M190.688,861.992c.7-.466.634-.765.717-1.442a1.854,1.854,0,0,0-.118-1.095,1.362,1.362,0,0,0-.782-.63,1.8,1.8,0,0,0-1.137,0,1.361,1.361,0,0,0-.783.63,1.854,1.854,0,0,0-.118,1.095c.083.677.019.976.717,1.442" fill="none" stroke="" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+        <path id="Tracé_8452" data-name="Tracé 8452" d="M192.306,874.14v-5.63l.3-3.555,4.777-1.327a.593.593,0,0,0,.416-.715l-.027-.106a.591.591,0,0,0-.658-.443l-5.693.813a3.855,3.855,0,0,1-2.963,0l-1.482.593c-.373.173-.593.3-.593,1.185v5.037a.891.891,0,0,0,.888.889h.3" fill="none" stroke="" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+        <line id="Ligne_661" data-name="Ligne 661" y2="3.852" transform="translate(187.566 870.288)" fill="none" stroke="" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      </g>
+      <line id="Ligne_662" data-name="Ligne 662" y1="0.889" x2="3.259" transform="translate(198.825 861.696)" fill="none" stroke="" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Ligne_663" data-name="Ligne 663" y2="2.37" transform="translate(189.936 871.77)" fill="none" stroke="" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

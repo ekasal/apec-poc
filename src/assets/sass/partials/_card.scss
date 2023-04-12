@@ -1,0 +1,70 @@
+@import 'variable';
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $bgcolor-card;
+  background-clip: border-box;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.card-title {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 50px;
+  color: $color-text-white;
+  margin-bottom: 20px;
+  strong {
+    font-size: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.card-hover {
+  display: none;
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color-text-white;
+    border-radius: 5px;
+    background-color: rgba(32, 35, 46, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.card-search-form {
+  padding: 2rem;
+  background-color: #343c4d;
+}
+.card-base {
+  padding: 2rem;
+}
+.card-base-header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+.card-base-header-picto {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.card-recherche-memo {
+  color: $color-text-white;
+}
+
+.light-mode {
+  .card-recherche-memo {
+    border-color: $bg-separator-light;
+  }
+}

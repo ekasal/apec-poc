@@ -1,0 +1,317 @@
+@import 'variable';
+
+.global-search {
+  display: block;
+  padding-top: 70px;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  z-index: 998;
+  overflow: auto;
+  background-color: $dark-mode;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transform: translate3d(0, -100%, 0);
+
+  &.global-search--open {
+    transform: translate3d(0, 0%, 0);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .container-search {
+    width: 90%;
+    margin: 0 auto 100px auto;
+
+    .search-nav {
+      display: flex;
+      justify-content: center;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: transparent;
+        width: 100%;
+
+        li {
+          list-style: none;
+          height: 40px;
+          margin-left: 1px;
+          flex: 1;
+
+          a {
+            height: 40px;
+            background-color: $bgcolor-search-tab;
+            color: $color-text;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            @media (min-width: 992px) {
+              padding: 0 15px;
+            }
+
+            &.search-tab-on {
+              background-color: $color-text-white;
+              color: $bgcolor-search-tab;
+
+              svg * {
+                stroke: $bgcolor-search-tab;
+              }
+            }
+
+            &:first-child {
+              border-top-left-radius: 5px;
+            }
+
+            &:last-child {
+              border-top-right-radius: 5px;
+            }
+
+            svg {
+              //stroke: $color-text;
+              fill: transparent;
+            }
+
+            span {
+              margin-left: 8px;
+              display: none;
+              @media (min-width: 992px) {
+                display: block;
+              }
+            }
+
+            &:hover,
+            &:active,
+            &:focus,
+            .active {
+              background-color: #fff;
+              color: #404a64;
+
+              svg * {
+                stroke: #404a64;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .search-form {
+      margin: 0 auto;
+      padding: 15px;
+      background-color: #343c4d;
+      border-radius: 5px;
+      @media (min-width: 768px) {
+        padding: 40px 50px;
+      }
+    }
+
+    // End .search-form
+  }
+
+  // End .container-search
+}
+
+.filters-tabs {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+
+  li {
+    width: 50%;
+    justify-content: center;
+
+    a {
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: table-cell;
+      cursor: pointer;
+      @media (min-width: 768px) {
+        border-radius: 0;
+      }
+      @media (min-width: 768px) {
+        font-size: 20px;
+        font-size: 2rem;
+      }
+
+      span {
+        display: block;
+        font-size: 12px;
+        font-size: 1.2rem;
+        @media (min-width: 768px) {
+          display: inline-block;
+          font-size: 20px;
+          font-size: 2rem;
+        }
+      }
+
+      &.active {
+        border: 1px solid $color-text-white;
+        @media (min-width: 768px) {
+          border: none;
+          border-bottom: 3px solid $color-text-white;
+        }
+      }
+    }
+  }
+}
+
+// End .filter-tab
+
+.filters-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  .filters-content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.filters-tabs-refined-search {
+  display: flex;
+  margin-bottom: 50px;
+
+  li {
+    a {
+      border: 1px solid $color-text-white;
+      font-size: 14px;
+      font-size: 1.4rem;
+      padding: 0 10px;
+      height: 60px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        margin-right: 10px;
+        padding-left: 30px;
+        height: 23px;
+        display: flex;
+        align-items: center;
+        background: url('/assets/images/form/icon_radio-button-off.svg') no-repeat center left;
+        background-size: 23px 23px;
+      }
+
+      svg {
+        display: none;
+
+        * {
+          stroke: #b8becc;
+        }
+      }
+
+      &.active {
+        background: $color-text-white;
+        color: #404a64;
+
+        span {
+          background: url('/assets/images/form/icon_radio-button-on.svg') no-repeat center left;
+          background-size: 23px 23px;
+        }
+
+        svg * {
+          stroke: #404a64;
+        }
+      }
+    }
+
+    &:first-child {
+      margin-right: 15px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    li {
+      a {
+        font-size: 18px;
+        font-size: 1.8rem;
+
+        svg {
+          display: block;
+        }
+      }
+
+      &:first-child {
+        margin-right: 50px;
+      }
+    }
+  }
+}
+
+// End .filters-tabs-refined-search
+
+.filters-tabs-customers-type {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+
+  li {
+    a {
+      border: 1px solid $color-text-white;
+      font-size: 14px;
+      font-size: 1.4rem;
+      padding: 0 15px;
+      height: 36px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        padding-left: 25px;
+        background: url('/assets/images/form/icon_radio-button-small-off.svg') no-repeat center left;
+        background-size: 14px 14px;
+      }
+
+      &.active {
+        background-color: $color-text-white;
+        color: #404a64;
+
+        span {
+          background: url('/assets/images/form/icon_radio-button-small-on.svg') no-repeat center left;
+          background-size: 14px 14px;
+        }
+      }
+    }
+
+    &:first-child {
+      margin-right: 25px;
+    }
+  }
+}

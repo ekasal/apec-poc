@@ -1,0 +1,87 @@
+/* =Form
+-------------------------------------------------------------- */
+@import 'variable';
+
+.action-buttons__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px 20px 30px;
+  box-sizing: border-box;
+  .actions-box {
+    position: relative;
+    flex: 1;
+    height: 51px;
+    .select-box {
+      .select-custom {
+        position: relative;
+        display: inline-block;
+        width: 156px;
+        height: 51px;
+
+        select {
+          display: none;
+          height: 51px;
+          width: 100%;
+          border: none;
+          background-color: #404a64;
+          color: #b8becc;
+          cursor: pointer;
+          padding: 10px 22px 10px 12px;
+          outline: none;
+          border-radius: 5px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+
+          &::-ms-expand {
+            display: none;
+          }
+        }
+
+        .select-box__icon {
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          transform: translateY(-50%);
+          width: 12px;
+          height: 8px;
+          transition: 0.2s ease;
+          display: none;
+          pointer-events: none;
+        }
+
+        .select-box__container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #404a64;
+          border-radius: 5px;
+          height: 51px;
+          width: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .select-box__action {
+            width: 20px;
+            height: 20px;
+            transition: 0.2s ease;
+          }
+        }
+
+        &.active {
+          select {
+            display: inline-block;
+          }
+
+          .select-box__icon {
+            display: inline-block;
+          }
+
+          .select-box__container {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import '../partials/variable';
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  .tab {
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    margin-right: 50px;
+    &.active {
+      border-bottom: 2px solid currentColor;
+      color: $color-text-white;
+      & > a {
+        color: currentColor;
+      }
+    }
+    svg {
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+  }
+}
+.dark-mode {
+  .tabs {
+    .tab {
+      &.active {
+        color: $color-text-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@import 'variable';
+
+apec-autocompletion,
+apec-input-autocompletion,
+.autocomplete {
+  .dropdown {
+    position: absolute;
+    display: block;
+    overflow-y: visible;
+    top: 20px;
+    left: 0px;
+  }
+
+  .dropdown-menu {
+    .dropdown-item:first-child {
+      margin: 0.2em 0 0 !important;
+    }
+
+    .dropdown-item {
+      display: block;
+      white-space: normal;
+      width: 100%;
+      clear: both;
+      background: transparent;
+      color: $color-text-light !important;
+      text-align: inherit;
+      border: 0;
+      cursor: pointer;
+
+      span,
+      label {
+        color: $color-text-light !important;
+
+        strong {
+          color: $color-text-white !important;
+        }
+      }
+    }
+
+    .dropdown-item:hover span,
+    .dropdown-item:hover label {
+      color: $color-text-white !important;
+      text-decoration: none !important;
+    }
+
+    max-height: 200px;
+  }
+
+  .bloc-open-close {
+    position: relative;
+    border: 1px solid $color-text-white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    .bloc-open-close__title {
+      margin-bottom: 3rem;
+    }
+    button {
+      position: absolute;
+      color: currentColor;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .animator-listing {
+    margin-top: 8px;
+    .animator-listing__row {
+      display: flex;
+      align-items: center;
+      .animator-icon {
+        margin-right: 10px;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .animator-name {
+        margin-right: 20px;
+      }
+      .animator-delete {
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        background: #000;
+        border-radius: 50%;
+        &:after,
+        &:before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: 6px;
+          width: 12px;
+          height: 2px;
+          background: #404a64;
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+        &:before {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .light-mode {
+    apec-autocompletion .dropdown-menu {
+      button {
+        span {
+          color: $color-text-light-lm !important;
+
+          strong {
+            color: $color-text-highlight-lm !important;
+          }
+        }
+      }
+
+      button:hover {
+        color: $color-text-highlight-lm !important;
+        text-decoration: none !important;
+      }
+    }
+  }
+}

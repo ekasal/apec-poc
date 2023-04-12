@@ -1,0 +1,23 @@
+.cke {
+  ol,
+  ul {
+    margin-left: 40px;
+    list-style: unset;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  em {
+    font-style: italic;
+  }
+}
+.cke_chrome {
+  word-break: break-word;
+}
+.ckeditor-characters {
+  float: right !important;
+  display: block !important;
+}
+.ckeditor-characters-invalid {
+  color: red !important;
+}

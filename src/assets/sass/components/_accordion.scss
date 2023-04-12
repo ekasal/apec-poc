@@ -1,0 +1,340 @@
+@import '../partials/variable';
+
+.z-index-3 {
+  z-index: 3 !important;
+}
+
+.z-index-1 {
+  z-index: 1 !important;
+}
+.accordion {
+  position: relative;
+  .accordion-transition {
+    transition: all 0.25s ease-in-out;
+  }
+
+  .accordion-flipIn {
+    animation: flipdown 0.5s ease both;
+  }
+
+  .accordion-no-select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: $color-text-white;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+    @extend .accordion-no-select;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .accordion-content {
+    position: relative;
+    display: block;
+    @extend .accordion-transition;
+    opacity: 1;
+    transform: translate(0, 0);
+    margin: 15px;
+    z-index: 2;
+    &.no-horizontal-margin {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .accordion-icon {
+    position: absolute;
+    transform: translate(-6px, 0);
+    margin-top: 12px;
+    right: 0;
+    &:before,
+    &:after {
+      content: '';
+      @extend .accordion-transition;
+      position: absolute;
+      background-color: currentColor;
+      width: 3px;
+      height: 9px;
+    }
+    &:before {
+      transform: translate(-2px, 0) rotate(45deg);
+    }
+    &:after {
+      transform: translate(2px, 0) rotate(-45deg);
+    }
+  }
+
+  .accordion-toggle {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+
+    &:checked {
+      & ~ .accordion-content {
+        margin-top: 0;
+        max-height: 0;
+        opacity: 0;
+        transform: translate(0, 50%);
+      }
+      & ~ i {
+        &:before {
+          transform: translate(2px, 0) rotate(45deg);
+        }
+        &:after {
+          transform: translate(-2px, 0) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    perspective: 900;
+    padding: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 4px;
+      z-index: 2;
+      &.step-session-2 {
+        z-index: 1;
+      }
+      & + li {
+        padding-top: 0px;
+        z-index: 1;
+      }
+
+      @extend .accordion-flipIn;
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+
+      i {
+        position: absolute;
+        transform: translate(-6px, 0);
+        margin-top: 16px;
+        right: 20px;
+
+        &:before,
+        &:after {
+          content: '';
+          @extend .accordion-transition;
+          position: absolute;
+          background-color: white;
+          width: 3px;
+          height: 9px;
+        }
+
+        &:before {
+          transform: translate(-2px, 0) rotate(45deg);
+        }
+
+        &:after {
+          transform: translate(2px, 0) rotate(-45deg);
+        }
+      } //End i
+
+      input[type='checkbox'] {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+
+        &:checked {
+          & ~ .accordion-content {
+            margin-top: 0;
+            max-height: 0;
+            opacity: 0;
+            transform: translate(0, 50%);
+          }
+          & ~ i {
+            &:before {
+              transform: translate(2px, 0) rotate(45deg);
+            }
+            &:after {
+              transform: translate(-2px, 0) rotate(-45deg);
+            }
+          }
+        }
+      } // End input[type=checkbox]
+    } //End li
+  } //End ul
+
+  &.accordion-new-registrations {
+    h3 {
+      color: #fdd600;
+    }
+    i {
+      &:before,
+      &:after {
+        background-color: #fdd600;
+      }
+    } //End i
+  }
+} // End accordion
+
+.accordion-context {
+  position: relative;
+  .accordion-content {
+    position: relative;
+    display: block;
+    transition: all 0.25s ease-in-out;
+    opacity: 1;
+    transform: translate(0, 0);
+    margin: 15px;
+    z-index: 2;
+    &.no-horizontal-margin {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &.no-margin-bottom {
+      margin-bottom: 0;
+    }
+  }
+  .accordion-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid;
+    min-height: 3.5rem;
+    margin-bottom: 4rem;
+    h2 {
+      font-weight: 700;
+      color: $color-text-white;
+    }
+  }
+  .accordion-icon {
+    position: absolute;
+    top: 0px;
+    right: 18px;
+    &:before,
+    &:after {
+      content: '';
+      transition: all 0.25s ease-in-out;
+      position: absolute;
+      background-color: currentColor;
+      width: 3px;
+      height: 9px;
+    }
+    &:before {
+      transform: translate(-2px, 0) rotate(45deg);
+    }
+    &:after {
+      transform: translate(2px, 0) rotate(-45deg);
+    }
+  }
+  .accordion-toggle {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    &:checked {
+      & ~ .accordion-content {
+        margin-top: 0;
+        max-height: 0;
+        opacity: 0;
+        transform: translate(0, 50%);
+        overflow: hidden;
+      }
+      & ~ i {
+        &:before {
+          transform: translate(2px, 0) rotate(45deg);
+        }
+        &:after {
+          transform: translate(-2px, 0) rotate(-45deg);
+        }
+      }
+    }
+  }
+  &.filtre-recherche {
+    .accordion-content {
+      margin-right: 0;
+      margin-left: 10px;
+      &.no-horizontal-margin {
+        margin-left: 0;
+      }
+    }
+    .accordion-icon {
+      top: 6px;
+      right: 8px;
+    }
+    .accordion-toggle {
+      height: 2rem;
+      top: 0;
+      right: 0;
+    }
+    .custom-checkbox,
+    .custom-radio-button {
+      padding-left: 30px;
+      padding-right: 15px;
+    }
+    .custom-checkbox + .accordion-toggle {
+      width: 2rem;
+    }
+    .custom-checkbox + .accordion-toggle:checked ~ .accordion-content {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.light-mode {
+  .accordion-context {
+    .accordion-header {
+      h2 {
+        color: $color-generic-lm;
+      }
+    }
+  }
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
+
+.accordion-content-i {
+  padding-top: 20px;
+}

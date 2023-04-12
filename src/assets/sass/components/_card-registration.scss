@@ -1,0 +1,291 @@
+@import '../partials/variable';
+
+.registration-list {
+  display: grid;
+  grid-gap: 25px;
+  margin-bottom: 100px;
+  @media screen and (min-width: 992px) {
+    grid-gap: 25px;
+  }
+  @media screen and (min-width: 1680px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+  }
+}
+
+.card-registration {
+  border-radius: 15px;
+  .card-registration-structure {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 15px;
+
+    .btn + .btn {
+      margin: 0;
+    }
+
+    .workshop-detail p {
+      font-size: 12px;
+      font-size: 1.2rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1.5fr;
+      padding: 25px 15px 25px 25px;
+      .registration-detail {
+        &.registration-detail-id {
+          ul {
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            .customer-name,
+            .registration-date,
+            .company-name,
+            .job-title {
+              text-align: left;
+            }
+            li {
+              &.avatar-customer {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 992px) {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  .btn {
+    &:hover {
+      color: $color-text-dark;
+    }
+  }
+}
+
+.card-part {
+  &.card-part-customer {
+    margin-bottom: 15px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    .presence-yes {
+      fill: #b7bdcb;
+    }
+
+    .presence-no,
+    .presence-undefined {
+      fill: none;
+    }
+
+    .presence-undefined {
+      stroke-dasharray: 3;
+    }
+  }
+
+  &.card-part-workshop {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 992px) {
+      grid-template-columns: 1fr 40px;
+    }
+
+    .slide-workshop {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'statut-inscription'
+        'nom'
+        'date'
+        'lieu'
+        'statut-atelier'
+        'call-to-action';
+
+      .status-indicator {
+        grid-area: statut-inscription;
+      }
+      .card-title {
+        grid-area: nom;
+      }
+      .workshop-detail-date {
+        grid-area: date;
+      }
+      .workshop-detail-apec-center {
+        grid-area: lieu;
+      }
+      .workshop-detail-status {
+        grid-area: statut-atelier;
+      }
+      .workshop-presence-status {
+        grid-area: statut-presence;
+      }
+      .call-to-action {
+        grid-area: call-to-action;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 15px;
+      }
+
+      &.status-not-registered {
+        grid-template-areas:
+          'statut-inscription'
+          'nom'
+          'call-to-action';
+      }
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 100px 1fr;
+        grid-template-areas:
+          'statut-inscription nom'
+          'statut-inscription date'
+          'statut-inscription lieu'
+          'statut-inscription statut-atelier'
+          'statut-inscription statut-presence'
+          'statut-inscription call-to-action';
+        &.status-not-registered {
+          grid-template-areas:
+            'statut-inscription nom'
+            'statut-inscription call-to-action';
+        }
+      }
+      @media screen and (min-width: 992px) {
+        grid-template-columns: 160px 1fr 1fr;
+        grid-template-areas:
+          'statut-inscription nom nom'
+          'statut-inscription date lieu'
+          'statut-inscription statut-atelier statut-presence'
+          'statut-inscription call-to-action call-to-action';
+        &.status-not-registered {
+          grid-template-areas:
+            'statut-inscription nom nom'
+            'statut-inscription call-to-action call-to-action';
+        }
+      }
+    } // End .slide-workshop
+  } // End .card-part-workshop
+
+  .registration-presence {
+    display: inline-flex;
+    margin: 0 0 0px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    font-weight: bold;
+
+    &.presence-ok {
+      color: #00ae14;
+    }
+    &.presence-ko {
+      color: #ea9202;
+    }
+  }
+}
+
+.status-indicator {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .status-symbol {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #404a64;
+    border: 10px solid #272d3a;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg * {
+      stroke: $color-text-white;
+    }
+  }
+  .separator {
+    top: 35px;
+  }
+  p {
+    background-color: #272d3a;
+    text-align: center;
+    font-size: 12px;
+    font-size: 1.2rem;
+    z-index: 1;
+  }
+}
+
+// Si inscrit à un atelier
+.status-registered {
+  .status-indicator {
+    p {
+      color: $color-text-white;
+    }
+    .status-symbol {
+      background: linear-gradient(#00c417, #006c0c);
+      svg * {
+        stroke: $color-text-white;
+      }
+    }
+  }
+}
+
+// En attente de validation ou à reporter
+.status-processing,
+.status-carry-over {
+  .status-indicator {
+    p {
+      color: $color-text-white;
+    }
+    .status-symbol {
+      background: linear-gradient(#ffa803, #c16800);
+      svg * {
+        stroke: $color-text-white;
+      }
+    }
+  }
+}
+
+// Annulé
+.status-canceled {
+  .status-indicator {
+    p {
+      color: $color-text-white;
+    }
+    .status-symbol {
+      background: linear-gradient(#ff0000, #d10000);
+      svg * {
+        stroke: $color-text;
+      }
+    }
+  }
+}
+
+.card-part-customer .workshop-detail:last-of-type p {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .status-indicator {
+    height: 100%;
+    justify-content: center;
+    .separator {
+      width: 1px;
+      height: 100%;
+      top: 0;
+    }
+    p {
+      padding: 0 10px 10px 10px;
+      width: 100px;
+    }
+  }
+}

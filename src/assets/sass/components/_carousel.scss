@@ -1,0 +1,76 @@
+@import '../partials/variable';
+
+.slick-dots {
+  li {
+    &.slick-active {
+      button {
+        &:before {
+          opacity: 1 !important;
+          color: white !important;
+        }
+      }
+    }
+    button {
+      &:before {
+        opacity: 1 !important;
+        color: #3e475a !important;
+      }
+    }
+  }
+}
+
+.vertical-dots {
+  right: 0;
+  list-style: none;
+  display: block;
+  position: absolute;
+  top: 40%;
+  margin-top: -10px;
+  text-align: right;
+  li {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    button {
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: transparent;
+      &:hover,
+      &:focus {
+        outline: none;
+        &:before {
+          opacity: 1;
+        }
+      }
+      &:before {
+        font-family: 'slick';
+        font-size: 30px;
+        line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        content: '•';
+        text-align: center;
+        opacity: 1;
+        color: #3e475a;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+    &.slick-active button:before {
+      opacity: 1;
+      color: white;
+    }
+  }
+}

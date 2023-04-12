@@ -1,0 +1,20 @@
+/* =Form
+-------------------------------------------------------------- */
+@import 'variable';
+
+textarea {
+  resize: none;
+}
+
+.dark-mode {
+  textarea {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+.light-mode {
+  textarea {
+    color: $color-text-white;
+    background-color: rgba(20, 20, 20, 0.75) !important;
+  }
+}

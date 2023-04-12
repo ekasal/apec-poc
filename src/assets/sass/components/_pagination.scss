@@ -1,0 +1,76 @@
+@import '../partials/variable';
+
+nav[aria-label='pagination'] {
+  margin-bottom: 100px;
+}
+
+.pagination {
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  &.center {
+    justify-content: center;
+  }
+  li {
+    a,
+    .page-link {
+      position: relative;
+      display: block;
+      padding: 1rem 1.5rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      color: currentColor;
+      background-color: #272d3a;
+      border: 1px solid #272d3a;
+      &:hover {
+        z-index: 2;
+        color: $color-text-white;
+        text-decoration: none;
+        background-color: $color-text-light;
+        border-color: $color-text-light;
+      }
+    }
+    &.active {
+      a,
+      .page-link {
+        z-index: 3;
+        color: $color-text-white;
+        background-color: $bg-btn;
+        border-color: $bg-btn;
+      }
+    }
+    &.disabled {
+      a,
+      .page-link {
+        pointer-events: none;
+        cursor: auto;
+        background-color: transparent;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.light-mode .pagination {
+  li {
+    a,
+    .page-link {
+      background-color: $bgcolor-input-light;
+      border: 1px solid $bgcolor-input-light;
+      &:hover {
+        background-color: #aeb7cb;
+        border-color: #aeb7cb;
+      }
+    }
+    &.active {
+      a,
+      .page-link {
+        color: $color-text-white;
+        background-color: $item-active-light;
+        border-color: $item-active-light;
+      }
+    }
+  }
+}

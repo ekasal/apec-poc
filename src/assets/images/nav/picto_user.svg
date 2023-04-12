@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="21" height="21" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="picto_user" clip-path="url(#clip-path)">
+    <circle id="Ellipse_4" data-name="Ellipse 4" cx="10" cy="10" r="10" transform="translate(0.5 0.5)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7569" data-name="Tracé 7569" d="M401.465,378.725l-3.19-1.278a1.114,1.114,0,0,1-.81-.953v-.769c1.5-.454,1.585-1.823,1.585-3a2.5,2.5,0,0,0,.586-.5,6.551,6.551,0,0,0,.489-2.04l-.66-.46V368.4a4.014,4.014,0,0,0-8,0v1.32l-.659.46a6.551,6.551,0,0,0,.489,2.04,2.5,2.5,0,0,0,.585.5c0,1.177.085,2.546,1.585,3v.769a1.115,1.115,0,0,1-.809.953l-3.191,1.278" transform="translate(-384.965 -361.725)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

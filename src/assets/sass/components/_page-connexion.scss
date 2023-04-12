@@ -1,0 +1,242 @@
+@import '../partials/variable';
+
+.choice-radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 30px;
+  border: 1px solid #656976;
+  padding: 0px 8px;
+  border-radius: 5px;
+  width: 160px;
+
+  &,
+  &:active {
+    color: $item-hover;
+  }
+
+  &:hover {
+    border-color: currentColor;
+  }
+
+  span {
+    padding-left: 30px;
+    height: 24px;
+    display: inline-block;
+    line-height: 24px;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      border: 1px solid currentColor;
+      display: inline-block;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &.active {
+    border: 1px solid #fff;
+    color: $color-text-white;
+
+    span {
+      padding-left: 30px;
+
+      &:after {
+        content: '';
+        width: 14px;
+        height: 14px;
+        background-color: currentColor;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+    svg {
+      stroke: #fff;
+    }
+  }
+}
+
+.wrapper {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    &.page-connexion {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      transform: none;
+      padding-top: 0;
+      margin-top: 0;
+      grid-template-columns: 1fr 3fr 1fr;
+
+      .logo-apec {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 60px;
+        height: 50px;
+      }
+
+      .btn-connexion {
+        background-color: $bg-btn;
+        color: $color-text;
+        font-size: 1.3rem;
+        padding: 8px 30px;
+        border-radius: 5px;
+      }
+    }
+
+    .page-connexion--side {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 20px;
+    }
+
+    .page-connexion--center {
+      padding: 30px;
+
+      .zone-form {
+        width: 470px;
+        height: 470px;
+        margin: 0 auto;
+        padding: 40px 50px 22px;
+        background: #565f77;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-bottom: 40px;
+
+        .zone-form--bloc {
+          width: 100%;
+          padding: 20px;
+
+          .floating-label {
+            .floating-input {
+              &:-webkit-autofill,
+              &:-webkit-autofill:hover,
+              &:-webkit-autofill:focus {
+                border: 0px;
+                transition: background-color 5000s ease-in-out 0s;
+                color: #fff !important;
+                -webkit-text-fill-color: #fff !important;
+              }
+            }
+          }
+        }
+
+        .choice-interface {
+          display: flex;
+          margin-bottom: 30px;
+
+          .new-interface {
+            color: darken($color-text, 10%);
+            margin-right: 30px;
+          }
+        }
+
+        .connexion-compte-apec {
+          margin-bottom: 30px;
+        }
+      }
+
+      .floating-label {
+        margin-bottom: 40px;
+
+        label {
+          color: $dark-mode;
+        }
+      }
+
+      .floating-input-registration-manager {
+        color: darken($color-generic-dark, 10%);
+      }
+
+      .zone-theme {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .zone-theme--mode {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .zone-theme--info {
+        .stroph-info {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
+          .icon-info {
+            margin-right: 12px;
+            fill: currentColor;
+            stroke: none;
+          }
+        }
+      }
+
+      .knowledge-info {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.light-mode {
+  .choice-radio {
+    color: $col-bleu;
+
+    &.active {
+      border-color: $color-black;
+      color: $color-black;
+
+      svg {
+        stroke: $color-black;
+      }
+    }
+  }
+
+  .wrapper {
+    main {
+      .page-connexion--center {
+        .zone-form {
+          .connexion-compte-apec {
+            a {
+              color: $color-text;
+            }
+          }
+        }
+
+        .floating-label {
+          .floating-input {
+            color: #fff;
+            font-weight: 400;
+
+            &.floating-input-registration-connexion {
+              background: url('/assets/images/form/icon_registration-manager-locked.svg') no-repeat center right;
+            }
+
+            &.floating-input-locked {
+              background: url('/assets/images/form/icon_padlock-locked.svg') no-repeat center right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+@import '../partials/variable';
+
+@import 'registration-item';
+
+.tile-search__back {
+  width: 1000px;
+  margin: 0 auto 15px auto;
+}
+
+.tile-search {
+  width: 1000px;
+  margin: 0 auto 100px auto;
+
+  .back-link {
+    margin-bottom: 15px;
+  }
+
+  .tile-search-container {
+    background-color: #272d3a;
+    border-radius: 5px;
+    padding-bottom: 50px;
+  }
+
+  .title-search-head {
+    padding: 30px;
+
+    h1 {
+      text-align: center;
+
+      .workshop-title {
+        display: block;
+        color: $color-text-new;
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+
+    .filters-grid {
+      width: fit-content;
+      margin: 30px auto;
+      display: grid;
+      grid-gap: 40px 100px;
+      grid-template-columns: 360px 360px;
+
+      &.filters-grid-workshop {
+        grid-template-areas:
+          'service service'
+          'region site'
+          'animator webconf';
+
+        .filter-group-service {
+          grid-area: service;
+        }
+
+        .filter-group-region {
+          grid-area: region;
+        }
+
+        .filter-group-apec-center {
+          grid-area: site;
+        }
+
+        .filter-group-animator {
+          grid-area: animator;
+        }
+
+        .filter-group-webconf {
+          grid-area: webconf;
+          margin: 0;
+        }
+      }
+
+      .dropdown-toggle::after {
+        display: none;
+      }
+
+      .floating-label {
+        margin: 0;
+      }
+
+      .filter-option {
+        span {
+          font-size: 14px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  // End tile-search-head
+
+  .tile-search-scan {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    .tile-search-scan-container {
+      width: 800px;
+      height: 250px;
+      margin: 0 auto 30px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        margin: 0 0 10px 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      &.idf {
+        background: url('/assets/images/common/map-idf.svg') no-repeat center center;
+      }
+
+      &.bretagne {
+        background: url('/assets/images/common/map-bretagne.svg') no-repeat center center;
+      }
+
+      &.pays-de-la-loire {
+        background: url('/assets/images/common/map-pays-de-la-loire.svg') no-repeat center center;
+      }
+    }
+  }
+
+  .title-search-results {
+    border-top: 1px solid #3f485d;
+    padding: 0 0 30px 0;
+    display: block;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  // End .tile-search-results
+
+  nav[aria-label='pagination'] {
+    margin-bottom: 0;
+  }
+
+  .btn-search {
+    width: fit-content;
+  }
+
+  .title-workshop {
+    font-size: 18px;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 15px;
+    // border-bottom: 1px solid #3F485D;
+    color: $color-text-white;
+    font-weight: bold;
+  }
+}
+
+// End .tile-search

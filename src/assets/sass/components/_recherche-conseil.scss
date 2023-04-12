@@ -1,0 +1,38 @@
+@import '../partials/variable';
+
+.recherche-conseil {
+  .selecteur-affichage-btn {
+    &.active,
+    &:hover,
+    &:focus {
+      color: $color-text-white;
+    }
+  }
+
+  table {
+    dd {
+      word-break: initial;
+    }
+  }
+
+  .filters-content-container {
+    width: inherit;
+    padding: 20px;
+  }
+
+  .display-items {
+    display: flex;
+    justify-content: space-between;
+    .sort-options {
+      margin: 15px 0;
+    }
+
+    .sort-options li {
+      padding: 8px 10px;
+    }
+  }
+
+  nav[aria-label='pagination'] {
+    margin-bottom: 0;
+  }
+}

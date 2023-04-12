@@ -1,0 +1,159 @@
+@import '../partials/variable';
+@import 'card-workshop';
+@import 'card-registration';
+@import 'workshop-page';
+@import 'tile-search';
+@import 'pagination';
+@import 'carousel';
+@import 'tabs';
+@import 'accordion';
+@import 'table';
+@import 'dropdown-actions';
+
+.ateliers {
+  main {
+    &.home-ateliers {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+
+    #volet-workshop,
+    #volet-registrations {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-position-x: center;
+    }
+
+    #volet-workshop {
+      height: calc(50vh + 30px);
+      padding-top: 60px;
+      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background-size: cover;
+      @media (min-width: 768px) {
+        height: 100vh;
+        padding-top: 0;
+      }
+    }
+
+    #volet-registrations {
+      height: calc(50vh - 30px);
+      background: linear-gradient(rgba(32, 36, 47, 0.9), rgba(26, 29, 38, 0.87)), url('/assets/images/ateliers/bg-registrations.jpg') no-repeat;
+      background-size: cover;
+      @media (min-width: 768px) {
+        height: 100vh;
+      }
+    }
+
+    &.create-workshop {
+      height: calc(100vh + 30px);
+      padding-top: 60px;
+      background: linear-gradient(rgba(26, 29, 38, 0.9), rgba(26, 29, 38, 0.9)), url('/assets/images/ateliers/bg-workshop.jpg') no-repeat;
+      background-size: cover;
+      @media (min-width: 768px) {
+        height: 100vh;
+        padding-top: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .block-center {
+        width: 730px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .floating-form {
+          width: 100%;
+        }
+
+        .dropdown-toggle::after {
+          border: none;
+        }
+
+        @media screen and (min-width: 992px) {
+          .floating-form {
+            width: 730px;
+          }
+        }
+      }
+    }
+  }
+
+  .registration-detail {
+    margin-bottom: 15px;
+
+    &.registration-detail-id {
+      .visit-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+
+        .avatar-customer {
+          margin-right: 15px;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+
+        li {
+          &.avatar-customer {
+            text-align: center;
+            margin-bottom: 10px;
+            align-self: center;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-flow: column wrap !important;
+
+          li {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .customer-name {
+      font-size: 20px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .registration-date {
+      font-size: 12px;
+      font-size: 1.2rem;
+      text-align: center;
+      color: $color-text-white;
+    }
+
+    .company-name {
+      font-weight: 600;
+      color: $color-text-white;
+      text-align: center;
+    }
+
+    .job-title {
+      color: $color-text-white;
+      text-align: center;
+    }
+  }
+}
+
+// Fin .ateliers

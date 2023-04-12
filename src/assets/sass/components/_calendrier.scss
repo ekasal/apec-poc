@@ -1,0 +1,17 @@
+apec-calendar {
+  font-size: 11px;
+  color: black;
+}
+
+.cal-day-selected,
+.cal-day-selected:hover {
+  background-color: blue !important;
+}
+
+mwl-calendar-month-view {
+  width: 200px;
+}
+
+.cal-event-title {
+  color: black;
+}

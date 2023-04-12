@@ -1,0 +1,117 @@
+.push-offres-button {
+  width: 20rem;
+  height: 10rem;
+}
+.list-horizontal.flex-wrap > .push-offres-button {
+  margin-bottom: 2rem;
+}
+.card-recherche-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nombre-de-resultats {
+  font-size: 1.6rem;
+}
+.header-actions {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1rem;
+}
+.header-offres-resultats-recherche-col-left {
+  flex-basis: 40rem;
+}
+.form-item-lieu-du-poste {
+  width: 100%;
+}
+.list-ancres {
+  font-size: 1.2rem;
+}
+.header-offres-detail-col-left {
+  flex-basis: 40rem;
+}
+.offres-detail-title-wrapper {
+  text-align: center;
+}
+.offres-detail-title {
+  color: #8ca3d5;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.offres-detail-subtitle {
+  color: $color-text-white;
+}
+.offres-detail-card-col-left {
+  flex-basis: 50rem;
+}
+#selectedLieuMaster {
+  max-width: 15rem;
+}
+.panel-body {
+  padding: 1rem 0;
+  label {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  ul {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+  }
+  ul > li {
+    text-indent: -0.6em;
+    padding-left: 1.4em;
+  }
+  ul > li::before {
+    content: '';
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background-color: currentColor;
+    position: relative;
+    left: -0.8em;
+  }
+  ul > li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.bloc-info {
+  .line-info__center {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  .label-info,
+  .label-value {
+    flex: 1;
+  }
+  .label-info {
+    margin-right: 3rem;
+    text-align: right;
+  }
+  .label-value {
+    color: $color-text-white;
+    a {
+      color: currentColor;
+    }
+    span {
+      display: block;
+      & + .button {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+.glyphicon-remove {
+  cursor: pointer;
+  svg {
+    vertical-align: middle;
+  }
+}
+
+.logo-entreprise {
+  max-width: 10rem;
+  max-height: 10rem;
+}

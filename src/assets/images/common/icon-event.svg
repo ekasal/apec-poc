@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30.05 29.15">
+  <g class="b" id="e35d6c38-4c33-4a52-90f0-d9b0168e5c66" data-name="calendier">
+
+    <path d="M.5,8h29a0,0,0,0,1,0,0V27.4a1.25,1.25,0,0,1-1.25,1.25H1.75A1.25,1.25,0,0,1,.5,27.4V8a0,0,0,0,1,0,0Z"
+          style="fill: none;stroke:#b8becc;stroke-miterlimit:10"/>
+    <path d="M1.75,2.52H28.3a1.25,1.25,0,0,1,1.25,1.25V8.3a0,0,0,0,1,0,0H.5a0,0,0,0,1,0,0V3.77A1.25,1.25,0,0,1,1.75,2.52Z"
+          style="fill:none;stroke:#b8becc;stroke-miterlimit:10"/>
+    <line x1="5.96" y1="0.5" x2="5.96" y2="4.55" style="fill:none;stroke:#b8becc;stroke-linecap:round;stroke-miterlimit:10"/>
+    <line x1="12.3" y1="0.5" x2="12.3" y2="4.55" style="fill:none;stroke:#b8becc;stroke-linecap:round;stroke-miterlimit:10"/>
+    <line x1="18.02" y1="0.5" x2="18.02" y2="4.55" style="fill:none;stroke:#b8becc;stroke-linecap:round;stroke-miterlimit:10"/>
+    <line x1="24.06" y1="0.5" x2="24.06" y2="4.55" style="fill:none;stroke:#b8becc;stroke-linecap:round;stroke-miterlimit:10"/>
+  </g>
+  <g id="b49b65c1-b859-47d0-8fc5-d0eb3dc2672d" data-name="etoile">
+    <polygon points="14.79 12.58 16.56 16.16 20.5 16.73 17.65 19.52 18.32 23.45 14.79 21.59 11.26 23.45 11.94 19.52 9.08 16.73 13.03 16.16 14.79 12.58"
+             transform="translate(0,0.5)"       style="fill:none;stroke:#b8becc;stroke-miterlimit:10"/>
+  </g>
+</svg>

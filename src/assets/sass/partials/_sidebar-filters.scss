@@ -1,0 +1,60 @@
+@import 'variable';
+
+.sidebar-filters {
+  width: 320px;
+  min-height: 100%;
+  background-color: #343c4d;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-shadow: 5px 0 15px 5px #171c26;
+  z-index: 4;
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99), opacity 0.5s ease-in-out;
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99), opacity 0.5s ease-in-out;
+  -ms-transition: -ms-transform 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99), opacity 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99), opacity 0.5s ease-in-out;
+  transition: transform 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99), opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+
+  &.push-open {
+    transform: translate3d(0%, 0, 0);
+    -webkit-transform: translate3d(0%, 0, 0);
+    -moz-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+
+  .filters-content-container {
+    position: absolute;
+    height: calc(100% - 110px);
+    width: 100%;
+    overflow-y: scroll;
+    padding: 15px;
+  }
+
+  .filter-group {
+    margin-bottom: 50px;
+  }
+
+  .btn-close {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 50px 0;
+    padding: 0;
+  }
+
+  .btn-filter {
+    position: absolute;
+    bottom: 25px;
+  }
+}

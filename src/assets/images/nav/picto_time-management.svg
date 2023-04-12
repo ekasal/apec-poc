@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="25" height="25" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="picto_time-management" clip-path="url(#clip-path)">
+    <path id="Tracé_8079" data-name="Tracé 8079" d="M695.309,272.406l-1.972-.492a9.917,9.917,0,0,0-1.163-2.685l1.06-1.445a.5.5,0,0,0,0-.707l-2.122-2.122a.5.5,0,0,0-.707,0l-1.446,1.06a9.927,9.927,0,0,0-3-1.245L685.688,263a.5.5,0,0,0-.5-.5h-3a.5.5,0,0,0-.5.5l-.273,1.769a9.937,9.937,0,0,0-3,1.245l-1.446-1.06a.5.5,0,0,0-.707,0l-2.121,2.122a.5.5,0,0,0,0,.707l1.06,1.445a9.918,9.918,0,0,0-1.164,2.685l-1.972.492a.5.5,0,0,0-.378.486v3.219a.5.5,0,0,0,.378.485l1.972.493a9.911,9.911,0,0,0,1.164,2.684l-1.06,1.446a.5.5,0,0,0,0,.707l2.121,2.121a.5.5,0,0,0,.707,0l1.446-1.06a9.912,9.912,0,0,0,3,1.245l.273,1.769a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5l.272-1.769a9.919,9.919,0,0,0,3-1.245l1.445,1.06a.5.5,0,0,0,.707,0l2.122-2.121a.5.5,0,0,0,0-.707l-1.06-1.446a9.911,9.911,0,0,0,1.163-2.684l1.972-.493a.5.5,0,0,0,.379-.485v-3.219A.5.5,0,0,0,695.309,272.406Z" transform="translate(-671.188 -262.001)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <circle id="Ellipse_49" data-name="Ellipse 49" cx="7.5" cy="7.5" r="7.5" transform="translate(5 5)" fill="none" stroke="#b8becc" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8080" data-name="Tracé 8080" d="M684.488,270.551v5.5h-4" transform="translate(-671.188 -262.001)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

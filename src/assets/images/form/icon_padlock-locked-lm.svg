@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12.243" height="17" viewBox="0 0 12.243 17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #637293;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_34327" data-name="Groupe 34327" transform="translate(-955.5 -1047.12)">
+    <path id="Rectangle_138" data-name="Rectangle 138" class="cls-1" d="M0,0H11.243a0,0,0,0,1,0,0V7.408A2.538,2.538,0,0,1,8.705,9.946H2.538A2.538,2.538,0,0,1,0,7.408V0A0,0,0,0,1,0,0Z" transform="translate(956 1053.674)"/>
+    <path id="Tracé_7842" data-name="Tracé 7842" class="cls-1" d="M957.73,1053.674v-2.162a3.9,3.9,0,0,1,3.892-3.892h0a3.9,3.9,0,0,1,3.892,3.892v2.162"/>
+    <path id="Tracé_7843" data-name="Tracé 7843" class="cls-1" d="M960.757,1058.527v1.634a.865.865,0,0,0,1.729,0v-1.634a1.3,1.3,0,1,0-1.729,0Z"/>
+  </g>
+</svg>

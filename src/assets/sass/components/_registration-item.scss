@@ -1,0 +1,172 @@
+@import '../partials/variable';
+
+.registration-item {
+  display: grid;
+  grid-gap: 0 10px;
+  border-bottom: 1px solid $col-G-d;
+
+  .btn {
+    padding: 8px 12px;
+  }
+  &.registration-item-cadre,
+  &.registration-item-legende-cadre {
+    grid-template-columns: 90px 220px 270px 280px 90px;
+    grid-template-areas:
+      'date name site manager select'
+      'button button button button button';
+    .registration-selection {
+      grid-area: select;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+    }
+    .registration-date {
+      grid-area: date;
+      padding: 15px;
+    }
+    .registration-name {
+      grid-area: name;
+      padding: 15px;
+    }
+    .registration-site {
+      grid-area: site;
+      padding: 15px;
+    }
+    .registration-manager {
+      grid-area: manager;
+      padding: 15px;
+    }
+    .btn-workshop-register {
+      grid-area: button;
+      display: none;
+    }
+  } // End .registration-item-cadres
+
+  &.registration-item-interlocuteur,
+  &.registration-item-legende-interlocuteur {
+    grid-template-columns: 90px 220px 270px 280px 90px;
+    grid-template-areas:
+      'date company site manager select'
+      'button button button button button';
+    .registration-selection {
+      grid-area: select;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+    }
+    .registration-date {
+      grid-area: date;
+      padding: 15px;
+    }
+    .registration-company {
+      grid-area: company;
+      padding: 15px;
+    }
+    .registration-site {
+      grid-area: site;
+      padding: 15px;
+    }
+    .registration-manager {
+      grid-area: manager;
+      padding: 15px;
+    }
+    .btn-workshop-register {
+      grid-area: button;
+      display: none;
+    }
+  } // End .registration-item-interlocuteur
+
+  &.registration-item-workshop,
+  &.registration-item-legende-workshop {
+    grid-template-columns: 40px 110px 170px 200px 110px 90px 100px 90px;
+    grid-template-areas:
+      'select session site animator available confirmed status publication'
+      'button button button button button button button button';
+
+    & * {
+      font-size: 14px;
+      font-size: 1.4rem;
+    }
+
+    .registration-selection {
+      grid-area: select;
+      padding: 15px 0;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+    }
+    .registration-session {
+      grid-area: session;
+      padding: 15px 0;
+    }
+    .registration-apec-center {
+      grid-area: site;
+      padding: 15px 0;
+    }
+    .registration-animator {
+      grid-area: animator;
+      padding: 15px 0;
+    }
+    .registration-number-available {
+      grid-area: available;
+      padding: 15px 0;
+    }
+    .registration-number-confirmed {
+      grid-area: confirmed;
+      padding: 15px 0;
+      word-break: break-word;
+    }
+    .registration-status {
+      grid-area: status;
+      padding: 15px 0;
+    }
+    .registration-publish {
+      grid-area: publication;
+      padding: 15px 0;
+    }
+    .btn-workshop-register {
+      grid-area: button;
+      display: none;
+    }
+  } // End .registration-item-cadres
+
+  &:last-of-type {
+    margin-bottom: 50px;
+  }
+
+  &:hover {
+    background: transparentize($color-text-dark, 0.95);
+  }
+
+  &.item-selected {
+    background-color: $col-bleu;
+    .btn-workshop-register {
+      display: block;
+    }
+    .registration-date ul li,
+    .registration-name,
+    .registration-site,
+    .registration-manager,
+    .registration-company,
+    .registration-session,
+    .registration-apec-center,
+    .registration-animator,
+    .registration-number-available,
+    .registration-number-confirmed,
+    .registration-status,
+    .registration-publish {
+      font-weight: bold;
+      color: $color-text-white;
+    }
+  }
+
+  .btn-workshop-register {
+    width: fit-content;
+    margin: 0 auto 15px auto;
+  }
+  .inverse-order {
+    justify-content: flex-start;
+  }
+} // End .registration-item

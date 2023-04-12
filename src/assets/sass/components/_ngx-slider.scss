@@ -1,0 +1,48 @@
+$color-bubble: #6b7b9a;
+$slider-max-width: 300px;
+
+.custom-ngx-slider {
+  max-width: $slider-max-width;
+  margin-top: 2rem;
+
+  .ngx-slider {
+    .ngx-slider-bubble {
+      bottom: 18px;
+      color: $color-bubble;
+    }
+    .ngx-slider-pointer {
+      &:after {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 2px;
+        top: 15px;
+        left: 9px;
+      }
+      &.ngx-slider-active {
+        &:after {
+          background-color: $bgcolor-white;
+        }
+      }
+    }
+    .ngx-slider-pointer-max {
+      &:before {
+        content: '';
+        background-color: $bgcolor-white;
+        position: absolute;
+        width: 2px;
+        height: 14px;
+        top: 9px;
+        left: 15px;
+      }
+    }
+  }
+}
+
+.light-mode {
+  .custom-ngx-slider {
+    .ngx-slider-bubble {
+      color: darken($color-bubble, 20%);
+    }
+  }
+}

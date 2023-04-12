@@ -1,0 +1,428 @@
+@import '../partials/variable';
+
+.workshop-list {
+  display: grid;
+  grid-gap: 75px;
+  margin-bottom: 100px;
+
+  @media screen and (min-width: 1680px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 75px 25px;
+  }
+  @media screen and (min-width: 1920px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card-workshop {
+  position: relative;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+
+  &:hover {
+    .card-workshop--hover {
+      opacity: 1;
+    }
+  }
+
+  .card-workshop-inner {
+    padding: 15px;
+    padding-bottom: 60px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+      'nom nom nom'
+      'lieu lieu confirmes'
+      'date date attente'
+      'statut statut disponibles'
+      'responsable responsable responsable'
+      'publication publication publication'
+      'commentaire commentaire commentaire';
+  }
+
+  // Fin .card-workshop-inner
+
+  .card-title {
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-weight: normal;
+    color: $color-text-white;
+    margin-bottom: 20px;
+    grid-area: nom;
+  }
+
+  .btn-add-registration {
+    position: absolute;
+    bottom: -50px;
+    right: calc(50% - 50px);
+  }
+
+  // Fin mobile-first
+
+  .card-workshop--hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(32, 35, 46, 0.4);
+    border-radius: 5px;
+    border: 1px solid $color-text-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+
+    .card-workshop-inner {
+      padding: 25px;
+      grid-template-columns: 1fr 1fr 120px;
+      grid-gap: 10px 15px;
+      grid-template-areas:
+        'nom nom nom'
+        'lieu date confirmes'
+        'responsable statut attente'
+        'publication vide disponibles'
+        '. . modalite'
+        'commentaire commentaire commentaire';
+    }
+  }
+  // End (min-width: 768px)
+
+  @media screen and (min-width: 992px) {
+    padding-bottom: 0;
+    width: calc(100% - 40px);
+
+    .card-workshop-inner {
+      padding-right: 70px;
+      grid-template-columns: 1fr 1fr 120px 1fr;
+      grid-template-areas:
+        'nom nom nom nom'
+        'lieu responsable confirmes commentaire'
+        'date statut attente commentaire'
+        'vide publication disponibles commentaire';
+    }
+
+    .btn-add-registration {
+      bottom: calc(50% - 50px);
+      right: calc(0% - 50px);
+    }
+  }
+  // End (min-width: 992px)
+
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+  }
+  // End (min-width: 1200px)
+
+  @media screen and (min-width: 1680px) {
+    width: calc(100% - 60px);
+    .card-workshop-inner {
+      grid-template-columns: 1fr 1fr 120px;
+      grid-template-areas:
+        'nom nom nom'
+        'lieu responsable confirmes'
+        'date statut attente'
+        'vide publication disponibles'
+        'commentaire commentaire commentaire';
+    }
+
+    .btn-add-registration {
+      bottom: calc(50% - 50px);
+      right: calc(0% - 50px);
+    }
+  }
+  // End (min-width: 1680px)
+
+  /********** TRI COMMUN **********/
+  &.card-workshop--sorted {
+    @media screen and (min-width: 768px) {
+      .card-workshop-inner {
+        height: 100%;
+
+        figure {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 15px;
+        }
+
+        p {
+          strong {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            > span {
+              align-self: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /********** TRI PAR DATE **********/
+  &.card-workshop-date {
+    .card-workshop-inner {
+      grid-template-areas:
+        'date date date'
+        'nom nom nom'
+        'lieu lieu confirmes'
+        'statut statut attente'
+        'responsable responsable disponibles'
+        'responsable responsable modalite'
+        'publication publication publication'
+        'commentaire commentaire commentaire';
+
+      .workshop-detail-date {
+        border-bottom: 1px solid $tr-border-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .workshop-detail-title {
+          display: none;
+
+          .workshop-hour {
+            color: red !important;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .card-workshop-inner {
+        grid-template-areas:
+          'date nom nom nom'
+          'date lieu statut confirmes'
+          'date commentaire responsable disponibles'
+          'date commentaire publication attente'
+          'date commentaire publication modalite';
+
+        .workshop-detail-date {
+          border-bottom: none;
+          border-right: 1px solid $tr-border-color;
+          flex-direction: column;
+          justify-content: center;
+
+          .workshop-day {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      .card-workshop-inner .workshop-detail-date figure img {
+        width: 56px;
+        height: 60px;
+      }
+    }
+  }
+
+  /********** TRI PAR CENTRE APEC **********/
+  &.card-workshop-apec-center {
+    .card-workshop-inner {
+      grid-template-areas:
+        'lieu lieu lieu'
+        'nom nom nom'
+        'date date confirmes'
+        'statut statut attente'
+        'responsable responsable disponibles'
+        'publication publication publication'
+        'commentaire commentaire commentaire';
+
+      .workshop-detail-apec-center {
+        border-bottom: 1px solid $tr-border-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .workshop-detail-title {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .card-workshop-inner {
+        grid-template-areas:
+          'lieu nom nom nom'
+          'lieu date statut confirmes'
+          'lieu commentaire publication disponibles'
+          'lieu commentaire responsable attente';
+
+        .workshop-detail-apec-center {
+          border-bottom: none;
+          border-right: 1px solid $tr-border-color;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      .card-workshop-inner .workshop-detail-apec-center figure img {
+        width: 56px;
+        height: 60px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    padding-bottom: 0;
+    width: calc(100% - 40px);
+
+    .card-workshop-inner {
+      padding-right: 70px;
+      grid-template-columns: 1fr 1fr 120px 1fr;
+      grid-template-areas:
+        'nom nom nom nom'
+        'lieu responsable confirmes commentaire'
+        'date statut attente commentaire'
+        'vide publication disponibles commentaire'
+        '.  . modalite .';
+    }
+
+    .btn-add-registration {
+      bottom: calc(50% - 50px);
+      right: calc(0% - 50px);
+    }
+  }
+  // End (min-width: 992px)
+
+  @media screen and (min-width: 1680px) {
+    width: calc(100% - 60px);
+    .card-workshop-inner {
+      grid-template-columns: 1fr 1fr 120px;
+      grid-template-areas:
+        'date nom nom nom'
+        'date lieu statut confirmes'
+        'date commentaire responsable disponibles'
+        'date commentaire publication attente'
+        'date commentaire publication modalite';
+    }
+
+    .workshop-detail-date {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-right: 1px solid $tr-border-color;
+
+      strong {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .btn-add-registration {
+      bottom: calc(50% - 50px);
+      right: calc(0% - 50px);
+    }
+  }
+  // End (min-width: 1680px)
+}
+
+.workshop-hour {
+  margin-left: 10px;
+}
+
+// Fin .card-workshop
+
+.workshop-detail {
+  display: flex;
+
+  &.workshop-detail-apec-center {
+    grid-area: lieu;
+  }
+
+  &.workshop-detail-date {
+    grid-area: date;
+  }
+
+  &.workshop-detail-status {
+    grid-area: statut;
+  }
+
+  &.workshop-detail-subscription-manager {
+    grid-area: responsable;
+  }
+
+  &.workshop-detail-apec-website {
+    grid-area: publication;
+  }
+
+  &.workshop-detail-number-confirmed {
+    grid-area: confirmes;
+  }
+
+  &.workshop-detail-number-processing {
+    grid-area: attente;
+  }
+
+  &.workshop-detail-number-available {
+    grid-area: disponibles;
+  }
+
+  &.workshop-detail-modalite {
+    grid-area: modalite;
+  }
+
+  &.workshop-detail-comment {
+    grid-area: commentaire;
+  }
+
+  figure {
+    margin-right: 10px;
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+
+    strong {
+      color: $color-text-white;
+      font-weight: bold;
+
+      &.number-person {
+        font-size: 20px;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &.workshop-detail-comment {
+    flex-direction: column;
+    align-items: baseline;
+
+    h3 {
+      font-size: 16px;
+      font-size: 1.6rem;
+      color: $color-text-white;
+      margin-bottom: 5px;
+
+      &::before {
+        content: '';
+        background: url('/assets/images/ateliers/icon_comment.svg');
+        background-size: 100%;
+        display: inline-block;
+        width: 21px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+
+    p {
+      font-style: italic;
+      word-break: break-all;
+    }
+  }
+}

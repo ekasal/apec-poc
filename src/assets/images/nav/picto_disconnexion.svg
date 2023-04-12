@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.518" height="21" viewBox="0 0 19.518 21">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="19.518" height="21" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="picto_disconnexion" clip-path="url(#clip-path)">
+    <path id="Tracé_7560" data-name="Tracé 7560" d="M773.885,470.387a9.259,9.259,0,1,1-5.2,0" transform="translate(-761.529 -468.037)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Ligne_34" data-name="Ligne 34" y1="5.926" transform="translate(9.759 0.5)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

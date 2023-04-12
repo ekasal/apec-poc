@@ -1,0 +1,354 @@
+/* =Form
+-------------------------------------------------------------- */
+@import 'variable';
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: $rounded-corner;
+  cursor: pointer;
+  svg {
+    margin-right: 1rem;
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+  svg + span {
+    text-align: left;
+  }
+  &.no-padding {
+    padding: 0;
+  }
+  &[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+.button {
+  @include button-base;
+  background-color: $bg-btn;
+  color: $color-text;
+  border: 1px solid $bg-btn;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]),
+  &:active:not([disabled]) {
+    color: $color-text-negative;
+    background-color: $bgcolor-white;
+  }
+
+  &.button-connexion {
+    padding: 1rem 4rem;
+  }
+}
+.light-mode .button {
+  color: $color-text-white;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]),
+  &:active:not([disabled]) {
+    background-color: $item-active-light;
+    color: $color-text-white;
+  }
+}
+
+.button-negative {
+  @include button-base;
+  background-color: transparent;
+  color: $color-text;
+  border: 1px solid currentColor;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]),
+  &:active:not([disabled]) {
+    background-color: $color-text-white;
+    color: $color-text-dark;
+  }
+}
+.light-mode .button-negative {
+  background-color: transparent;
+  border-color: $color-generic-lm;
+  color: $color-generic-lm;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]),
+  &:active:not([disabled]) {
+    background-color: $color-generic-lm;
+    color: $color-text-white;
+  }
+}
+
+.button-transparent {
+  @include button-base;
+  background-color: transparent;
+  border: none;
+  color: currentColor;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]),
+  &:active:not([disabled]) {
+    color: $color-text-white;
+  }
+}
+.light-mode .button-transparent {
+  &:hover:not([disabled]),
+  &:focus:not([disabled]),
+  &:active:not([disabled]) {
+    color: $color-ancre-hover-lm;
+  }
+}
+
+.btn {
+  background-color: $bg-btn;
+  text-align: center;
+  color: $color-text;
+  font-size: 14px;
+  font-size: 1.4rem;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: $rounded-corner;
+  border: 1px solid $bg-btn;
+  cursor: pointer;
+  svg {
+    margin-right: 10px;
+  }
+  figure {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+      * {
+        stroke: $color-text;
+      }
+    }
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-text-negative;
+    background-color: white;
+    figure {
+      svg * {
+        stroke: $color-text-negative;
+      }
+    }
+  }
+  &.active {
+    figure {
+      svg * {
+        stroke: $color-text-white;
+      }
+    }
+  }
+
+  &.non-active {
+    background-color: #272d3a;
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  &.no-padding {
+    padding: 0;
+  }
+  .underline {
+    text-decoration: underline;
+  }
+}
+
+.btn-gen {
+  background-color: $bg-btn;
+  text-align: center;
+  color: $color-text;
+  font-size: 14px;
+  font-size: 1.4rem;
+  padding: 15px 20px;
+  border-radius: $rounded-corner;
+  border: none;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-text-negative;
+    background-color: white;
+  }
+}
+
+.btn.btn-negative {
+  background-color: transparent;
+  border: 1px solid white;
+  color: $color-text-white;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-text-white;
+    color: $color-text-dark;
+  }
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: none;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+    color: $color-text-white;
+  }
+}
+
+.btn-add-registration {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-btn;
+  color: $color-text-light;
+  border: 20px solid #20232e;
+  transition: border 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  svg {
+    width: 20px;
+    height: 40px;
+    margin: 0;
+    transition: width 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99), height 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99), transform 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    * {
+      stroke: $color-text-light;
+    }
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    svg {
+      width: 15px;
+      height: 30px;
+      transform: translateY(-10px);
+      * {
+        stroke: $color-text-light;
+      }
+    }
+    &::after {
+      content: 'Ajouter une inscription';
+      color: $color-text-light;
+      font-size: 10px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.btn-search {
+  width: 150px;
+}
+
+.btn-filters {
+  padding: 5px 10px;
+  border: none;
+  background-color: $bg-btn;
+  span {
+    display: none;
+    margin-left: 0;
+    @media screen and (min-width: 768px) {
+      display: block;
+      margin-right: 10px;
+    }
+  }
+}
+
+.btn-sort-others {
+  svg {
+    margin: 0;
+    * {
+      stroke: none;
+      fill: $color-text-light;
+    }
+  }
+  &:hover {
+    svg * {
+      stroke: none;
+      fill: $color-text-white;
+    }
+  }
+}
+
+.btn-secondary {
+  padding: 10px 15px;
+}
+
+.btn-export-excel,
+.btn-filters {
+  svg {
+    margin: 0;
+  }
+  span {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    svg {
+      margin-right: 10px;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+
+.btn-edit-workshop {
+  display: inline-block;
+}
+
+.btn-save,
+.btn-unlock-workshop {
+  display: flex;
+  flex-direction: column;
+  svg {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.btn-reset {
+  width: fit-content;
+  padding: 0;
+}
+
+.btn-sort-order {
+  background-color: transparent;
+  border: none;
+  padding: 2px 5px;
+}
+
+.back-link {
+  display: block;
+  svg {
+    margin-right: 5px;
+  }
+}
+
+.bloc-button__submit {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-neutral {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  color: currentColor;
+}
+
+.btn.btn-cancelling,
+.btn.btn-cancelling:hover {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: $btn-cancelling-color;
+  color: $color-text-white;
+  border: 1px solid $btn-cancelling-color;
+}

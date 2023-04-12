@@ -54,7 +54,7 @@
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "browserTarget": "apecbook:production"
+            "browserTarget": "apecbook:build:production"
           }
         }
       }

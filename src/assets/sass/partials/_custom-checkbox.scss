@@ -1,0 +1,96 @@
+/* =Form
+-------------------------------------------------------------- */
+@import 'variable';
+
+/* Personnalisation des checkboxes */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-size: 1.4rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &.no-padding {
+    padding: 0;
+  }
+  &.horizontal {
+    display: flex;
+    margin-left: 12px;
+  }
+  /* Cache les checkboxes natives du navigateur */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    /* Quand un checkbox est coché */
+    &:checked ~ .checkmark {
+      background-color: #404a64;
+      border: 1px solid #404a64;
+    }
+
+    &:disabled ~ .checkmark {
+      opacity: 0.3;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+    /* Montre l'indication quand le checkbox est coché */
+    &:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  /* Création du checkbox personnalisé */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border: 1px solid #b8becc;
+    border-radius: 5px;
+    /* Créé l'indicateur quand le checkbox n'est pas coché */
+    &::after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+    /* Personnalisation de l'indicateur */
+    &::after {
+      left: 6px;
+      top: 0;
+      width: 7px;
+      height: 14px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  /* Au rollover */
+  &:hover {
+    input ~ .checkmark {
+      background-color: transparent;
+      border-color: $color-text-white;
+    }
+  }
+}
+.list-horizontal .custom-checkbox {
+  margin-bottom: 0;
+}
+.dark-mode {
+  .custom-checkbox {
+    &:hover {
+      color: $color-text-white;
+    }
+  }
+}

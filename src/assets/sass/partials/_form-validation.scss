@@ -1,0 +1,157 @@
+/* =Form
+-------------------------------------------------------------- */
+@import 'variable';
+
+.txt-error {
+  display: none;
+}
+
+.txt-error-minmax {
+  display: none;
+}
+
+.fork-values-participant {
+  flex-wrap: wrap;
+}
+
+.form-validation {
+  .floating-label .floating-input,
+  .floating-label .floating-select,
+  .floating-label textarea,
+  .floating-textarea .floating-input,
+  .floating-textarea .floating-select,
+  .floating-textarea textarea:valid,
+  .filter-group,
+  .floating-textarea {
+    border-color: $color-text-validation;
+  }
+
+  .floating-label .floating-input:valid & not .input-error,
+  .floating-label .floating-select:valid,
+  .floating-label textarea:valid,
+  .floating-textarea .floating-input:valid,
+  .floating-textarea .floating-select:valid,
+  .floating-textarea textarea:valid,
+  .filter-group:valid,
+  .floating-textarea:valid {
+    border-color: $color-text-validation;
+  }
+
+  .floating-label .floating-input:invalid,
+    .floating-label .floating-select:invalid,
+    .filter-group .multiselect-native-select .floating-select:invalid,
+    .floating-label textarea:invalid,
+    .floating-textarea .floating-input:invalid,
+    .floating-textarea .floating-select:invalid,
+    .floating-textarea textarea:invalid,
+    //.filter-group:invalid,
+    .floating-label  .input-error,
+    .floating-textarea:invalid {
+    border-color: $color-text-error;
+    ~ .txt-error {
+      color: $color-text-error;
+      display: block;
+      p {
+        color: $color-text-error;
+        margin-top: 5px;
+        font-size: 12px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .floating-label {
+    &.input-error {
+      ~ .txt-error-minmax {
+        display: block;
+        width: 100%;
+        p {
+          color: $color-text-error;
+          margin-top: 5px;
+          font-size: 12px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .filter-group {
+    &.error-input {
+      border-bottom: 1px solid $color-text-error;
+
+      .txt-error {
+        color: $color-text-error;
+        display: block;
+        position: relative;
+        top: 10px;
+        p {
+          color: $color-text-error;
+          margin-top: 5px;
+          font-size: 12px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &.input-valid {
+      border-bottom: 1px solid $color-text-validation;
+    }
+  }
+} // End .form-validation
+
+.floating-label {
+  &.input-error {
+    .floating-input {
+      border-bottom: 1px solid $color-text-error;
+    }
+    & ~ .txt-error {
+      display: block;
+      p {
+        color: $color-text-error;
+      }
+    }
+  }
+}
+
+.filter-group {
+  &.input-error {
+    border-bottom: 1px solid $color-text-error;
+    .txt-error {
+      display: block;
+      position: relative;
+      top: 10px;
+
+      p {
+        color: $color-text-error;
+      }
+    }
+    .multiselect-native-select {
+      & ~ .txt-error {
+        top: 30px;
+      }
+    }
+  }
+}
+
+.bloc-button__submit {
+  display: flex;
+  justify-content: center;
+  .anchor-submit {
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: $rounded-corner;
+    background-color: #404a64;
+    &.active:hover {
+      background-color: #fff;
+      color: #404a64;
+      svg {
+        .st0 {
+          stroke: #404a64;
+        }
+      }
+    }
+    span {
+      margin-left: 14px;
+    }
+  }
+}

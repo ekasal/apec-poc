@@ -1,0 +1,263 @@
+@import 'variable';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background: rgba($bgcolor-topbar, 1);
+  color: $color-text;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  transition: background 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  padding: 10px 15px 10px 50px;
+  @media (min-width: 1600px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo-apec svg {
+    width: 60px;
+    height: 40px;
+    //display: none;
+    stroke: none;
+    /*
+		@media (min-width: 768px) {
+			display: block;
+		}*/
+  }
+
+  .header-inner {
+    border-bottom: none;
+    width: 100%;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.5s, transform 0.5s;
+    @media (min-width: 1200px) {
+      margin-left: 60px;
+    }
+    .btn-search svg *,
+    .user-nav svg * {
+      stroke: $color-text;
+      fill: transparent;
+    }
+
+    a:hover svg *,
+    a:focus svg *,
+    a:active svg *,
+    button:hover svg *,
+    button:focus svg *,
+    button:active svg * {
+      stroke: #fff;
+    }
+
+    .user-nav {
+      display: flex;
+      align-items: center;
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        .user-panel {
+          position: absolute;
+          top: 60px;
+          right: 15px;
+          background-color: #111724;
+          box-shadow: $shadow;
+          display: none;
+          border-radius: 5px;
+          &.show {
+            display: block;
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 5px;
+            a {
+              svg * {
+                stroke: $color-text;
+                fill: transparent;
+              }
+              &:hover svg * {
+                stroke: $color-text-white;
+                fill: transparent;
+              }
+            }
+            ul {
+              position: relative;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+            }
+          }
+          li {
+            width: 100%;
+          }
+        }
+      }
+
+      li {
+        list-style: none;
+        float: left;
+        a {
+          &.username {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          }
+        }
+        span {
+          margin-right: 5px;
+        }
+        li {
+          margin: 0;
+          &.display-mode {
+            border-top: 1px solid $line-color;
+            border-bottom: 1px solid $line-color;
+            padding: 15px;
+          }
+          a {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            span {
+              margin: 0 0 0 8px;
+            }
+          }
+          li {
+            margin-right: 15px;
+            a {
+              cursor: pointer;
+              padding: 15px 0 0 0;
+            }
+          }
+          &.interface-mode {
+            border-top: 1px solid $line-color;
+            padding: 15px;
+            .choice-interface {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .toggle-switch {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    } // Fin .user-nav
+  } // Fin .header-inner
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .btn-help {
+    margin-right: 25px;
+    svg {
+      margin: 0;
+    }
+  }
+  .notification {
+  }
+  .notification .badge {
+    position: relative;
+    bottom: 10px;
+    right: 30%;
+    font-size: 13px;
+    line-height: 9px;
+    border-radius: 50%;
+    width: 21px;
+    height: 19px;
+    background-color: #ff0000;
+    border: 4px solid #ff0000;
+    color: #ffffff;
+    text-align: center;
+  }
+  .btn-transparent.btn-search {
+    color: $color-text;
+    background-color: transparent;
+    width: auto;
+    margin: 0;
+    padding: 10px 20px;
+    border: none;
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .btn-search span,
+  .wellcome-user {
+    display: none;
+    @media (min-width: 1600px) {
+      display: inline-block;
+    }
+  }
+} // Fin header
+
+.menu-button {
+  cursor: pointer;
+  display: block;
+  width: 25px;
+  height: 20px;
+  top: 23px;
+  left: 15px;
+  position: absolute;
+  z-index: 3;
+  @media (min-width: 1600px) {
+    display: none;
+  }
+  &:hover {
+    .before {
+      -webkit-transform: translateY(-2px);
+      -moz-transform: translateY(-2px);
+      -ms-transform: translateY(-2px);
+      -o-transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+    .after {
+      -webkit-transform: translateY(2px);
+      -moz-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+      -o-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+  }
+  .before,
+  .middle,
+  .after {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 5px;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    -ms-transition: -ms-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+    transition: transform 0.2s;
+  }
+}
+
+.logo-apec {
+  svg {
+    .st5 {
+      fill: $logo-color-primary;
+    }
+
+    .st6 {
+      fill: $bgcolor-white;
+
+      .light-mode & {
+        fill: $logo-color-secondary;
+      }
+    }
+  }
+}

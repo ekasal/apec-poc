@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="21" height="21" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="picto_help" clip-path="url(#clip-path)">
+    <path id="Tracé_7561" data-name="Tracé 7561" d="M738.363,479.406a9.083,9.083,0,0,1,6.193-6.3" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7562" data-name="Tracé 7562" d="M745.988,490.809a9.071,9.071,0,0,1-7.879-7.873" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7563" data-name="Tracé 7563" d="M756.1,482.936a9.07,9.07,0,0,1-7.883,7.873" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7564" data-name="Tracé 7564" d="M748.255,472.819a9.069,9.069,0,0,1,7.844,7.851" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7565" data-name="Tracé 7565" d="M746.04,486.585a4.894,4.894,0,0,1-3.71-3.72" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7566" data-name="Tracé 7566" d="M751.879,482.875a4.9,4.9,0,0,1-3.718,3.712" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7567" data-name="Tracé 7567" d="M748.163,477.037a4.9,4.9,0,0,1,3.711,3.687" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_7568" data-name="Tracé 7568" d="M742.335,480.731a4.9,4.9,0,0,1,3.7-3.692" transform="translate(-736.606 -471.312)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <g id="Groupe_34111" data-name="Groupe 34111" transform="translate(-736.606 -471.312)">
+      <rect id="Rectangle_29" data-name="Rectangle 29" width="2.06" height="5.851" rx="0.659" transform="translate(746.075 471.812)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <rect id="Rectangle_30" data-name="Rectangle 30" width="2.06" height="5.851" rx="0.659" transform="translate(746.075 485.961)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <g id="Groupe_34112" data-name="Groupe 34112" transform="translate(-736.606 -471.312)">
+      <rect id="Rectangle_31" data-name="Rectangle 31" width="5.851" height="2.06" rx="0.659" transform="translate(751.254 480.782)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <rect id="Rectangle_32" data-name="Rectangle 32" width="5.851" height="2.06" rx="0.659" transform="translate(737.106 480.782)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

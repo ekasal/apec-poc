@@ -1,0 +1,643 @@
+@import '../partials/variable';
+
+@import 'workshop-page-consultation';
+
+.workshop-page {
+  width: $workshop-page-width;
+  background-color: $bgcolor-card;
+  border-radius: 5px;
+  margin: 0 auto 100px auto;
+
+  .light-mode & {
+    background-color: #fff;
+  }
+
+  .workshop-page-head {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    border-bottom: 1px solid $tr-border-color;
+
+    .workshop-preview {
+      padding: 30px 20px 15px 30px;
+
+      h1 {
+        font-size: 24px;
+        font-size: 2.4rem;
+      }
+
+      .workshop-preview-grid {
+        display: grid;
+        grid-gap: 5px 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          'date lieu publication'
+          'commentaires commentaires commentaires';
+
+        .workshop-detail-date {
+          grid-area: date;
+        }
+
+        .workshop-detail-apec-center {
+          grid-area: lieu;
+        }
+
+        .workshop-detail-apec-website {
+          grid-area: publication;
+        }
+
+        .workshop-detail-comment {
+          grid-area: commentaires;
+        }
+      }
+    }
+
+    .workshop-page-buttons {
+      display: flex;
+      justify-content: flex-end;
+
+      .btn {
+        border-radius: 0;
+
+        &:last-child {
+          border-top-right-radius: 5px;
+        }
+      }
+
+      .btn-save {
+        margin-top: 0;
+        border-left: 1px solid #3f485d;
+
+        &:hover {
+          color: $color-text-dark;
+        }
+      }
+
+      .btn-unlock-workshop {
+        border-left: 1px solid #3f485d;
+
+        &:hover {
+          color: $color-text-dark;
+          background-color: $color-text-white;
+
+          svg * {
+            stroke: $color-text-dark;
+          }
+        }
+      }
+    }
+  }
+
+  // End .workshop-page-head
+
+  .workshop-page-body {
+    padding: 15px 0 30px 0;
+
+    .tabs,
+    .accordion {
+      margin: 0 0px 30px 30px;
+    }
+
+    .accordion-content {
+      .fork-values {
+        padding-top: 10px;
+
+        &.fork-values-participant {
+          .floating-label {
+            width: 95px;
+
+            &.floating-maximum {
+              position: relative;
+              width: 600px;
+
+              .input-maximum {
+                width: 94px;
+              }
+            }
+
+            .texte-optimal {
+              position: absolute;
+              top: 5px;
+              left: 100px;
+            }
+          }
+        }
+      }
+    }
+
+    .accordion-content-grid {
+      .filter-option {
+        margin: 0;
+
+        + .filter-option {
+          margin-top: 15px;
+        }
+      }
+
+      .filter-group-apec-center {
+        grid-row: 1;
+      }
+
+      .filter-group-animation-place {
+        grid-row: 2;
+        margin-top: 20px;
+      }
+
+      .workshop-address {
+        grid-row: 3;
+        grid-column: 1 / span 2;
+        margin-top: 20px;
+      }
+
+      .title-workshop-address {
+        font-size: 16px;
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 5px;
+        }
+      }
+
+      .filter-group-others {
+        grid-row: 5;
+        grid-column: 1 / span 2;
+        margin-top: 20px;
+      }
+
+      .filter-option {
+        justify-content: flex-start;
+
+        .toggle-switch {
+          margin-left: 15px;
+        }
+      }
+
+      .filter-group-partner {
+        grid-row: 6;
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .session-item {
+      border-left: 2px solid $color-text-white;
+      padding-left: 15px;
+
+      .session-item-grid {
+        width: 670px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        grid-template-areas:
+          'session session'
+          'day .'
+          'hour duree'
+          'animator modalities';
+
+        h4 {
+          color: $color-text-white;
+          font-size: 16px;
+          font-size: 1.6rem;
+          grid-area: session;
+        }
+
+        .filter-group-session-day {
+          grid-area: day;
+        }
+
+        .session-start-hour {
+          grid-area: hour;
+        }
+
+        .session-duration {
+          grid-area: duree;
+        }
+
+        .filter-group-modalities {
+          grid-area: modalities;
+          padding-bottom: 30px;
+        }
+
+        .filter-group-workshop-animator {
+          grid-area: animator;
+          padding-bottom: 10px;
+          display: block;
+
+          .animator-selection-area {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #fff;
+            height: 30px;
+          }
+
+          .animator-listing {
+            margin-top: 8px;
+
+            .animator-listing__row {
+              display: flex;
+              align-items: center;
+
+              .animator-icon {
+                margin-right: 10px;
+
+                svg {
+                  width: 24px;
+                  height: 24px;
+                }
+              }
+
+              .animator-name {
+                margin-right: 20px;
+              }
+
+              .animator-delete {
+                display: block;
+                position: relative;
+                width: 24px;
+                height: 24px;
+                background: #000;
+                border-radius: 50%;
+
+                &:after,
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: 10px;
+                  left: 6px;
+                  width: 12px;
+                  height: 2px;
+                  background: #404a64;
+                }
+
+                &:after {
+                  transform: rotate(45deg);
+                }
+
+                &:before {
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+          }
+
+          .animator-add-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+        }
+
+        .filter-group-modalities {
+          grid-area: modalities;
+          padding-bottom: 30px;
+        }
+      }
+
+      + .session-item {
+        margin-top: 5px;
+      }
+    }
+
+    .tab-content-settings {
+      margin: 0 30px 50px 30px;
+    }
+
+    .tab-content-registrations,
+    .tab-content-attendance-tracking {
+      .registrations-synthesis {
+        display: flex;
+        flex-direction: row;
+        margin: 0 30px 30px 30px;
+
+        .workshop-detail:not(:last-of-type) {
+          margin-right: 60px;
+        }
+      }
+    }
+
+    .accordion-new-registrations {
+      .accordion-content {
+        margin-left: 10px;
+      }
+    }
+
+    .new-registration-item {
+      border-left: 2px solid #fdd600;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & + .new-registration-item {
+        margin-top: 5px;
+      }
+
+      li {
+        font-size: 12px;
+        padding-right: 0px;
+
+        &:not(:nth-child(1)) {
+          text-align: center;
+        }
+
+        &:nth-child(1) {
+          width: 480px;
+        }
+
+        &:nth-child(2) {
+          width: 136px;
+        }
+
+        &:nth-child(3) {
+          width: 300px;
+        }
+
+        &:nth-child(4) {
+          width: 200px;
+        }
+
+        &:nth-child(5) {
+          width: 100px;
+        }
+
+        &.remove-item {
+          width: 20px;
+
+          svg {
+            cursor: pointer;
+          }
+        }
+
+        &.new-registration-item__inscription-edit {
+          width: 262px;
+        }
+      }
+
+      &.new-registration-item-interlocuteurs {
+        li {
+          &:nth-child(1) {
+            width: 446px;
+          }
+
+          &:nth-child(2) {
+            width: 196px;
+          }
+
+          &:nth-child(3) {
+            width: 245px;
+          }
+
+          &.remove-item {
+            width: 40px;
+
+            svg {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      &.new-registration-item-interlocuteurs__head {
+        li {
+          font-size: 12px;
+        }
+
+        li {
+          &:nth-child(1) {
+            width: 446px;
+          }
+
+          &:nth-child(2) {
+            width: 196px;
+          }
+
+          &:nth-child(3) {
+            width: 240px;
+          }
+        }
+      }
+
+      .registration-detail-id {
+        margin-bottom: 0;
+
+        li {
+          font-size: 12px;
+          font-size: 1.2rem;
+          padding: 0;
+          margin: 0;
+          text-align: left;
+
+          &:nth-child(1) {
+            width: 268px;
+          }
+        }
+
+        .customer-name {
+          font-size: 14px;
+          font-size: 1.4rem;
+          color: #fdd600;
+        }
+      }
+
+      .registration-date {
+        li {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+      }
+
+      .entry-situation {
+        li {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+
+          &:nth-child(2) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    .new-registration-item__head {
+      border-left: 2px solid #fdd600;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 5px;
+
+      li {
+        padding-bottom: 4px;
+        font-size: 12px;
+
+        &:nth-child(1) {
+          width: 284px;
+        }
+
+        &:nth-child(2) {
+          width: 80px;
+        }
+
+        &:nth-child(3) {
+          width: 240px;
+        }
+
+        &:nth-child(4) {
+          width: 200px;
+        }
+
+        &:nth-child(5) {
+          width: 100px;
+          margin-left: 9px;
+        }
+      }
+
+      li + li {
+        padding-top: 0;
+        text-align: center;
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0 30px 15px 30px;
+
+      &.download-buttons {
+        justify-content: space-around;
+
+        .btn + .btn {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .message-attention {
+      font-size: 12px;
+      font-size: 1.2rem;
+    }
+
+    nav[aria-label='pagination'] {
+      margin-bottom: 30px;
+    }
+  }
+
+  // End .workshop-page-body
+
+  &-footer {
+    padding: 10px 20px 20px;
+  }
+
+  input.switch-apec-center[type='checkbox'] {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+
+    &:checked + .workshop-address {
+      display: none;
+    }
+  }
+
+  // End input[type=checkbox]
+
+  .workshop-address-grid {
+    width: 720px;
+    display: grid;
+    grid-gap: 15px 30px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      'name name name name name name name name name name name name'
+      'address address address address address address address address address address address address'
+      'complement complement complement complement complement complement complement building building building building building'
+      'code code code code city city city city city city city city '
+      'reset reset reset reset . . . . . . . .';
+
+    .animation-place {
+      grid-area: name;
+    }
+
+    .floating-label-address {
+      grid-area: address;
+    }
+
+    .floating-label-address-complement {
+      grid-area: complement;
+    }
+
+    .floating-label-building {
+      grid-area: building;
+    }
+
+    .floating-label-postal-code {
+      grid-area: code;
+    }
+
+    .floating-label-city {
+      grid-area: city;
+    }
+
+    .btn-reset {
+      grid-area: reset;
+    }
+  }
+
+  .autocomplete-add-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .btn-add-registration {
+    position: absolute;
+    bottom: 50px;
+    right: calc(50% - 50px);
+  }
+
+  &.edit-mode {
+    .action-buttons {
+      justify-content: space-between;
+    }
+  }
+
+  .bloc-open-close {
+    position: relative;
+    border: 1px solid $color-text-white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+
+    .bloc-open-close__title {
+      margin-bottom: 3rem;
+    }
+
+    button {
+      position: absolute;
+      color: currentColor;
+      top: 0;
+      right: 0;
+    }
+
+    .light-mode & {
+      border: 1px solid $dark-mode;
+    }
+  }
+
+  .liste-items-separated {
+    span {
+      display: block;
+    }
+  }
+}
+
+// End .workshop-page

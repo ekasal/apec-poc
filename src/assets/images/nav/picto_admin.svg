@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.119" height="25" viewBox="0 0 20.119 25">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20.119" height="25" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="picto_admin" clip-path="url(#clip-path)">
+    <path id="Tracé_8081" data-name="Tracé 8081" d="M929.135,277.794v-1.22a1.22,1.22,0,0,1,1.22-1.22h3.254" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8082" data-name="Tracé 8082" d="M936.863,275.354H938.9a1.221,1.221,0,0,1,1.221,1.22v1.22" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8083" data-name="Tracé 8083" d="M934.829,277.794h-6.1a1.221,1.221,0,0,0-1.221,1.221v2.847h14.238v-2.847a1.221,1.221,0,0,0-1.221-1.221h-2.847" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Ligne_178" data-name="Ligne 178" x2="0.814" transform="translate(8.636 20.432)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Ligne_179" data-name="Ligne 179" x2="0.814" transform="translate(7.416 17.992)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8084" data-name="Tracé 8084" d="M936.863,266.4v1.22l3.254,4.068-1.627,2.441v1.22" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8085" data-name="Tracé 8085" d="M930.762,275.354V272.1l-1.627-1.221v-6.508a6.508,6.508,0,0,1,10.576-5.081l-1.524,1.524" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8086" data-name="Tracé 8086" d="M937.27,260.3l4.475,4.475V266l-1.627,1.627L938.9,266.4H936.05a2.034,2.034,0,0,1-2.034-2.034h0" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8087" data-name="Tracé 8087" d="M935.643,259.489a4.881,4.881,0,0,0-4.881,4.882V266.4" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8088" data-name="Tracé 8088" d="M938.9,281.862h7.729v-1.22a1.22,1.22,0,0,0-1.22-1.22H945v-3.255h.407a.813.813,0,0,0,0-1.627h-1.127a3.05,3.05,0,1,0-3.958-4.474" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Ligne_180" data-name="Ligne 180" x1="2.034" transform="translate(15.145 17.178)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Ligne_181" data-name="Ligne 181" x1="2.034" transform="translate(15.958 18.805)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Ligne_182" data-name="Ligne 182" x1="2.034" transform="translate(15.958 22.06)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Tracé_8089" data-name="Tracé 8089" d="M941.338,271.693a1.221,1.221,0,0,1,1.22-1.221" transform="translate(-927.007 -257.362)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

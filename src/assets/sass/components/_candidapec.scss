@@ -1,0 +1,576 @@
+@import '../partials/variable';
+@import 'card-workshop';
+@import 'card-registration';
+@import 'workshop-page';
+@import 'tile-search';
+@import 'pagination';
+@import 'carousel';
+@import 'tabs';
+@import 'accordion';
+@import 'table';
+@import 'dropdown-actions';
+
+.candidapec {
+  .home-main {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .langue label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .langue .competence span {
+    margin-right: 3px;
+    cursor: pointer;
+  }
+
+  .cadres .onglets li p {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #8ca3d5;
+  }
+
+  .cadres .onglets li p.disabled {
+    color: #b8becc;
+    cursor: default;
+  }
+
+  nav[aria-label='pagination'] {
+    margin-bottom: 0;
+  }
+
+  .filters-content-container {
+    width: 100%;
+  }
+
+  .sidebar-filters {
+    width: 1000px;
+    display: block;
+  }
+
+  .sidebar-filters [class*='flex-row-'] {
+    margin: 0;
+  }
+
+  .tag.delete-all {
+    border: 1px solid lightsalmon;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  #volet-workshop {
+    height: calc(50vh + 30px);
+    padding-top: 60px;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 768px) {
+      height: 100vh;
+      padding-top: 0;
+    }
+  }
+
+  .smallImg img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .mini-section-separator {
+    border-top: 1px solid $bg-separator;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+  }
+
+  .card-gestion-profil {
+    height: 100%;
+  }
+
+  .form-group-refs {
+    max-width: 17rem;
+  }
+
+  .card-recherche-profil-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .card-recherche-memo {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $bg-separator;
+    margin-right: -2rem;
+    margin-left: -2rem;
+    padding: 2rem 2rem 0 2rem;
+
+    .text {
+      margin-right: 2rem;
+      margin-left: 0.5rem;
+    }
+
+    &:first-child {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: none;
+      font-size: 2rem;
+    }
+  }
+
+  .card-affiner-recherche {
+    display: block;
+  }
+
+  .h3 {
+    margin-bottom: 1rem;
+    color: inherit;
+    font-weight: 700;
+    cursor: inherit;
+  }
+
+  .title-list-choices {
+    margin-bottom: 1rem;
+  }
+
+  .dual-list-wrapper {
+    align-items: flex-end;
+  }
+
+  .dual-list-container {
+    max-width: 40rem;
+  }
+
+  .dual-list-actions {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    flex-basis: 0;
+  }
+
+  .dual-list-btn {
+    border-radius: 0;
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+    text-align: center;
+
+    & + .dual-list-btn {
+      margin-top: 1px;
+    }
+
+    svg {
+      width: 1.6rem;
+      height: 1.2rem;
+
+      &:only-child {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .dual-list-select {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .dual-list {
+    height: 30rem;
+    overflow: auto;
+    background-color: $bgcolor-very-dark;
+    padding: 10px 0 10px 20px;
+
+    span {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-text-white;
+      }
+
+      &::before {
+        content: '+';
+        font-size: 2rem;
+        line-height: 0;
+      }
+
+      &.more {
+        &::before {
+          content: '-';
+        }
+      }
+
+      &.deplie {
+        &::before {
+          content: '';
+        }
+      }
+    }
+  }
+
+  .nombre-de-profils {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+
+    strong {
+      color: $bg-loader-on;
+      font-size: 2rem;
+    }
+  }
+
+  .nombre-de-profils {
+    color: $color-text-white;
+  }
+
+  .selecteur-affichage-btn {
+    &.active,
+    &:hover,
+    &:focus {
+      color: $color-text-white;
+    }
+  }
+
+  .table-col-profils {
+    width: 50%;
+  }
+
+  .table-col-rech-memo-actions {
+    width: 23rem;
+  }
+
+  .titre-profil {
+    color: $bg-loader-on;
+    font-weight: 700;
+    font-size: 1.8rem;
+
+    a {
+      color: currentColor;
+    }
+  }
+
+  .sous-titre-profil {
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+
+  .list-status {
+    margin-top: 1rem;
+  }
+
+  .titre-profil-rubrique {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .filtre-recherche-header {
+    font-weight: 600;
+  }
+
+  .accordion {
+    .filtre-recherche-content {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .titre-page {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .titre-page {
+    color: $color-text-white;
+  }
+
+  .card-profil-header {
+    border-bottom: 1px solid $bg-separator;
+    padding-bottom: 2rem;
+  }
+
+  .light-mode .card-profil-header {
+    border-color: $bg-separator-light;
+  }
+
+  .quote {
+    display: inline-flex;
+  }
+
+  .quote-icon {
+    color: $color-text-attention;
+  }
+
+  .quote-text {
+    font-style: italic;
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+
+  .list-value-strong {
+    strong {
+      font-size: 16px;
+      color: $color-text-white;
+    }
+  }
+
+  .competences-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .competence {
+    margin-bottom: 2rem;
+    break-inside: avoid;
+
+    svg {
+      width: 17px;
+      stroke: none;
+      border: none;
+      outline: none;
+
+      .st0 {
+        fill: #b8bdcb;
+      }
+    }
+  }
+
+  .competence-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .competence-note {
+    margin-right: 1rem;
+
+    span {
+      color: $color-text-attention;
+    }
+  }
+
+  .atout {
+    display: flex;
+  }
+
+  .atout-number {
+    font-size: 4rem;
+    width: 5rem;
+    flex-shrink: 0;
+    text-align: right;
+    margin-right: 1rem;
+    line-height: 1;
+  }
+
+  .moment-cle {
+    text-align: center;
+  }
+
+  .moment-cle-icon {
+    color: $color-text-attention;
+    line-height: 4.5rem;
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  .moment-cle-date {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .moment-cle-titre {
+    font-weight: 700;
+    color: $bg-loader-on;
+  }
+
+  .liste-projet {
+    flex-wrap: wrap;
+  }
+
+  .projet {
+    margin-bottom: 2rem;
+  }
+
+  .projet-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .header-criteres-recherche {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1rem;
+  }
+
+  $message-bg: $bgcolor-very-dark;
+  $message-arrow-width: 1.2rem;
+
+  .contenu-message-text {
+    position: relative;
+    background-color: $message-bg;
+    padding: 3rem;
+    border-radius: 6px;
+    max-width: 100rem;
+    line-height: 1.6;
+    word-break: break-word;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      margin-top: -$message-arrow-width;
+      border-width: $message-arrow-width;
+      border-style: solid;
+      border-color: transparent $message-bg transparent transparent;
+    }
+  }
+
+  .panel-header {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .consultations {
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .consultations-total {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  .consultations-total {
+    color: $color-text-white;
+  }
+
+  .repartition {
+    padding-top: 2rem;
+  }
+
+  .repartition-graphique {
+    svg {
+      max-width: 100%;
+
+      text {
+        stroke: none;
+      }
+    }
+  }
+
+  .repartition-titre {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    max-width: 29rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .repartition-liste {
+    margin-left: 5rem;
+
+    > * {
+      margin-bottom: 0;
+    }
+  }
+
+  .visite-profil {
+    border: 1px solid currentColor;
+    padding: 2rem 3rem;
+    display: inline-block;
+    position: relative;
+  }
+
+  .visite-profil-title {
+    position: absolute;
+    background-color: $bgcolor-card;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    top: -1.8rem;
+    margin-left: -1rem;
+  }
+
+  .visite-profil-text {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  .visite-profil-text {
+    color: $color-text-white;
+  }
+
+  .visite-profil-icon {
+    margin-right: 0;
+  }
+
+  .visite-profil-icon {
+    color: $color-text-white;
+  }
+
+  .svg-donut path {
+    stroke: rgb(255, 255, 255);
+    stroke-width: 1;
+  }
+
+  .list-legende-graphic {
+    margin-left: 0px !important;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    background-color: #ed7601;
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.light-mode {
+  .candidapec {
+    .card-profil-header {
+      border-color: $bg-separator-light;
+    }
+  }
+
+  .dual-list {
+    background-color: $bgcolor-white;
+  }
+
+  .nombre-de-profils {
+    color: $color-generic-lm;
+    font-weight: 700;
+  }
+
+  .visite-profil-title {
+    background-color: $bgcolor-white;
+  }
+
+  .visite-profil-text,
+  .visite-profil-icon,
+  .consultations-total {
+    color: $color-generic-lm;
+  }
+
+  .list-value-strong {
+    strong {
+      color: $color-generic-lm;
+    }
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+}

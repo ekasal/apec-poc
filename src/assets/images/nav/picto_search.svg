@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25.207" height="25.207" viewBox="0 0 25.207 25.207">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="25.207" height="25.207" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="picto_search" clip-path="url(#clip-path)">
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="9.6" cy="9.6" r="9.6" transform="translate(0.5 0.5)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Ligne_33" data-name="Ligne 33" x2="7.2" y2="7.2" transform="translate(17.3 17.3)" fill="none" stroke="#b8becc" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>
